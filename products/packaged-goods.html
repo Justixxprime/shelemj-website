@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Packaged Goods | ShelemJ Products</title>
+<meta name="description" content="Ready-to-retail packaged African foods and beverages, from Maggi Star and Knorr to Indomie noodles and Golden Morn, branded and export-ready.">
+
+<meta property="og:title" content="Packaged Goods | ShelemJ">
+<meta property="og:description" content="Ready-to-retail packaged African foods and beverages.">
+<meta property="og:image" content="../assets/images/og-image.jpeg">
+<meta property="og:url" content="https://shelemjresourcesltd.com/products/spices-seasonings.html">
+
+<link rel="icon" href="../assets/images/shelemj-logo.png">
+<link rel="apple-touch-icon" href="../assets/images/shelemj-logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ⚙️ Same CDN integration note as the other pages — swap for /dist/output.css in your real project.
+     Note this file lives in /products/, so that link would be href="../dist/output.css" from here. -->
+<link rel="stylesheet" href="../dist/output.css">
+<!-- GLightbox — for the product gallery. Free CDN library, no build step needed.
+     Currently has nothing to open since the gallery below uses placeholders — see the comment
+     above the gallery for the exact markup to switch to once real photos are added. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { -webkit-font-smoothing: antialiased; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal-visible { opacity: 1; transform: none; }
+  /* ===== Modern polish additions ===== */
+  /* Subtle film-grain texture over dark sections for depth */
+  .grain::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none; z-index: 1;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  /* Soft radial gold glow for hero-type sections */
+  .gold-glow::before {
+    content: '';
+    position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,164,76,0.10), transparent 70%);
+  }
+  /* Image zoom-on-hover wrapper */
+  .img-zoom { overflow: hidden; }
+  .img-zoom img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+  .img-zoom:hover img { transform: scale(1.08); }
+  /* Elevated hover shadow for cards */
+  .card-lift { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease; }
+  .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.55); }
+  /* Sticky sample bar slide-down */
+  #sampleBar { transform: translateY(-100%); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+  #sampleBar.visible { transform: translateY(0); }
+  /* FAQ accordion */
+  .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
+  .faq-icon { transition: transform .3s ease; }
+  summary::-webkit-details-marker { display: none; }
+  .hidden-extra { display: none; }
+  /* Gallery grid — hand-written CSS so it never depends on a rebuilt Tailwind file */
+  .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  @media (min-width: 640px) { .gallery-grid { grid-template-columns: repeat(3, 1fr); } }
+  .gallery-tile { position: relative; aspect-ratio: 1 / 1; display: block; }
+  .gallery-tile img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+
+  .img-slot {
+    background-image: repeating-linear-gradient(135deg, rgba(201,164,76,0.06) 0px, rgba(201,164,76,0.06) 2px, transparent 2px, transparent 10px);
+  }
+
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 2px solid #C9A44C;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (min-width: 768px) {
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: #0D0D0D; }
+    ::-webkit-scrollbar-thumb { background: #6B5B32; border-radius: 8px; }
+    ::-webkit-scrollbar-thumb:hover { background: #C9A44C; }
+  }
+
+  #mobileMenu { transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1 !important; transform: none !important; }
+  }
+</style>
+</head>
+
+<body class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+
+<!-- ============ NAV (Products active) ============ -->
+<header id="siteNav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="flex items-center justify-between h-20">
+
+      <a href="../index.html" class="flex items-center gap-3 group">
+        <img src="../assets/images/shelemj-logo.png" alt="ShelemJ" class="h-11 w-auto">
+        <span class="font-serif text-xl tracking-wide text-cream">Shelem<span class="text-gold">J</span></span>
+      </a>
+
+      <nav aria-label="Primary" class="hidden lg:flex items-center gap-10 font-sans text-sm tracking-wide">
+        <a href="../index.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Home</a>
+        <a href="../about.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">About</a>
+        <a href="../products.html" class="text-gold relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-gold">Products</a>
+        <a href="../supply-chain.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Supply Chain</a>
+        <a href="../partnership.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Partnership</a>
+        <a href="../contact.html" class="inline-flex items-center px-5 py-2.5 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors">Contact</a>
+      </nav>
+
+      <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" class="lg:hidden text-gold p-2 -mr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div id="mobileMenu" class="lg:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10">
+    <div class="flex justify-end">
+      <button id="menuCloseBtn" aria-label="Close menu" class="text-gold p-2 -mr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav aria-label="Mobile" class="mt-10 flex flex-col gap-7 font-serif text-2xl">
+      <a href="../index.html" class="text-cream/90 hover:text-gold transition-colors">Home</a>
+      <a href="../about.html" class="text-cream/90 hover:text-gold transition-colors">About</a>
+      <a href="../products.html" class="text-gold">Products</a>
+      <a href="../supply-chain.html" class="text-cream/90 hover:text-gold transition-colors">Supply Chain</a>
+      <a href="../partnership.html" class="text-cream/90 hover:text-gold transition-colors">Partnership</a>
+      <a href="../contact.html" class="text-cream/90 hover:text-gold transition-colors">Contact</a>
+    </nav>
+    <div class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase">
+      <span>Est. 2013</span>
+    </div>
+  </div>
+  <div id="menuOverlay" class="hidden fixed inset-0 bg-black/60 z-40 lg:hidden"></div>
+</header>
+
+<main id="main">
+
+  <!-- ============ BREADCRUMB + CATEGORY HERO ============ -->
+  <section class="relative pt-32 pb-14 sm:pt-40 sm:pb-16 overflow-hidden">
+    <div class="pointer-events-none absolute -right-40 -top-32 w-[500px] h-[500px] opacity-25" aria-hidden="true">
+      <div class="absolute inset-0 rounded-full border border-gold/40"></div>
+      <div class="absolute inset-10 rounded-full border border-gold/30"></div>
+      <div class="absolute inset-20 rounded-full border border-gold/20"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+      <nav aria-label="Breadcrumb" class="reveal flex items-center gap-2 text-xs text-cream/50 mb-8">
+        <a href="../index.html" class="hover:text-gold transition-colors">Home</a>
+        <span>/</span>
+        <a href="../products.html" class="hover:text-gold transition-colors">Products</a>
+        <span>/</span>
+        <span class="text-gold">Packaged Goods</span>
+      </nav>
+
+      <div class="max-w-2xl reveal">
+        <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Product Category</p>
+        <h1 class="font-serif text-4xl sm:text-5xl text-cream leading-tight">Packaged Goods</h1>
+        <p class="text-cream/70 mt-6 leading-relaxed">Ready-to-retail packaged African foods and beverages, from Maggi Star and Knorr to Indomie noodles and Golden Morn, branded and export-ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="pb-20 sm:pb-24">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="gallery-grid" id="galleryGrid">
+        <a href="../assets/images/packaged-goods-01.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-01.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+        <a href="../assets/images/packaged-goods-02.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-02.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+        <a href="../assets/images/packaged-goods-03.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-03.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+        <a href="../assets/images/packaged-goods-04.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-04.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+        <a href="../assets/images/packaged-goods-05.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-05.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+        <a href="../assets/images/packaged-goods-06.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-06.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+        <a href="../assets/images/packaged-goods-07.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-07.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+        <a href="../assets/images/packaged-goods-08.jpg" class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra" data-gallery="packaged-goods">
+          <img src="../assets/images/packaged-goods-08.jpg" alt="Packaged Goods product photo" loading="lazy">
+        </a>
+      </div>
+      <div class="text-center mt-8">
+        <button id="galleryShowMore" class="inline-flex items-center px-9 py-4 mt-9 border border-gold/40 text-gold text-sm tracking-wide rounded-sm hover:border-gold hover:bg-gold hover:text-charcoal transition-colors">
+          Show More
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" /></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCT SPECS ============ -->
+  <section class="py-20 sm:py-24 bg-charcoal2 border-y border-gold/10">
+    <div class="max-w-5xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div class="reveal max-w-2xl mb-10">
+        <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Available Products</p>
+        <h2 class="font-serif text-3xl sm:text-4xl text-cream">In This Category</h2>
+      </div>
+
+      <!-- ⚠️ Pack size / MOQ columns are placeholders — get real values from your aunt per the checklist you already sent her -->
+      <div class="reveal overflow-x-auto rounded-lg border border-gold/20">
+        <table class="w-full text-left border-collapse min-w-[520px]">
+          <thead>
+            <tr class="bg-charcoal text-gold text-xs tracking-widest uppercase">
+              <th class="py-4 px-5 font-sans font-medium">Product</th>
+              <th class="py-4 px-5 font-sans font-medium">Pack Size</th>
+              <th class="py-4 px-5 font-sans font-medium">MOQ</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm text-cream/75 divide-y divide-gold/10">
+            <tr>
+              <td class="py-4 px-5">Maggi Star Seasoning</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-5">Knorr Seasoning</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-5">Indomie Instant Noodles</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-5">Golden Morn</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+              <td class="py-4 px-5 text-cream/40">[ confirm ]</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="reveal mt-10">
+        <a href="../contact.html?category=packaged-goods" class="inline-flex items-center px-8 py-4 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors">
+          Request a Quote for This Category
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPLORE OTHER CATEGORIES ============ -->
+  <section class="py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <p class="reveal text-xs tracking-[0.3em] uppercase text-gold mb-6">Explore Other Categories</p>
+      <div class="reveal flex flex-wrap gap-3">
+        <a href="spices-seasonings.html" class="px-5 py-2.5 rounded-full border border-gold/25 text-sm text-cream/75 hover:border-gold hover:text-gold transition-colors">Spices & Seasonings</a>
+        <a href="african-made-beverages.html" class="px-5 py-2.5 rounded-full border border-gold/25 text-sm text-cream/75 hover:border-gold hover:text-gold transition-colors">African Made Beverages</a>
+        <a href="grains-raw-materials.html" class="px-5 py-2.5 rounded-full border border-gold/25 text-sm text-cream/75 hover:border-gold hover:text-gold transition-colors">Grains & Raw Materials</a>
+        <a href="premium-oils.html" class="px-5 py-2.5 rounded-full border border-gold/25 text-sm text-cream/75 hover:border-gold hover:text-gold transition-colors">Premium Oils</a>
+        <a href="dried-seeds-vegetables.html" class="px-5 py-2.5 rounded-full border border-gold/25 text-sm text-cream/75 hover:border-gold hover:text-gold transition-colors">Dried Seeds & Vegetables</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <img src="../assets/images/shelemj-logo.png" alt="ShelemJ" class="h-10 w-auto">
+          <span class="font-serif text-lg text-cream">Shelem<span class="text-gold">J</span></span>
+        </div>
+        <p class="text-cream/60 text-sm leading-relaxed">Rooted in Africa. Trusted by retailers worldwide.</p>
+      </div>
+
+      <div>
+        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Navigate</p>
+        <ul class="space-y-2.5 text-sm text-cream/70">
+          <li><a href="../about.html" class="hover:text-gold transition-colors">About</a></li>
+          <li><a href="../products.html" class="hover:text-gold transition-colors">Products</a></li>
+          <li><a href="../supply-chain.html" class="hover:text-gold transition-colors">Supply Chain</a></li>
+          <li><a href="../partnership.html" class="hover:text-gold transition-colors">Partnership</a></li>
+          <li><a href="../contact.html" class="hover:text-gold transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Contact</p>
+        <ul class="space-y-2.5 text-sm text-cream/70">
+          <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
+          <li>+234 803 318 7724</li>
+          <li>+234 803 347 9732</li>
+          <li>shelemjresourcesltd@gmail.com</li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Follow</p>
+        <div class="flex gap-4">
+          <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 4h4v16H4zM4 4h4v4H4zM10 9h4v11h-4zM10 9c0-3 4-3 4 0M14 9h4v11h-4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40">
+      <p>&copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228. All rights reserved.</p>
+      <p>Est. 2013, as Jueco Foods</p>
+    </div>
+    <div class="mt-3 text-center text-[11px] text-mutedgold/40">
+      <p>Website by <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Obioma Chibueze Justice</a></p>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/2348033187724" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
+   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite]">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const nav = document.getElementById('siteNav');
+  const onScroll = () => {
+    if (window.scrollY > 40) { nav.classList.add('shadow-lg'); } else { nav.classList.remove('shadow-lg'); }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const menuBtn = document.getElementById('menuBtn');
+  const menuCloseBtn = document.getElementById('menuCloseBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  function openMenu() {
+    mobileMenu.classList.remove('translate-x-full');
+    menuOverlay.classList.remove('hidden');
+    menuBtn.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.add('translate-x-full');
+    menuOverlay.classList.add('hidden');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  menuBtn.addEventListener('click', openMenu);
+  menuCloseBtn.addEventListener('click', closeMenu);
+  menuOverlay.addEventListener('click', closeMenu);
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  if (!prefersReduced && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('reveal-visible'), (i % 6) * 60);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('reveal-visible'));
+  }
+
+  // GLightbox — ready and waiting, currently has no .glightbox elements to bind to (see gallery comment above)
+  if (typeof GLightbox !== 'undefined') {
+    GLightbox({ selector: '.glightbox' });
+  }
+
+  // Gallery "Show More" toggle
+  const galleryShowMore = document.getElementById('galleryShowMore');
+  if (galleryShowMore) {
+    galleryShowMore.addEventListener('click', () => {
+      document.querySelectorAll('#galleryGrid .hidden-extra').forEach(el => {
+        el.classList.remove('hidden-extra');
+        el.classList.add('reveal-visible');
+      });
+      galleryShowMore.style.display = 'none';
+    });
+  }
+</script>
+
+</body>
+</html>
