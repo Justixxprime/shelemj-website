@@ -1,412 +1,900 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Partnership Opportunities | ShelemJ</title>
-<meta name="description" content="Partner with ShelemJ for direct African sourcing, private labeling, exclusive product lines, seasonal promotions, and dedicated partnership support.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Partnership Opportunities | ShelemJ</title>
+    <meta
+      name="description"
+      content="Partner with ShelemJ for direct African sourcing, private labeling, exclusive product lines, seasonal promotions, and dedicated partnership support."
+    />
 
-<meta property="og:title" content="Partnership Opportunities | ShelemJ">
-<meta property="og:description" content="Direct sourcing. Dependable delivery. Dedicated support for retail partners.">
-<meta property="og:image" content="assets/images/og-image.jpeg">
-<meta property="og:url" content="https://shelemjresourcesltd.com">
+    <meta property="og:title" content="Partnership Opportunities | ShelemJ" />
+    <meta
+      property="og:description"
+      content="Direct sourcing. Dependable delivery. Dedicated support for retail partners."
+    />
+    <meta property="og:image" content="assets/images/og-image.jpeg" />
+    <meta property="og:url" content="https://shelemjresourcesltd.com" />
 
-<!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
-<link rel="icon" href="assets/images/shelemj-logo.png">
-<link rel="apple-touch-icon" href="assets/images/shelemj-logo.png">
+    <!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
+    <link rel="icon" href="assets/images/shelemj-logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/shelemj-logo.png" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- ⚙️ Same CDN integration note as the other pages — swap for /dist/output.css in your real project. -->
-<link rel="stylesheet" href="dist/output.css">
-<style>
-  html { scroll-behavior: smooth; }
-  body { -webkit-font-smoothing: antialiased; }
+    <!-- ⚙️ Same CDN integration note as the other pages — swap for /dist/output.css in your real project. -->
+    <link rel="stylesheet" href="dist/output.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
 
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
-  .reveal-visible { opacity: 1; transform: none; }
-  /* ===== Modern polish additions ===== */
-  /* Subtle film-grain texture over dark sections for depth */
-  .grain::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 1;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  /* Soft radial gold glow for hero-type sections */
-  .gold-glow::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,164,76,0.10), transparent 70%);
-  }
-  /* Image zoom-on-hover wrapper */
-  .img-zoom { overflow: hidden; }
-  .img-zoom img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-  .img-zoom:hover img { transform: scale(1.08); }
-  /* Elevated hover shadow for cards */
-  .card-lift { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease; }
-  .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.55); }
-  /* Sticky sample bar slide-down */
-  #sampleBar { transform: translateY(-100%); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
-  #sampleBar.visible { transform: translateY(0); }
-  /* FAQ accordion */
-  .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
-  .faq-icon { transition: transform .3s ease; }
-  summary::-webkit-details-marker { display: none; }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+          transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: none;
+      }
+      /* ===== Modern polish additions ===== */
+      /* Subtle film-grain texture over dark sections for depth */
+      .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      /* Soft radial gold glow for hero-type sections */
+      .gold-glow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          ellipse 60% 50% at 50% 0%,
+          rgba(201, 164, 76, 0.1),
+          transparent 70%
+        );
+      }
+      /* Image zoom-on-hover wrapper */
+      .img-zoom {
+        overflow: hidden;
+      }
+      .img-zoom img {
+        transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .img-zoom:hover img {
+        transform: scale(1.08);
+      }
+      /* Elevated hover shadow for cards */
+      .card-lift {
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .card-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.55);
+      }
+      /* Sticky sample bar slide-down */
+      #sampleBar {
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      #sampleBar.visible {
+        transform: translateY(0);
+      }
+      /* FAQ accordion */
+      .faq-item[open] summary .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
 
+      .img-slot {
+        background-image: repeating-linear-gradient(
+          135deg,
+          rgba(201, 164, 76, 0.06) 0px,
+          rgba(201, 164, 76, 0.06) 2px,
+          transparent 2px,
+          transparent 10px
+        );
+      }
 
-  .img-slot {
-    background-image: repeating-linear-gradient(135deg, rgba(201,164,76,0.06) 0px, rgba(201,164,76,0.06) 2px, transparent 2px, transparent 10px);
-  }
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #c9a44c;
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
 
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-    outline: 2px solid #C9A44C;
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
-
-  @media (min-width: 768px) {
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #0D0D0D; }
-    ::-webkit-scrollbar-thumb { background: #6B5B32; border-radius: 8px; }
-    ::-webkit-scrollbar-thumb:hover { background: #C9A44C; }
-  }
-
-  #mobileMenu { transition: transform .45s cubic-bezier(.2,.7,.2,1); }
-
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-    .reveal { opacity: 1 !important; transform: none !important; }
-  }
-</style>
-</head>
-
-<body class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal">
-
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
-
-<!-- ============ NAV (Partnership active) ============ -->
-<header id="siteNav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div class="flex items-center justify-between h-20">
-
-      <a href="index.html" class="flex items-center gap-3 group">
-        <img src="assets/images/shelemj-logo.png" alt="ShelemJ" class="h-11 w-auto">
-        <span class="font-serif text-xl tracking-wide text-cream">Shelem<span class="text-gold">J</span></span>
-      </a>
-
-      <nav aria-label="Primary" class="hidden lg:flex items-center gap-10 font-sans text-sm tracking-wide">
-        <a href="index.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Home</a>
-        <a href="about.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">About</a>
-        <a href="products.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Products</a>
-        <a href="gallery.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Gallery</a>
-        <a href="supply-chain.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Supply Chain</a>
-        <a href="partnership.html" class="text-gold relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-gold">Partnership</a>
-        <a href="contact.html" class="inline-flex items-center px-5 py-2.5 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors">Contact</a>
-      </nav>
-
-      <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" class="lg:hidden text-gold p-2 -mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <div id="mobileMenu" class="lg:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10">
-    <div class="flex justify-end">
-      <button id="menuCloseBtn" aria-label="Close menu" class="text-gold p-2 -mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    <nav aria-label="Mobile" class="mt-10 flex flex-col gap-7 font-serif text-2xl">
-      <a href="index.html" class="text-cream/90 hover:text-gold transition-colors">Home</a>
-      <a href="about.html" class="text-cream/90 hover:text-gold transition-colors">About</a>
-      <a href="products.html" class="text-cream/90 hover:text-gold transition-colors">Products</a>
-      <a href="gallery.html" class="text-cream/90 hover:text-gold transition-colors">Gallery</a>
-      <a href="supply-chain.html" class="text-cream/90 hover:text-gold transition-colors">Supply Chain</a>
-      <a href="partnership.html" class="text-gold">Partnership</a>
-      <a href="contact.html" class="text-cream/90 hover:text-gold transition-colors">Contact</a>
-    </nav>
-    <div class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase">
-      <span>Est. 2013</span>
-    </div>
-  </div>
-  <div id="menuOverlay" class="hidden fixed inset-0 bg-black/60 z-40 lg:hidden"></div>
-</header>
-
-<main id="main">
-
-  <!-- ============ HERO ============ -->
-  <section class="relative pt-36 pb-16 sm:pt-44 sm:pb-20 overflow-hidden">
-    <div class="pointer-events-none absolute -right-40 -top-32 w-[540px] h-[540px] opacity-30" aria-hidden="true">
-      <div class="absolute inset-0 rounded-full border border-gold/40"></div>
-      <div class="absolute inset-10 rounded-full border border-gold/30"></div>
-      <div class="absolute inset-20 rounded-full border border-gold/20"></div>
-      <div class="absolute inset-32 rounded-full border border-gold/15"></div>
-    </div>
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
-      <div class="max-w-2xl reveal">
-        <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Partner With ShelemJ</p>
-        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-cream leading-tight">Direct sourcing.<br>Dependable delivery.</h1>
-        <p class="text-cream/70 mt-6 leading-relaxed">Join the ShelemJ family and bring authentic African flavors to your customers — backed by direct sourcing, flexible logistics, and a team invested in your growth.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHY PARTNER ============ -->
-  <section class="pb-24 sm:pb-28">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-      <p class="reveal text-xs tracking-[0.3em] uppercase text-gold mb-4">Why Partner With ShelemJ</p>
-      <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 mt-8">
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Unmatched Quality & Authenticity</h3>
-          <p class="text-cream/75 leading-relaxed">We deliver premium African products with genuine flavors and ingredients, sourced from the finest producers across the continent, ensuring every product meets the highest retail standards.</p>
-        </div>
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Direct African Sourcing</h3>
-          <p class="text-cream/75 leading-relaxed">Our direct relationships with trusted African farmers and producers eliminate unnecessary intermediaries, guaranteeing product integrity, traceability, and the best value for your shelves.</p>
-        </div>
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Flexible Supply Chain Solutions</h3>
-          <p class="text-cream/75 leading-relaxed">From flexible order volumes to reliable delivery schedules, our agile logistics infrastructure adapts to your retail needs, ensuring consistent stock availability and seamless supply chain management.</p>
-        </div>
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Dedicated Partnership Support</h3>
-          <p class="text-cream/75 leading-relaxed">Our dedicated account managers provide end-to-end support, from onboarding and product training to marketing collaboration, fostering long-term growth and success for your business.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PARTNERSHIP OPPORTUNITIES ============ -->
-  <section class="py-24 sm:py-28 bg-charcoal2 border-y border-gold/10">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-      <p class="reveal text-xs tracking-[0.3em] uppercase text-gold mb-4">Partnership Opportunities</p>
-
-      <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 mt-8">
-        <!-- Filled in from your aunt's "we customise products too" note — refine exact wording with her before publishing -->
-        <div class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Private Labeling</h3>
-          <p class="text-cream/75 leading-relaxed">Secure your own branded packaging on ShelemJ products — from custom labels to fully tailored product lines built around your retail brand. Ask us what's possible for your store.</p>
-        </div>
-        <div class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Seasonal Promotions</h3>
-          <p class="text-cream/75 leading-relaxed">Collaborative marketing campaigns and seasonal promotions crafted to drive customer engagement and boost sales.</p>
-        </div>
-        <div class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Exclusive Product Lines</h3>
-          <p class="text-cream/75 leading-relaxed">Secure exclusive access to signature ShelemJ products, differentiating your shelves with authentic African flavors.</p>
-        </div>
-        <div class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Flexible Orders & Delivery</h3>
-          <p class="text-cream/75 leading-relaxed">Tailored order volumes and reliable delivery schedules designed to meet your retail demands with consistency.</p>
-        </div>
-        <div class="reveal sm:col-span-2 p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Dedicated Partnership Support</h3>
-          <p class="text-cream/75 leading-relaxed max-w-2xl">A committed account team ensuring seamless onboarding, ongoing support, and long-term partnership growth — the same team you'll speak to today is who you'll know a year from now.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ HOW IT WORKS ============ -->
-  <section class="py-24 sm:py-28">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
-      <div class="max-w-2xl reveal mb-16 sm:mb-20">
-        <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Getting Started</p>
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">How Partnership Works</h2>
-      </div>
-
-      <div class="relative">
-        <div class="hidden sm:block absolute top-6 left-6 right-6 h-px bg-gold/15" aria-hidden="true">
-          <div id="stepsFillDesktop" class="h-full bg-gold origin-left scale-x-0 transition-transform duration-[1600ms] ease-out"></div>
-        </div>
-        <div class="sm:hidden absolute top-0 bottom-0 left-6 w-px bg-gold/15" aria-hidden="true">
-          <div id="stepsFillMobile" class="w-full bg-gold origin-top scale-y-0 transition-transform duration-[1600ms] ease-out"></div>
-        </div>
-
-        <div id="stepsWrap" class="grid sm:grid-cols-3 gap-10 sm:gap-8 relative">
-          <div class="reveal flex sm:flex-col gap-5 sm:gap-0 sm:items-center sm:text-center">
-            <div class="w-12 h-12 shrink-0 rounded-full bg-charcoal border-2 border-gold flex items-center justify-center font-serif text-gold z-10">1</div>
-            <div class="sm:mt-6">
-              <p class="font-serif text-xl text-gold">Reach Out</p>
-              <p class="text-cream/65 text-sm mt-2 leading-relaxed sm:max-w-[220px] sm:mx-auto">Tell us about your store and what you're looking to stock.</p>
-            </div>
-          </div>
-          <div class="reveal flex sm:flex-col gap-5 sm:gap-0 sm:items-center sm:text-center">
-            <div class="w-12 h-12 shrink-0 rounded-full bg-charcoal border-2 border-gold flex items-center justify-center font-serif text-gold z-10">2</div>
-            <div class="sm:mt-6">
-              <p class="font-serif text-xl text-gold">Sample & Discuss</p>
-              <p class="text-cream/65 text-sm mt-2 leading-relaxed sm:max-w-[220px] sm:mx-auto">Try our products and align on volumes, pricing, and terms.</p>
-            </div>
-          </div>
-          <div class="reveal flex sm:flex-col gap-5 sm:gap-0 sm:items-center sm:text-center">
-            <div class="w-12 h-12 shrink-0 rounded-full bg-charcoal border-2 border-gold flex items-center justify-center font-serif text-gold z-10">3</div>
-            <div class="sm:mt-6">
-              <p class="font-serif text-xl text-gold">Start Stocking</p>
-              <p class="text-cream/65 text-sm mt-2 leading-relaxed sm:max-w-[220px] sm:mx-auto">We handle sourcing and shipping — you handle the shelves.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CTA BANNER ============ -->
-  <section class="relative py-24 sm:py-28 overflow-hidden grain">
-    <div class="absolute inset-0">
-      <img src="assets/images/partnership-cta-background.jpeg" alt="ShelemJ partnership" class="w-full h-full object-cover">
-    </div>
-    <div class="absolute inset-0 bg-charcoal/80"></div>
-    <div class="relative max-w-3xl mx-auto px-5 text-center reveal">
-      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">Join the ShelemJ Family</h2>
-      <p class="text-cream/75 mt-5 max-w-xl mx-auto">Bring authentic African flavors to your customers. Schedule a consultation or request a sample today.</p>
-      <a href="contact.html" class="inline-flex items-center px-9 py-4 mt-9 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors">
-        Schedule a Consultation
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      <div>
-        <div class="flex items-center gap-3 mb-4">
-          <img src="assets/images/shelemj-logo.png" alt="ShelemJ" class="h-10 w-auto">
-          <span class="font-serif text-lg text-cream">Shelem<span class="text-gold">J</span></span>
-        </div>
-        <p class="text-cream/60 text-sm leading-relaxed">Rooted in Africa. Trusted by retailers worldwide.</p>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Navigate</p>
-        <ul class="space-y-2.5 text-sm text-cream/70">
-          <li><a href="about.html" class="hover:text-gold transition-colors">About</a></li>
-          <li><a href="products.html" class="hover:text-gold transition-colors">Products</a></li>
-          <li><a href="gallery.html" class="hover:text-gold transition-colors">Gallery</a></li>
-          <li><a href="supply-chain.html" class="hover:text-gold transition-colors">Supply Chain</a></li>
-          <li><a href="partnership.html" class="hover:text-gold transition-colors">Partnership</a></li>
-          <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Contact</p>
-        <ul class="space-y-2.5 text-sm text-cream/70">
-          <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
-          <li>+234 803 318 7724</li>
-          <li>+234 803 347 9732</li>
-          <li>+234 812 763 2037</li>
-          <li>shelemjresourcesltd@gmail.com</li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Follow</p>
-        <div class="flex gap-4">
-          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
-          </a>
-          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 4h4v16H4zM4 4h4v4H4zM10 9h4v11h-4zM10 9c0-3 4-3 4 0M14 9h4v11h-4z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40">
-      <p>&copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228. All rights reserved.</p>
-      <p>Est. 2013, as Jueco Foods</p>
-    </div>
-    <div class="mt-3 text-center text-[11px] text-mutedgold/40">
-      <p>Website by <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Obioma Chibueze Justice</a></p>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/2348033187724" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite]">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"/></svg>
-</a>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  const nav = document.getElementById('siteNav');
-  const onScroll = () => {
-    if (window.scrollY > 40) { nav.classList.add('shadow-lg'); } else { nav.classList.remove('shadow-lg'); }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  const menuBtn = document.getElementById('menuBtn');
-  const menuCloseBtn = document.getElementById('menuCloseBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuOverlay = document.getElementById('menuOverlay');
-
-  function openMenu() {
-    mobileMenu.classList.remove('translate-x-full');
-    menuOverlay.classList.remove('hidden');
-    menuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMenu() {
-    mobileMenu.classList.add('translate-x-full');
-    menuOverlay.classList.add('hidden');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  menuBtn.addEventListener('click', openMenu);
-  menuCloseBtn.addEventListener('click', closeMenu);
-  menuOverlay.addEventListener('click', closeMenu);
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-  const revealEls = document.querySelectorAll('.reveal');
-  if (!prefersReduced && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('reveal-visible'), (i % 6) * 60);
-          io.unobserve(entry.target);
+      @media (min-width: 768px) {
+        ::-webkit-scrollbar {
+          width: 10px;
         }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('reveal-visible'));
-  }
-
-  const stepsWrap = document.getElementById('stepsWrap');
-  if (stepsWrap && 'IntersectionObserver' in window) {
-    const stIo = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fillD = document.getElementById('stepsFillDesktop');
-          const fillM = document.getElementById('stepsFillMobile');
-          if (fillD) { fillD.classList.remove('scale-x-0'); fillD.classList.add('scale-x-100'); }
-          if (fillM) { fillM.classList.remove('scale-y-0'); fillM.classList.add('scale-y-100'); }
-          stIo.unobserve(entry.target);
+        ::-webkit-scrollbar-track {
+          background: #0d0d0d;
         }
-      });
-    }, { threshold: 0.3 });
-    stIo.observe(stepsWrap);
-  }
-</script>
+        ::-webkit-scrollbar-thumb {
+          background: #6b5b32;
+          border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #c9a44c;
+        }
+      }
 
-</body>
+      #mobileMenu {
+        transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body
+    class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded"
+      >Skip to content</a
+    >
+
+    <!-- ============ NAV (Partnership active) ============ -->
+    <header
+      id="siteNav"
+      class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10"
+    >
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <img
+              src="assets/images/shelemj-logo.png"
+              alt="ShelemJ"
+              class="h-11 w-auto"
+            />
+            <span class="font-serif text-xl tracking-wide text-cream"
+              >Shelem<span class="text-gold">J</span></span
+            >
+          </a>
+
+          <nav
+            aria-label="Primary"
+            class="hidden lg:flex items-center gap-10 font-sans text-sm tracking-wide"
+          >
+            <a
+              href="index.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >About</a
+            >
+            <a
+              href="products.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Products</a
+            >
+            <a
+              href="gallery.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Gallery</a
+            >
+            <a
+              href="supply-chain.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Supply Chain</a
+            >
+            <a
+              href="partnership.html"
+              class="text-gold relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-gold"
+              >Partnership</a
+            >
+            <a
+              href="contact.html"
+              class="inline-flex items-center px-5 py-2.5 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors"
+              >Contact</a
+            >
+          </nav>
+
+          <button
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+            class="lg:hidden text-gold p-2 -mr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="lg:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10"
+      >
+        <div class="flex justify-end">
+          <button
+            id="menuCloseBtn"
+            aria-label="Close menu"
+            class="text-gold p-2 -mr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav
+          aria-label="Mobile"
+          class="mt-10 flex flex-col gap-7 font-serif text-2xl"
+        >
+          <a
+            href="index.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >About</a
+          >
+          <a
+            href="products.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Products</a
+          >
+          <a
+            href="gallery.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Gallery</a
+          >
+          <a
+            href="supply-chain.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Supply Chain</a
+          >
+          <a href="partnership.html" class="text-gold">Partnership</a>
+          <a
+            href="contact.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Contact</a
+          >
+        </nav>
+        <div
+          class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase"
+        >
+          <span>Est. 2013</span>
+        </div>
+      </div>
+      <div
+        id="menuOverlay"
+        class="hidden fixed inset-0 bg-black/60 z-40 lg:hidden"
+      ></div>
+    </header>
+
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="relative pt-36 pb-16 sm:pt-44 sm:pb-20 overflow-hidden">
+        <div
+          class="pointer-events-none absolute -right-40 -top-32 w-[540px] h-[540px] opacity-30"
+          aria-hidden="true"
+        >
+          <div
+            class="absolute inset-0 rounded-full border border-gold/40"
+          ></div>
+          <div
+            class="absolute inset-10 rounded-full border border-gold/30"
+          ></div>
+          <div
+            class="absolute inset-20 rounded-full border border-gold/20"
+          ></div>
+          <div
+            class="absolute inset-32 rounded-full border border-gold/15"
+          ></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+          <div class="max-w-2xl reveal">
+            <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+              Partner With ShelemJ
+            </p>
+            <h1
+              class="font-serif text-4xl sm:text-5xl md:text-6xl text-cream leading-tight"
+            >
+              Direct sourcing.<br />Dependable delivery.
+            </h1>
+            <p class="text-cream/70 mt-6 leading-relaxed">
+              Join the ShelemJ family and bring authentic African flavors to
+              your customers — backed by direct sourcing, flexible logistics,
+              and a team invested in your growth.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WHY PARTNER ============ -->
+      <section class="pb-24 sm:pb-28">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <p class="reveal text-xs tracking-[0.3em] uppercase text-gold mb-4">
+            Why Partner With ShelemJ
+          </p>
+          <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 mt-8">
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Unmatched Quality & Authenticity
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                We deliver premium African products with genuine flavors and
+                ingredients, sourced from the finest producers across the
+                continent, ensuring every product meets the highest retail
+                standards.
+              </p>
+            </div>
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Direct African Sourcing
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                Our direct relationships with trusted African farmers and
+                producers eliminate unnecessary intermediaries, guaranteeing
+                product integrity, traceability, and the best value for your
+                shelves.
+              </p>
+            </div>
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Flexible Supply Chain Solutions
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                From flexible order volumes to reliable delivery schedules, our
+                agile logistics infrastructure adapts to your retail needs,
+                ensuring consistent stock availability and seamless supply chain
+                management.
+              </p>
+            </div>
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Dedicated Partnership Support
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                Our dedicated account managers provide end-to-end support, from
+                onboarding and product training to marketing collaboration,
+                fostering long-term growth and success for your business.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PARTNERSHIP OPPORTUNITIES ============ -->
+      <section class="py-24 sm:py-28 bg-charcoal2 border-y border-gold/10">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <p class="reveal text-xs tracking-[0.3em] uppercase text-gold mb-4">
+            Partnership Opportunities
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 mt-8">
+            <!-- Filled in from your aunt's "we customise products too" note — refine exact wording with her before publishing -->
+            <div
+              class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Private Labeling
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                Secure your own branded packaging on ShelemJ products — from
+                custom labels to fully tailored product lines built around your
+                retail brand. Ask us what's possible for your store.
+              </p>
+            </div>
+            <div
+              class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Seasonal Promotions
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                Collaborative marketing campaigns and seasonal promotions
+                crafted to drive customer engagement and boost sales.
+              </p>
+            </div>
+            <div
+              class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Exclusive Product Lines
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                Secure exclusive access to signature ShelemJ products,
+                differentiating your shelves with authentic African flavors.
+              </p>
+            </div>
+            <div
+              class="reveal p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Flexible Orders & Delivery
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                Tailored order volumes and reliable delivery schedules designed
+                to meet your retail demands with consistency.
+              </p>
+            </div>
+            <div
+              class="reveal sm:col-span-2 p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Dedicated Partnership Support
+              </h3>
+              <p class="text-cream/75 leading-relaxed max-w-2xl">
+                A committed account team ensuring seamless onboarding, ongoing
+                support, and long-term partnership growth — the same team you'll
+                speak to today is who you'll know a year from now.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ HOW IT WORKS ============ -->
+      <section class="py-24 sm:py-28">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div class="max-w-2xl reveal mb-16 sm:mb-20">
+            <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+              Getting Started
+            </p>
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">
+              How Partnership Works
+            </h2>
+          </div>
+
+          <div class="relative">
+            <div
+              class="hidden sm:block absolute top-6 left-6 right-6 h-px bg-gold/15"
+              aria-hidden="true"
+            >
+              <div
+                id="stepsFillDesktop"
+                class="h-full bg-gold origin-left scale-x-0 transition-transform duration-[1600ms] ease-out"
+              ></div>
+            </div>
+            <div
+              class="sm:hidden absolute top-0 bottom-0 left-6 w-px bg-gold/15"
+              aria-hidden="true"
+            >
+              <div
+                id="stepsFillMobile"
+                class="w-full bg-gold origin-top scale-y-0 transition-transform duration-[1600ms] ease-out"
+              ></div>
+            </div>
+
+            <div
+              id="stepsWrap"
+              class="grid sm:grid-cols-3 gap-10 sm:gap-8 relative"
+            >
+              <div
+                class="reveal flex sm:flex-col gap-5 sm:gap-0 sm:items-center sm:text-center"
+              >
+                <div
+                  class="w-12 h-12 shrink-0 rounded-full bg-charcoal border-2 border-gold flex items-center justify-center font-serif text-gold z-10"
+                >
+                  1
+                </div>
+                <div class="sm:mt-6">
+                  <p class="font-serif text-xl text-gold">Reach Out</p>
+                  <p
+                    class="text-cream/65 text-sm mt-2 leading-relaxed sm:max-w-[220px] sm:mx-auto"
+                  >
+                    Tell us about your store and what you're looking to stock.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="reveal flex sm:flex-col gap-5 sm:gap-0 sm:items-center sm:text-center"
+              >
+                <div
+                  class="w-12 h-12 shrink-0 rounded-full bg-charcoal border-2 border-gold flex items-center justify-center font-serif text-gold z-10"
+                >
+                  2
+                </div>
+                <div class="sm:mt-6">
+                  <p class="font-serif text-xl text-gold">Sample & Discuss</p>
+                  <p
+                    class="text-cream/65 text-sm mt-2 leading-relaxed sm:max-w-[220px] sm:mx-auto"
+                  >
+                    Try our products and align on volumes, pricing, and terms.
+                  </p>
+                </div>
+              </div>
+              <div
+                class="reveal flex sm:flex-col gap-5 sm:gap-0 sm:items-center sm:text-center"
+              >
+                <div
+                  class="w-12 h-12 shrink-0 rounded-full bg-charcoal border-2 border-gold flex items-center justify-center font-serif text-gold z-10"
+                >
+                  3
+                </div>
+                <div class="sm:mt-6">
+                  <p class="font-serif text-xl text-gold">Start Stocking</p>
+                  <p
+                    class="text-cream/65 text-sm mt-2 leading-relaxed sm:max-w-[220px] sm:mx-auto"
+                  >
+                    We handle sourcing and shipping — you handle the shelves.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA BANNER ============ -->
+      <section class="relative py-24 sm:py-28 overflow-hidden grain">
+        <div class="absolute inset-0">
+          <img
+            src="assets/images/partnership-cta-background.jpeg"
+            alt="ShelemJ partnership"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="absolute inset-0 bg-charcoal/80"></div>
+        <div class="relative max-w-3xl mx-auto px-5 text-center reveal">
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">
+            Join the ShelemJ Family
+          </h2>
+          <p class="text-cream/75 mt-5 max-w-xl mx-auto">
+            Bring authentic African flavors to your customers. Schedule a
+            consultation or request a sample today.
+          </p>
+          <a
+            href="contact.html"
+            class="inline-flex items-center px-9 py-4 mt-9 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors"
+          >
+            Schedule a Consultation
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="assets/images/shelemj-logo.png"
+                alt="ShelemJ"
+                class="h-10 w-auto"
+              />
+              <span class="font-serif text-lg text-cream"
+                >Shelem<span class="text-gold">J</span></span
+              >
+            </div>
+            <p class="text-cream/60 text-sm leading-relaxed">
+              Rooted in Africa. Trusted by retailers worldwide.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Navigate
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>
+                <a href="about.html" class="hover:text-gold transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="products.html"
+                  class="hover:text-gold transition-colors"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="gallery.html" class="hover:text-gold transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="supply-chain.html"
+                  class="hover:text-gold transition-colors"
+                  >Supply Chain</a
+                >
+              </li>
+              <li>
+                <a
+                  href="partnership.html"
+                  class="hover:text-gold transition-colors"
+                  >Partnership</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-gold transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Contact
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
+              <li>+234 803 318 7724</li>
+              <li>+234 803 347 9732</li>
+              <li>+234 812 763 2037</li>
+              <li>shelemjresourcesltd@gmail.com</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Follow
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                aria-label="Facebook"
+                class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M4 4h4v16H4zM4 4h4v4H4zM10 9h4v11h-4zM10 9c0-3 4-3 4 0M14 9h4v11h-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
+        >
+          <p>
+            &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
+            All rights reserved.
+          </p>
+          <p>Est. 2013, as Jueco Foods</p>
+        </div>
+        <div class="mt-3 text-center text-[11px] text-mutedgold/40">
+          <p>
+            Website by
+            <a
+              href="https://wa.me/2349133058119"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-gold transition-colors"
+              >Obioma Chibueze Justice</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a
+      href="https://wa.me/2348033187724"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite]"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-7 h-7"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      const nav = document.getElementById("siteNav");
+      const onScroll = () => {
+        if (window.scrollY > 40) {
+          nav.classList.add("shadow-lg");
+        } else {
+          nav.classList.remove("shadow-lg");
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      const menuBtn = document.getElementById("menuBtn");
+      const menuCloseBtn = document.getElementById("menuCloseBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+
+      function openMenu() {
+        mobileMenu.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        mobileMenu.classList.add("translate-x-full");
+        menuOverlay.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      menuBtn.addEventListener("click", openMenu);
+      menuCloseBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMenu));
+
+      const revealEls = document.querySelectorAll(".reveal");
+      if (!prefersReduced && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, i) => {
+              if (entry.isIntersecting) {
+                setTimeout(
+                  () => entry.target.classList.add("reveal-visible"),
+                  (i % 6) * 60,
+                );
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("reveal-visible"));
+      }
+
+      const stepsWrap = document.getElementById("stepsWrap");
+      if (stepsWrap && "IntersectionObserver" in window) {
+        const stIo = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const fillD = document.getElementById("stepsFillDesktop");
+                const fillM = document.getElementById("stepsFillMobile");
+                if (fillD) {
+                  fillD.classList.remove("scale-x-0");
+                  fillD.classList.add("scale-x-100");
+                }
+                if (fillM) {
+                  fillM.classList.remove("scale-y-0");
+                  fillM.classList.add("scale-y-100");
+                }
+                stIo.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.3 },
+        );
+        stIo.observe(stepsWrap);
+      }
+    </script>
+  </body>
 </html>

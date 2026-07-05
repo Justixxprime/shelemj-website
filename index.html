@@ -1,234 +1,528 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ShelemJ | Premium African Food Export</title>
-<meta name="description" content="ShelemJ brings Africa's finest spices, beverages, grains, oils and packaged goods to retailers worldwide. Rooted in Africa. Trusted by retailers worldwide.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShelemJ | Premium African Food Export</title>
+    <meta
+      name="description"
+      content="ShelemJ brings Africa's finest spices, beverages, grains, oils and packaged goods to retailers worldwide. Rooted in Africa. Trusted by retailers worldwide."
+    />
 
-<!-- 🖼️ PLACEHOLDER: Open Graph share image — 1200x630px, logo + tagline on the gold/black background. Update the two URLs below once it exists. -->
-<meta property="og:title" content="ShelemJ | Premium African Food Export">
-<meta property="og:description" content="Rooted in Africa. Trusted by retailers worldwide.">
-<meta property="og:image" content="assets/images/og-image.jpeg">
-<meta property="og:url" content="https://shelemjresourcesltd.com">
+    <!-- 🖼️ PLACEHOLDER: Open Graph share image — 1200x630px, logo + tagline on the gold/black background. Update the two URLs below once it exists. -->
+    <meta property="og:title" content="ShelemJ | Premium African Food Export" />
+    <meta
+      property="og:description"
+      content="Rooted in Africa. Trusted by retailers worldwide."
+    />
+    <meta property="og:image" content="assets/images/og-image.jpeg" />
+    <meta property="og:url" content="https://shelemjresourcesltd.com" />
 
-<!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
-<link rel="icon" href="assets/images/shelemj-logo.png">
-<link rel="apple-touch-icon" href="assets/images/shelemj-logo.png">
+    <!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
+    <link rel="icon" href="assets/images/shelemj-logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/shelemj-logo.png" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="dist/output.css" />
 
-<style>
-  html { scroll-behavior: smooth; }
-  body { -webkit-font-smoothing: antialiased; }
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
 
-  /* Scroll-reveal */
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
-  .reveal-visible { opacity: 1; transform: none; }
-  /* ===== Modern polish additions ===== */
-  /* Subtle film-grain texture over dark sections for depth */
-  .grain::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 1;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  /* Soft radial gold glow for hero-type sections */
-  .gold-glow::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,164,76,0.10), transparent 70%);
-  }
-  /* Image zoom-on-hover wrapper */
-  .img-zoom { overflow: hidden; }
-  .img-zoom img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-  .img-zoom:hover img { transform: scale(1.08); }
-  /* Elevated hover shadow for cards */
-  .card-lift { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease; }
-  .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.55); }
-  /* Sticky sample bar slide-down */
-  #sampleBar { position: fixed; top: 5rem; left: 0; right: 0; z-index: 40; transform: translateY(-100%); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
-  #sampleBar.visible { transform: translateY(0); }
-  /* FAQ accordion */
-  .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
-  .faq-icon { transition: transform .3s ease; }
-  summary::-webkit-details-marker { display: none; }
+      /* Scroll-reveal */
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+          transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: none;
+      }
+      /* ===== Modern polish additions ===== */
+      /* Subtle film-grain texture over dark sections for depth */
+      .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      /* Soft radial gold glow for hero-type sections */
+      .gold-glow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          ellipse 60% 50% at 50% 0%,
+          rgba(201, 164, 76, 0.1),
+          transparent 70%
+        );
+      }
+      /* Image zoom-on-hover wrapper */
+      .img-zoom {
+        overflow: hidden;
+      }
+      .img-zoom img {
+        transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .img-zoom:hover img {
+        transform: scale(1.08);
+      }
+      /* Elevated hover shadow for cards */
+      .card-lift {
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .card-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.55);
+      }
+      /* Sticky sample bar slide-down */
+      #sampleBar {
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        right: 0;
+        z-index: 40;
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      #sampleBar.visible {
+        transform: translateY(0);
+      }
+      /* FAQ accordion */
+      .faq-item[open] summary .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
 
+      /* Hero slideshow crossfade */
+      .hero-slide {
+        opacity: 0;
+        transition: opacity 1.4s ease-in-out;
+      }
+      .hero-slide.active {
+        opacity: 1;
+      }
 
-  /* Hero slideshow crossfade */
-  .hero-slide { opacity: 0; transition: opacity 1.4s ease-in-out; }
-  .hero-slide.active { opacity: 1; }
+      /* Placeholder image slot pattern */
+      .img-slot {
+        background-image: repeating-linear-gradient(
+          135deg,
+          rgba(201, 164, 76, 0.06) 0px,
+          rgba(201, 164, 76, 0.06) 2px,
+          transparent 2px,
+          transparent 10px
+        );
+      }
 
-  /* Placeholder image slot pattern */
-  .img-slot {
-    background-image: repeating-linear-gradient(135deg, rgba(201,164,76,0.06) 0px, rgba(201,164,76,0.06) 2px, transparent 2px, transparent 10px);
-  }
+      /* Visible keyboard focus */
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #c9a44c;
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
 
-  /* Visible keyboard focus */
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
-    outline: 2px solid #C9A44C;
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+      /* Custom scrollbar, desktop only */
+      @media (min-width: 768px) {
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #0d0d0d;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #6b5b32;
+          border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #c9a44c;
+        }
+      }
 
-  /* Custom scrollbar, desktop only */
-  @media (min-width: 768px) {
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #0D0D0D; }
-    ::-webkit-scrollbar-thumb { background: #6B5B32; border-radius: 8px; }
-    ::-webkit-scrollbar-thumb:hover { background: #C9A44C; }
-  }
+      /* Mobile menu panel */
+      #mobileMenu {
+        transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
 
-  /* Mobile menu panel */
-  #mobileMenu { transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    </style>
+  </head>
 
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-    .reveal { opacity: 1 !important; transform: none !important; }
-  }
-</style>
-</head>
+  <body
+    class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded"
+      >Skip to content</a
+    >
 
-<body class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal">
+    <!-- ============ NAV ============ -->
+    <header
+      id="siteNav"
+      class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10"
+    >
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <!-- Logo: cropped from the real business card your aunt sent. Swap for a proper vector/high-res file if she can provide one later. -->
+          <a href="#main" class="flex items-center gap-3 group">
+            <img
+              src="assets/images/shelemj-logo.png"
+              alt="ShelemJ"
+              class="h-11 w-auto"
+            />
+            <span class="font-serif text-xl tracking-wide text-cream"
+              >Shelem<span class="text-gold">J</span></span
+            >
+          </a>
 
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+          <!-- Desktop nav -->
+          <nav
+            aria-label="Primary"
+            class="hidden lg:flex items-center gap-10 font-sans text-sm tracking-wide"
+          >
+            <a
+              href="index.html"
+              class="text-gold relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-gold"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >About</a
+            >
+            <a
+              href="products.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Products</a
+            >
+            <a
+              href="gallery.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Gallery</a
+            >
+            <a
+              href="supply-chain.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Supply Chain</a
+            >
+            <a
+              href="partnership.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Partnership</a
+            >
+            <a
+              href="contact.html"
+              class="inline-flex items-center px-5 py-2.5 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors"
+              >Contact</a
+            >
+          </nav>
 
-<!-- ============ NAV ============ -->
-<header id="siteNav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div class="flex items-center justify-between h-20">
-
-      <!-- Logo: cropped from the real business card your aunt sent. Swap for a proper vector/high-res file if she can provide one later. -->
-      <a href="#main" class="flex items-center gap-3 group">
-        <img src="assets/images/shelemj-logo.png" alt="ShelemJ" class="h-11 w-auto">
-        <span class="font-serif text-xl tracking-wide text-cream">Shelem<span class="text-gold">J</span></span>
-      </a>
-
-      <!-- Desktop nav -->
-      <nav aria-label="Primary" class="hidden lg:flex items-center gap-10 font-sans text-sm tracking-wide">
-        <a href="index.html" class="text-gold relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-gold">Home</a>
-        <a href="about.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">About</a>
-        <a href="products.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Products</a>
-        <a href="gallery.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Gallery</a>
-        <a href="supply-chain.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Supply Chain</a>
-        <a href="partnership.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Partnership</a>
-        <a href="contact.html" class="inline-flex items-center px-5 py-2.5 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors">Contact</a>
-      </nav>
-
-      <!-- Mobile menu button -->
-      <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" class="lg:hidden text-gold p-2 -mr-2">
-        <svg id="menuIconOpen" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile menu panel -->
-  <div id="mobileMenu" class="lg:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10">
-    <div class="flex justify-end">
-      <button id="menuCloseBtn" aria-label="Close menu" class="text-gold p-2 -mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    <nav aria-label="Mobile" class="mt-10 flex flex-col gap-7 font-serif text-2xl">
-      <a href="index.html" class="text-gold">Home</a>
-      <a href="about.html" class="text-cream/90 hover:text-gold transition-colors">About</a>
-      <a href="products.html" class="text-cream/90 hover:text-gold transition-colors">Products</a>
-      <a href="gallery.html" class="text-cream/90 hover:text-gold transition-colors">Gallery</a>
-      <a href="supply-chain.html" class="text-cream/90 hover:text-gold transition-colors">Supply Chain</a>
-      <a href="partnership.html" class="text-cream/90 hover:text-gold transition-colors">Partnership</a>
-      <a href="contact.html" class="text-cream/90 hover:text-gold transition-colors">Contact</a>
-    </nav>
-    <div class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase">
-      <span>Est. 2013</span>
-    </div>
-  </div>
-  <div id="menuOverlay" class="hidden fixed inset-0 bg-black/60 z-40 lg:hidden"></div>
-</header>
-
-<!-- ============ STICKY SAMPLE BAR ============ -->
-<div id="sampleBar" class="fixed top-20 inset-x-0 z-40 bg-gold text-charcoal">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-2.5 flex items-center justify-between gap-4 text-sm">
-    <p class="font-medium">Ready to bring authentic African flavors to your shelves?</p>
-    <div class="flex items-center gap-3 shrink-0">
-      <a href="contact.html" class="underline underline-offset-2 hover:no-underline font-medium">Request a Sample</a>
-      <button id="sampleBarClose" aria-label="Dismiss" class="text-charcoal/70 hover:text-charcoal">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-      </button>
-    </div>
-  </div>
-</div>
-
-<main id="main">
-
-  <!-- ============ HERO (split: image beside text) ============ -->
-  <section class="relative overflow-hidden bg-charcoal pt-28 lg:pt-20 grain gold-glow">
-    <div class="lg:grid lg:grid-cols-2 lg:min-h-[100svh]">
-
-      <!-- Image side -->
-      <div class="relative h-[62vw] max-h-[480px] lg:h-auto lg:max-h-none overflow-hidden">
-        <div class="hero-slide active absolute inset-0">
-          <img src="assets/images/hero-1.jpg" alt="Ingredient and product spread" class="w-full h-full object-cover">
+          <!-- Mobile menu button -->
+          <button
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+            class="lg:hidden text-gold p-2 -mr-2"
+          >
+            <svg
+              id="menuIconOpen"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="hero-slide absolute inset-0">
-          <img src="assets/images/hero-2.jpeg" alt="Sourcing and farms" class="w-full h-full object-cover">
-        </div>
-        <div class="hero-slide absolute inset-0">
-          <img src="assets/images/hero-3.jpeg" alt="Packaged goods" class="w-full h-full object-cover">
-        </div>
-        <!-- edge blend into the text panel -->
-        <div class="hidden lg:block absolute inset-y-0 right-0 w-28 bg-gradient-to-r from-transparent to-charcoal"></div>
-        <div class="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-charcoal to-transparent"></div>
       </div>
 
-      <!-- Text side -->
-      <div class="relative flex items-center px-5 sm:px-8 lg:px-16 py-14 lg:py-0">
-        <div class="pointer-events-none absolute -right-32 -top-16 w-[420px] h-[420px] opacity-30 hidden lg:block" aria-hidden="true">
-          <div class="absolute inset-0 rounded-full border border-gold/40"></div>
-          <div class="absolute inset-10 rounded-full border border-gold/30"></div>
-          <div class="absolute inset-20 rounded-full border border-gold/20"></div>
+      <!-- Mobile menu panel -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10"
+      >
+        <div class="flex justify-end">
+          <button
+            id="menuCloseBtn"
+            aria-label="Close menu"
+            class="text-gold p-2 -mr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
+        <nav
+          aria-label="Mobile"
+          class="mt-10 flex flex-col gap-7 font-serif text-2xl"
+        >
+          <a href="index.html" class="text-gold">Home</a>
+          <a
+            href="about.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >About</a
+          >
+          <a
+            href="products.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Products</a
+          >
+          <a
+            href="gallery.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Gallery</a
+          >
+          <a
+            href="supply-chain.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Supply Chain</a
+          >
+          <a
+            href="partnership.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Partnership</a
+          >
+          <a
+            href="contact.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Contact</a
+          >
+        </nav>
+        <div
+          class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase"
+        >
+          <span>Est. 2013</span>
+        </div>
+      </div>
+      <div
+        id="menuOverlay"
+        class="hidden fixed inset-0 bg-black/60 z-40 lg:hidden"
+      ></div>
+    </header>
 
-        <div class="relative max-w-xl">
-          <p class="reveal font-sans text-xs sm:text-sm tracking-[0.3em] uppercase text-gold mb-5">Premium African Food Export</p>
-          <h1 class="reveal font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-cream">
-            Bringing Africa's <span class="text-gold italic">Finest Flavors</span> to Your Shelves
-          </h1>
-          <p class="reveal font-sans text-base sm:text-lg text-cream/75 max-w-lg mt-6">
-            Rooted in Africa. Trusted by retailers worldwide. Direct-sourced spices, beverages, grains, oils and packaged goods, exported with full traceability.
-          </p>
-          <div class="reveal flex flex-col sm:flex-row gap-4 mt-9">
-            <a href="products.html" class="inline-flex justify-center items-center px-8 py-4 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors">
-              Explore Products
-            </a>
-            <a href="contact.html" class="inline-flex justify-center items-center px-8 py-4 border border-cream/40 text-cream font-sans tracking-wide rounded-sm hover:border-gold hover:text-gold transition-colors">
-              Request a Sample
-            </a>
-          </div>
-          <div class="reveal flex items-center gap-3 mt-10 pt-8 border-t border-gold/15 text-sm text-cream/55">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-12a7 7 0 1114 0c0 3.75-2.5 7.5-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            16 Kogberegbe Street, Ejigbo, Lagos
-          </div>
+    <!-- ============ STICKY SAMPLE BAR ============ -->
+    <div
+      id="sampleBar"
+      class="fixed top-20 inset-x-0 z-40 bg-gold text-charcoal"
+    >
+      <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 py-2.5 flex items-center justify-between gap-4 text-sm"
+      >
+        <p class="font-medium">
+          Ready to bring authentic African flavors to your shelves?
+        </p>
+        <div class="flex items-center gap-3 shrink-0">
+          <a
+            href="contact.html"
+            class="underline underline-offset-2 hover:no-underline font-medium"
+            >Request a Sample</a
+          >
+          <button
+            id="sampleBarClose"
+            aria-label="Dismiss"
+            class="text-charcoal/70 hover:text-charcoal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ============ TRUSTED BY (Client Logo Strip) ============ -->
- <!-- <section class="py-10 sm:py-12 bg-charcoal2/60 border-b border-gold/10">
+    <main id="main">
+      <!-- ============ HERO (split: image beside text) ============ -->
+      <section
+        class="relative overflow-hidden bg-charcoal pt-28 lg:pt-20 grain gold-glow"
+      >
+        <div class="lg:grid lg:grid-cols-2 lg:min-h-[100svh]">
+          <!-- Image side -->
+          <div
+            class="relative h-[62vw] max-h-[480px] lg:h-auto lg:max-h-none overflow-hidden"
+          >
+            <div class="hero-slide active absolute inset-0">
+              <img
+                src="assets/images/hero-1.jpg"
+                alt="Ingredient and product spread"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="hero-slide absolute inset-0">
+              <img
+                src="assets/images/hero-2.jpeg"
+                alt="Sourcing and farms"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="hero-slide absolute inset-0">
+              <img
+                src="assets/images/hero-3.jpeg"
+                alt="Packaged goods"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <!-- edge blend into the text panel -->
+            <div
+              class="hidden lg:block absolute inset-y-0 right-0 w-28 bg-gradient-to-r from-transparent to-charcoal"
+            ></div>
+            <div
+              class="lg:hidden absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-charcoal to-transparent"
+            ></div>
+          </div>
+
+          <!-- Text side -->
+          <div
+            class="relative flex items-center px-5 sm:px-8 lg:px-16 py-14 lg:py-0"
+          >
+            <div
+              class="pointer-events-none absolute -right-32 -top-16 w-[420px] h-[420px] opacity-30 hidden lg:block"
+              aria-hidden="true"
+            >
+              <div
+                class="absolute inset-0 rounded-full border border-gold/40"
+              ></div>
+              <div
+                class="absolute inset-10 rounded-full border border-gold/30"
+              ></div>
+              <div
+                class="absolute inset-20 rounded-full border border-gold/20"
+              ></div>
+            </div>
+
+            <div class="relative max-w-xl">
+              <p
+                class="reveal font-sans text-xs sm:text-sm tracking-[0.3em] uppercase text-gold mb-5"
+              >
+                Premium African Food Export
+              </p>
+              <h1
+                class="reveal font-serif text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-cream"
+              >
+                Bringing Africa's
+                <span class="text-gold italic">Finest Flavors</span> to Your
+                Shelves
+              </h1>
+              <p
+                class="reveal font-sans text-base sm:text-lg text-cream/75 max-w-lg mt-6"
+              >
+                Rooted in Africa. Trusted by retailers worldwide. Direct-sourced
+                spices, beverages, grains, oils and packaged goods, exported
+                with full traceability.
+              </p>
+              <div class="reveal flex flex-col sm:flex-row gap-4 mt-9">
+                <a
+                  href="products.html"
+                  class="inline-flex justify-center items-center px-8 py-4 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors"
+                >
+                  Explore Products
+                </a>
+                <a
+                  href="contact.html"
+                  class="inline-flex justify-center items-center px-8 py-4 border border-cream/40 text-cream font-sans tracking-wide rounded-sm hover:border-gold hover:text-gold transition-colors"
+                >
+                  Request a Sample
+                </a>
+              </div>
+              <div
+                class="reveal flex items-center gap-3 mt-10 pt-8 border-t border-gold/15 text-sm text-cream/55"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4 text-gold shrink-0"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12 21c-4.5-4.5-7-8.25-7-12a7 7 0 1114 0c0 3.75-2.5 7.5-7 12z"
+                  />
+                  <circle cx="12" cy="9" r="2.5" />
+                </svg>
+                16 Kogberegbe Street, Ejigbo, Lagos
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ TRUSTED BY (Client Logo Strip) ============ -->
+      <!-- <section class="py-10 sm:py-12 bg-charcoal2/60 border-b border-gold/10">
     <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
       <p class="reveal text-center text-xs tracking-[0.3em] uppercase text-mutedgold mb-8">Trusted By Retailers Including</p>
       <div class="reveal flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-70">
@@ -241,423 +535,865 @@
     </div>
   </section> -->
 
-  <!-- ============ STATS ============ -->
-  <section class="bg-charcoal2 border-y border-gold/10 py-14 sm:py-16">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-      <div id="statsGrid" class="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 text-center">
-        <div class="reveal">
-          <p class="font-serif text-4xl sm:text-5xl text-gold" data-count="2013" data-suffix="">0</p>
-          <p class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60">Est. / Founded</p>
-        </div>
-        <div class="reveal">
-          <p class="font-serif text-4xl sm:text-5xl text-gold" data-count="6" data-suffix="">0</p>
-          <p class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60">Product Categories</p>
-        </div>
-        <div class="reveal">
-          <p class="font-serif text-4xl sm:text-5xl text-gold" data-count="100" data-suffix="%">0%</p>
-          <p class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60">Direct African Sourcing</p>
-        </div>
-        <!-- 🖼️ PLACEHOLDER STAT: confirm real export-market count with your aunt, then set data-count to that number -->
-        <div class="reveal">
-          <p class="font-serif text-4xl sm:text-5xl text-gold" data-count="100" data-suffix="+">—</p>
-          <p class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60">Export Markets <span class="text-gold/50 normal-case tracking-normal">(confirm)</span></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ VALUES ============ -->
-  <section class="py-24 sm:py-32 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-      <div class="max-w-2xl reveal">
-        <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Why ShelemJ</p>
-        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">Our Values</h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 mt-14">
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Quality</h3>
-          <p class="text-cream/75 leading-relaxed">We source only the finest products directly from trusted African farmers and producers, ensuring every item meets the highest standards of purity, taste, and excellence.</p>
-        </div>
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Authenticity</h3>
-          <p class="text-cream/75 leading-relaxed">We celebrate and preserve the genuine flavors, ingredients, and culinary heritage of Africa, delivering products that are true to their origins and rich in cultural character.</p>
-        </div>
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Sustainability</h3>
-          <p class="text-cream/75 leading-relaxed">Our sourcing practices are built on ethical principles and environmental responsibility, supporting local farming communities while protecting the natural resources that make African produce exceptional.</p>
-        </div>
-        <div class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift">
-          <h3 class="font-sans text-lg tracking-wide text-gold uppercase mb-3">Reliability</h3>
-          <p class="text-cream/75 leading-relaxed">From farm to shelf, we uphold rigorous supply chain integrity, ensuring consistent quality, on-time delivery, and dependable partnerships that retailers can count on every season.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ PRODUCT PORTFOLIO PREVIEW ============ -->
-  <section class="py-24 sm:py-32 bg-charcoal2 relative overflow-hidden">
-    <div class="pointer-events-none absolute -left-40 top-1/3 w-[420px] h-[420px] opacity-20" aria-hidden="true">
-      <div class="absolute inset-0 rounded-full border border-gold/40"></div>
-      <div class="absolute inset-10 rounded-full border border-gold/30"></div>
-      <div class="absolute inset-20 rounded-full border border-gold/20"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 reveal">
-        <div class="max-w-xl">
-          <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">What We Export</p>
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">Product Portfolio</h2>
-        </div>
-        <a href="products.html" class="hidden sm:inline-flex items-center gap-2 text-gold hover:text-goldlight transition-colors font-sans text-sm tracking-wide">
-          View all categories
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-        </a>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-
-        <a href="products/spices-seasonings.html" class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift">
-          <img src="assets/images/category-spices.jpeg" alt="Spices and seasonings" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Spices & Seasonings</h3>
-            <p class="text-cream/65 text-sm mt-1 line-clamp-2">Aromatic blends including suya spice, dawadawa, and crayfish.</p>
+      <!-- ============ STATS ============ -->
+      <section class="bg-charcoal2 border-y border-gold/10 py-14 sm:py-16">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div
+            id="statsGrid"
+            class="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 text-center"
+          >
+            <div class="reveal">
+              <p
+                class="font-serif text-4xl sm:text-5xl text-gold"
+                data-count="2013"
+                data-suffix=""
+              >
+                0
+              </p>
+              <p
+                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
+              >
+                Est. / Founded
+              </p>
+            </div>
+            <div class="reveal">
+              <p
+                class="font-serif text-4xl sm:text-5xl text-gold"
+                data-count="6"
+                data-suffix=""
+              >
+                0
+              </p>
+              <p
+                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
+              >
+                Product Categories
+              </p>
+            </div>
+            <div class="reveal">
+              <p
+                class="font-serif text-4xl sm:text-5xl text-gold"
+                data-count="100"
+                data-suffix="%"
+              >
+                0%
+              </p>
+              <p
+                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
+              >
+                Direct African Sourcing
+              </p>
+            </div>
+            <!-- 🖼️ PLACEHOLDER STAT: confirm real export-market count with your aunt, then set data-count to that number -->
+            <div class="reveal">
+              <p
+                class="font-serif text-4xl sm:text-5xl text-gold"
+                data-count="100"
+                data-suffix="+"
+              >
+                —
+              </p>
+              <p
+                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
+              >
+                Export Markets
+                <span class="text-gold/50 normal-case tracking-normal"
+                  >(confirm)</span
+                >
+              </p>
+            </div>
           </div>
-        </a>
+        </div>
+      </section>
 
-        <a href="products/african-made-beverages.html" class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift">
-          <img src="assets/images/category-beverages.jpeg" alt="African made beverages" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">African Made Beverages</h3>
-            <p class="text-cream/65 text-sm mt-1 line-clamp-2">Bitters, palm wine, and carbonated drinks, ready for retail.</p>
+      <!-- ============ VALUES ============ -->
+      <section class="py-24 sm:py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div class="max-w-2xl reveal">
+            <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+              Why ShelemJ
+            </p>
+            <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">
+              Our Values
+            </h2>
           </div>
-        </a>
 
-        <a href="products/grains-raw-materials.html" class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift">
-          <img src="assets/images/category-grains.jpeg" alt="Grains and raw materials" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Grains & Raw Materials</h3>
-            <p class="text-cream/65 text-sm mt-1 line-clamp-2">Garri, cassava flour, Ofada rice, and elubo cocoyam.</p>
+          <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 mt-14">
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Quality
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                We source only the finest products directly from trusted African
+                farmers and producers, ensuring every item meets the highest
+                standards of purity, taste, and excellence.
+              </p>
+            </div>
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Authenticity
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                We celebrate and preserve the genuine flavors, ingredients, and
+                culinary heritage of Africa, delivering products that are true
+                to their origins and rich in cultural character.
+              </p>
+            </div>
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Sustainability
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                Our sourcing practices are built on ethical principles and
+                environmental responsibility, supporting local farming
+                communities while protecting the natural resources that make
+                African produce exceptional.
+              </p>
+            </div>
+            <div
+              class="reveal group p-8 border border-gold/25 rounded-lg hover:border-gold/60 transition-colors card-lift"
+            >
+              <h3
+                class="font-sans text-lg tracking-wide text-gold uppercase mb-3"
+              >
+                Reliability
+              </h3>
+              <p class="text-cream/75 leading-relaxed">
+                From farm to shelf, we uphold rigorous supply chain integrity,
+                ensuring consistent quality, on-time delivery, and dependable
+                partnerships that retailers can count on every season.
+              </p>
+            </div>
           </div>
-        </a>
+        </div>
+      </section>
 
-        <a href="products/premium-oils.html" class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift">
-          <img src="assets/images/category-oils.jpeg" alt="Premium oils" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Premium Oils</h3>
-            <p class="text-cream/65 text-sm mt-1 line-clamp-2">Cold-pressed palm oil, shea butter, and groundnut oil.</p>
+      <!-- ============ PRODUCT PORTFOLIO PREVIEW ============ -->
+      <section class="py-24 sm:py-32 bg-charcoal2 relative overflow-hidden">
+        <div
+          class="pointer-events-none absolute -left-40 top-1/3 w-[420px] h-[420px] opacity-20"
+          aria-hidden="true"
+        >
+          <div
+            class="absolute inset-0 rounded-full border border-gold/40"
+          ></div>
+          <div
+            class="absolute inset-10 rounded-full border border-gold/30"
+          ></div>
+          <div
+            class="absolute inset-20 rounded-full border border-gold/20"
+          ></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+          <div
+            class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 reveal"
+          >
+            <div class="max-w-xl">
+              <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+                What We Export
+              </p>
+              <h2
+                class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream"
+              >
+                Product Portfolio
+              </h2>
+            </div>
+            <a
+              href="products.html"
+              class="hidden sm:inline-flex items-center gap-2 text-gold hover:text-goldlight transition-colors font-sans text-sm tracking-wide"
+            >
+              View all categories
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
           </div>
-        </a>
 
-        <a href="products/dried-seeds-vegetables.html" class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift">
-          <img src="assets/images/category-dried-seeds.jpeg" alt="Dried seeds and vegetables" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Dried Seeds & Vegetables</h3>
-            <p class="text-cream/65 text-sm mt-1 line-clamp-2">Sun-dried ogbono, egusi, bitter kola, and dried peppers.</p>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
+            <a
+              href="products/spices-seasonings.html"
+              class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift"
+            >
+              <img
+                src="assets/images/category-spices.jpeg"
+                alt="Spices and seasonings"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
+              ></div>
+              <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3
+                  class="font-serif text-xl text-cream group-hover:text-gold transition-colors"
+                >
+                  Spices & Seasonings
+                </h3>
+                <p class="text-cream/65 text-sm mt-1 line-clamp-2">
+                  Aromatic blends including suya spice, dawadawa, and crayfish.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="products/african-made-beverages.html"
+              class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift"
+            >
+              <img
+                src="assets/images/category-beverages.jpeg"
+                alt="African made beverages"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
+              ></div>
+              <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3
+                  class="font-serif text-xl text-cream group-hover:text-gold transition-colors"
+                >
+                  African Made Beverages
+                </h3>
+                <p class="text-cream/65 text-sm mt-1 line-clamp-2">
+                  Bitters, palm wine, and carbonated drinks, ready for retail.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="products/grains-raw-materials.html"
+              class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift"
+            >
+              <img
+                src="assets/images/category-grains.jpeg"
+                alt="Grains and raw materials"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
+              ></div>
+              <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3
+                  class="font-serif text-xl text-cream group-hover:text-gold transition-colors"
+                >
+                  Grains & Raw Materials
+                </h3>
+                <p class="text-cream/65 text-sm mt-1 line-clamp-2">
+                  Garri, cassava flour, Ofada rice, and elubo cocoyam.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="products/premium-oils.html"
+              class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift"
+            >
+              <img
+                src="assets/images/category-oils.jpeg"
+                alt="Premium oils"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
+              ></div>
+              <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3
+                  class="font-serif text-xl text-cream group-hover:text-gold transition-colors"
+                >
+                  Premium Oils
+                </h3>
+                <p class="text-cream/65 text-sm mt-1 line-clamp-2">
+                  Cold-pressed palm oil, shea butter, and groundnut oil.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="products/dried-seeds-vegetables.html"
+              class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift"
+            >
+              <img
+                src="assets/images/category-dried-seeds.jpeg"
+                alt="Dried seeds and vegetables"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
+              ></div>
+              <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3
+                  class="font-serif text-xl text-cream group-hover:text-gold transition-colors"
+                >
+                  Dried Seeds & Vegetables
+                </h3>
+                <p class="text-cream/65 text-sm mt-1 line-clamp-2">
+                  Sun-dried ogbono, egusi, bitter kola, and dried peppers.
+                </p>
+              </div>
+            </a>
+
+            <a
+              href="products/packaged-goods.html"
+              class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift"
+            >
+              <img
+                src="assets/images/category-packaged-goods.jpeg"
+                alt="Packaged goods"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"
+              ></div>
+              <div class="absolute inset-0 p-6 flex flex-col justify-end">
+                <h3
+                  class="font-serif text-xl text-cream group-hover:text-gold transition-colors"
+                >
+                  Packaged Goods
+                </h3>
+                <p class="text-cream/65 text-sm mt-1 line-clamp-2">
+                  Branded, export-ready African foods and beverages.
+                </p>
+              </div>
+            </a>
           </div>
-        </a>
 
-        <a href="products/packaged-goods.html" class="reveal group relative h-72 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom card-lift">
-          <img src="assets/images/category-packaged-goods.jpeg" alt="Packaged goods" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
-          <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/50 to-transparent"></div>
-          <div class="absolute inset-0 p-6 flex flex-col justify-end">
-            <h3 class="font-serif text-xl text-cream group-hover:text-gold transition-colors">Packaged Goods</h3>
-            <p class="text-cream/65 text-sm mt-1 line-clamp-2">Branded, export-ready African foods and beverages.</p>
-          </div>
-        </a>
-      </div>
-
-      <a href="products.html" class="sm:hidden mt-10 inline-flex items-center gap-2 text-gold font-sans text-sm tracking-wide">
-        View all categories
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- ============ WHY PARTNER TEASER ============ -->
-  <section class="py-24 sm:py-28">
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-      <div class="grid lg:grid-cols-2 gap-14 items-center">
-        <div class="reveal">
-          <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Why Partner With ShelemJ</p>
-          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream leading-tight">Direct sourcing.<br>Dependable delivery.</h2>
-          <p class="text-cream/70 mt-6 leading-relaxed max-w-md">Our direct relationships with trusted African farmers and producers eliminate unnecessary intermediaries — guaranteeing product integrity, traceability, and the best value for your shelves.</p>
-          <a href="partnership.html" class="inline-flex items-center gap-2 mt-8 text-gold hover:text-goldlight transition-colors font-sans text-sm tracking-wide">
-            See partnership opportunities
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          <a
+            href="products.html"
+            class="sm:hidden mt-10 inline-flex items-center gap-2 text-gold font-sans text-sm tracking-wide"
+          >
+            View all categories
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
+            </svg>
           </a>
         </div>
-        <div class="grid grid-cols-2 gap-5">
-          <div class="reveal p-6 border border-gold/25 rounded-lg card-lift">
-            <p class="font-serif text-gold text-2xl mb-1">01</p>
-            <p class="text-sm text-cream/75">Unmatched Quality & Authenticity</p>
-          </div>
-          <div class="reveal p-6 border border-gold/25 rounded-lg sm:mt-8 card-lift">
-            <p class="font-serif text-gold text-2xl mb-1">02</p>
-            <p class="text-sm text-cream/75">Direct African Sourcing</p>
-          </div>
-          <div class="reveal p-6 border border-gold/25 rounded-lg card-lift">
-            <p class="font-serif text-gold text-2xl mb-1">03</p>
-            <p class="text-sm text-cream/75">Flexible Supply Chain Solutions</p>
-          </div>
-          <div class="reveal p-6 border border-gold/25 rounded-lg sm:mt-8 card-lift">
-            <p class="font-serif text-gold text-2xl mb-1">04</p>
-            <p class="text-sm text-cream/75">Dedicated Partnership Support</p>
+      </section>
+
+      <!-- ============ WHY PARTNER TEASER ============ -->
+      <section class="py-24 sm:py-28">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div class="grid lg:grid-cols-2 gap-14 items-center">
+            <div class="reveal">
+              <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+                Why Partner With ShelemJ
+              </p>
+              <h2
+                class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream leading-tight"
+              >
+                Direct sourcing.<br />Dependable delivery.
+              </h2>
+              <p class="text-cream/70 mt-6 leading-relaxed max-w-md">
+                Our direct relationships with trusted African farmers and
+                producers eliminate unnecessary intermediaries — guaranteeing
+                product integrity, traceability, and the best value for your
+                shelves.
+              </p>
+              <a
+                href="partnership.html"
+                class="inline-flex items-center gap-2 mt-8 text-gold hover:text-goldlight transition-colors font-sans text-sm tracking-wide"
+              >
+                See partnership opportunities
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="grid grid-cols-2 gap-5">
+              <div
+                class="reveal p-6 border border-gold/25 rounded-lg card-lift"
+              >
+                <p class="font-serif text-gold text-2xl mb-1">01</p>
+                <p class="text-sm text-cream/75">
+                  Unmatched Quality & Authenticity
+                </p>
+              </div>
+              <div
+                class="reveal p-6 border border-gold/25 rounded-lg sm:mt-8 card-lift"
+              >
+                <p class="font-serif text-gold text-2xl mb-1">02</p>
+                <p class="text-sm text-cream/75">Direct African Sourcing</p>
+              </div>
+              <div
+                class="reveal p-6 border border-gold/25 rounded-lg card-lift"
+              >
+                <p class="font-serif text-gold text-2xl mb-1">03</p>
+                <p class="text-sm text-cream/75">
+                  Flexible Supply Chain Solutions
+                </p>
+              </div>
+              <div
+                class="reveal p-6 border border-gold/25 rounded-lg sm:mt-8 card-lift"
+              >
+                <p class="font-serif text-gold text-2xl mb-1">04</p>
+                <p class="text-sm text-cream/75">
+                  Dedicated Partnership Support
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- ============ TESTIMONIALS ============ -->
-  <!-- ⚠️ Confirm with your aunt these quotes are real and she has permission to publish them before launch -->
-  <section class="py-24 sm:py-28 bg-charcoal2 border-y border-gold/10">
-    <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
-      <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4 reveal">Retailer Testimonials</p>
+      <!-- ============ TESTIMONIALS ============ -->
+      <!-- ⚠️ Confirm with your aunt these quotes are real and she has permission to publish them before launch -->
+      <section class="py-24 sm:py-28 bg-charcoal2 border-y border-gold/10">
+        <div class="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 text-center">
+          <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4 reveal">
+            Retailer Testimonials
+          </p>
 
-      <div class="relative mt-10 min-h-[220px] sm:min-h-[180px]">
-        <div class="testimonial-slide" data-index="0">
-          <p class="font-serif italic text-xl sm:text-2xl text-cream/90 leading-relaxed">"ShelemJ has transformed our specialty aisle. Customers keep coming back for their authentic African spices — quality is unmatched."</p>
-          <p class="mt-6 text-gold text-sm tracking-wide">Amara Foods — Specialty Grocery, London</p>
+          <div class="relative mt-10 min-h-[220px] sm:min-h-[180px]">
+            <div class="testimonial-slide" data-index="0">
+              <p
+                class="font-serif italic text-xl sm:text-2xl text-cream/90 leading-relaxed"
+              >
+                "ShelemJ has transformed our specialty aisle. Customers keep
+                coming back for their authentic African spices — quality is
+                unmatched."
+              </p>
+              <p class="mt-6 text-gold text-sm tracking-wide">
+                Amara Foods — Specialty Grocery, London
+              </p>
+            </div>
+            <div class="testimonial-slide hidden" data-index="1">
+              <p
+                class="font-serif italic text-xl sm:text-2xl text-cream/90 leading-relaxed"
+              >
+                "Reliable, premium, and truly authentic. ShelemJ is the partner
+                every retailer needs."
+              </p>
+              <p class="mt-6 text-gold text-sm tracking-wide">
+                The African Market — Gourmet Retailer, Toronto
+              </p>
+            </div>
+          </div>
+
+          <div class="flex justify-center gap-3 mt-8" id="testimonialDots">
+            <button
+              class="w-2 h-2 rounded-full bg-gold"
+              data-dot="0"
+              aria-label="Show testimonial 1"
+            ></button>
+            <button
+              class="w-2 h-2 rounded-full bg-gold/30"
+              data-dot="1"
+              aria-label="Show testimonial 2"
+            ></button>
+          </div>
+
+          <p
+            class="mt-10 text-xs tracking-[0.25em] uppercase text-mutedgold reveal"
+          >
+            Trusted by premium retailers across North America and Europe
+          </p>
         </div>
-        <div class="testimonial-slide hidden" data-index="1">
-          <p class="font-serif italic text-xl sm:text-2xl text-cream/90 leading-relaxed">"Reliable, premium, and truly authentic. ShelemJ is the partner every retailer needs."</p>
-          <p class="mt-6 text-gold text-sm tracking-wide">The African Market — Gourmet Retailer, Toronto</p>
+      </section>
+
+      <!-- ============ CTA BANNER ============ -->
+      <section class="relative py-24 sm:py-28 overflow-hidden grain">
+        <div class="absolute inset-0">
+          <img
+            src="assets/images/Export-warehouse-and-dock.jpeg"
+            alt="Export warehouse and dock"
+            class="w-full h-full object-cover"
+          />
         </div>
-      </div>
-
-      <div class="flex justify-center gap-3 mt-8" id="testimonialDots">
-        <button class="w-2 h-2 rounded-full bg-gold" data-dot="0" aria-label="Show testimonial 1"></button>
-        <button class="w-2 h-2 rounded-full bg-gold/30" data-dot="1" aria-label="Show testimonial 2"></button>
-      </div>
-
-      <p class="mt-10 text-xs tracking-[0.25em] uppercase text-mutedgold reveal">Trusted by premium retailers across North America and Europe</p>
-    </div>
-  </section>
-
-  <!-- ============ CTA BANNER ============ -->
-  <section class="relative py-24 sm:py-28 overflow-hidden grain">
-    <div class="absolute inset-0">
-      <img src="assets/images/Export-warehouse-and-dock.jpeg" alt="Export warehouse and dock" class="w-full h-full object-cover">
-    </div>
-    <div class="absolute inset-0 bg-charcoal/80"></div>
-    <div class="relative max-w-3xl mx-auto px-5 text-center reveal">
-      <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">Join the ShelemJ Family</h2>
-      <p class="text-cream/75 mt-5 max-w-xl mx-auto">Bring authentic African flavors to your customers. Schedule a consultation or request a sample today.</p>
-      <a href="contact.html" class="inline-flex items-center px-9 py-4 mt-9 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors">
-        Schedule a Consultation
-      </a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      <div>
-        <!-- 🖼️ PLACEHOLDER: same logo replacement note as the nav -->
-        <div class="flex items-center gap-3 mb-4">
-          <img src="assets/images/shelemj-logo.png" alt="ShelemJ" class="h-10 w-auto">
-          <span class="font-serif text-lg text-cream">Shelem<span class="text-gold">J</span></span>
-        </div>
-        <p class="text-cream/60 text-sm leading-relaxed">Rooted in Africa. Trusted by retailers worldwide.</p>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Navigate</p>
-        <ul class="space-y-2.5 text-sm text-cream/70">
-          <li><a href="about.html" class="hover:text-gold transition-colors">About</a></li>
-          <li><a href="products.html" class="hover:text-gold transition-colors">Products</a></li>
-          <li><a href="gallery.html" class="hover:text-gold transition-colors">Gallery</a></li>
-          <li><a href="supply-chain.html" class="hover:text-gold transition-colors">Supply Chain</a></li>
-          <li><a href="partnership.html" class="hover:text-gold transition-colors">Partnership</a></li>
-          <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Contact</p>
-        <ul class="space-y-2.5 text-sm text-cream/70">
-          <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
-          <li>+234 803 318 7724</li>
-          <li>+234 803 347 9732</li>
-          <li>+234 812 763 2037</li>
-          <li>shelemjresourcesltd@gmail.com</li>
-        </ul>
-        
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Follow</p>
-        <!-- 🖼️ PLACEHOLDER: link these to real social profiles -->
-        <div class="flex gap-4">
-          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
+        <div class="absolute inset-0 bg-charcoal/80"></div>
+        <div class="relative max-w-3xl mx-auto px-5 text-center reveal">
+          <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl text-cream">
+            Join the ShelemJ Family
+          </h2>
+          <p class="text-cream/75 mt-5 max-w-xl mx-auto">
+            Bring authentic African flavors to your customers. Schedule a
+            consultation or request a sample today.
+          </p>
+          <a
+            href="contact.html"
+            class="inline-flex items-center px-9 py-4 mt-9 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors"
+          >
+            Schedule a Consultation
           </a>
-          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 4h4v16H4zM4 4h4v4H4zM10 9h4v11h-4zM10 9c0-3 4-3 4 0M14 9h4v11h-4z"/></svg>
-          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <!-- 🖼️ PLACEHOLDER: same logo replacement note as the nav -->
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="assets/images/shelemj-logo.png"
+                alt="ShelemJ"
+                class="h-10 w-auto"
+              />
+              <span class="font-serif text-lg text-cream"
+                >Shelem<span class="text-gold">J</span></span
+              >
+            </div>
+            <p class="text-cream/60 text-sm leading-relaxed">
+              Rooted in Africa. Trusted by retailers worldwide.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Navigate
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>
+                <a href="about.html" class="hover:text-gold transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href="products.html"
+                  class="hover:text-gold transition-colors"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a href="gallery.html" class="hover:text-gold transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="supply-chain.html"
+                  class="hover:text-gold transition-colors"
+                  >Supply Chain</a
+                >
+              </li>
+              <li>
+                <a
+                  href="partnership.html"
+                  class="hover:text-gold transition-colors"
+                  >Partnership</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-gold transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Contact
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
+              <li>+234 803 318 7724</li>
+              <li>+234 803 347 9732</li>
+              <li>+234 812 763 2037</li>
+              <li>shelemjresourcesltd@gmail.com</li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Follow
+            </p>
+            <!-- 🖼️ PLACEHOLDER: link these to real social profiles -->
+            <div class="flex gap-4">
+              <a
+                href="#"
+                aria-label="Facebook"
+                class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M4 4h4v16H4zM4 4h4v4H4zM10 9h4v11h-4zM10 9c0-3 4-3 4 0M14 9h4v11h-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
+        >
+          <p>
+            &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
+            All rights reserved.
+          </p>
+          <p>Est. 2013, as Jueco Foods</p>
+        </div>
+        <div class="mt-3 text-center text-[11px] text-mutedgold/40">
+          <p>
+            Website by
+            <a
+              href="https://wa.me/2349133058119"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-gold transition-colors"
+              >Obioma Chibueze Justice</a
+            >
+          </p>
         </div>
       </div>
-    </div>
+    </footer>
 
-    <div class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40">
-      <p>&copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228. All rights reserved.</p>
-      <p>Est. 2013, as Jueco Foods</p>
-    </div>
-    <div class="mt-3 text-center text-[11px] text-mutedgold/40">
-      <p>Website by <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Obioma Chibueze Justice</a></p>
-    </div>
-  </div>
-</footer>
+    <!-- ============ FLOATING WHATSAPP ============ -->
+    <a
+      href="https://wa.me/2348033187724"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite]"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-7 h-7"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"
+        />
+      </svg>
+    </a>
 
-<!-- ============ FLOATING WHATSAPP ============ -->
-<a href="https://wa.me/2348033187724" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite]">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"/></svg>
-</a>
+    <script>
+      // Year
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-<script>
-  // Year
-  document.getElementById('year').textContent = new Date().getFullYear();
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
 
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // ---- Sticky nav on scroll ----
-  const nav = document.getElementById('siteNav');
-  const onScroll = () => {
-    if (window.scrollY > 40) {
-      nav.classList.add('shadow-lg');
-    } else {
-      nav.classList.remove('shadow-lg');
-    }
-  };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  // ---- Sticky sample bar ----
-  const sampleBar = document.getElementById('sampleBar');
-  const sampleBarClose = document.getElementById('sampleBarClose');
-  let sampleBarDismissed = false;
-  const onScrollSampleBar = () => {
-    if (sampleBarDismissed) return;
-    if (window.scrollY > window.innerHeight * 0.8) {
-      sampleBar.classList.add('visible');
-    } else {
-      sampleBar.classList.remove('visible');
-    }
-  };
-  window.addEventListener('scroll', onScrollSampleBar, { passive: true });
-  sampleBarClose.addEventListener('click', () => {
-    sampleBar.classList.remove('visible');
-    sampleBarDismissed = true;
-  });
-
-  // ---- Mobile menu ----
-  const menuBtn = document.getElementById('menuBtn');
-  const menuCloseBtn = document.getElementById('menuCloseBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuOverlay = document.getElementById('menuOverlay');
-
-  function openMenu() {
-    mobileMenu.classList.remove('translate-x-full');
-    menuOverlay.classList.remove('hidden');
-    menuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMenu() {
-    mobileMenu.classList.add('translate-x-full');
-    menuOverlay.classList.add('hidden');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  menuBtn.addEventListener('click', openMenu);
-  menuCloseBtn.addEventListener('click', closeMenu);
-  menuOverlay.addEventListener('click', closeMenu);
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-  // ---- Hero slideshow crossfade ----
-  const slides = document.querySelectorAll('.hero-slide');
-  if (slides.length > 1 && !prefersReduced) {
-    let current = 0;
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 5000);
-  }
-
-  // ---- Scroll reveal ----
-  const revealEls = document.querySelectorAll('.reveal');
-  if (!prefersReduced && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('reveal-visible'), i % 6 * 60);
-          io.unobserve(entry.target);
+      // ---- Sticky nav on scroll ----
+      const nav = document.getElementById("siteNav");
+      const onScroll = () => {
+        if (window.scrollY > 40) {
+          nav.classList.add("shadow-lg");
+        } else {
+          nav.classList.remove("shadow-lg");
         }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('reveal-visible'));
-  }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
 
-  // ---- Animated stat counters ----
-  const statEls = document.querySelectorAll('[data-count]');
-  function animateCount(el) {
-    const target = parseInt(el.dataset.count, 10);
-    const suffix = el.dataset.suffix || '';
-    if (!target) { el.textContent = suffix ? '0' + suffix : '—'; return; }
-    const duration = 1400;
-    let start = null;
-    function step(ts) {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / duration, 1);
-      const value = Math.floor(progress * target);
-      el.textContent = value + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target + suffix;
-    }
-    requestAnimationFrame(step);
-  }
-  if ('IntersectionObserver' in window) {
-    const statsIo = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          statEls.forEach(el => prefersReduced ? (el.textContent = el.dataset.count + (el.dataset.suffix||'')) : animateCount(el));
-          statsIo.unobserve(entry.target);
+      // ---- Sticky sample bar ----
+      const sampleBar = document.getElementById("sampleBar");
+      const sampleBarClose = document.getElementById("sampleBarClose");
+      let sampleBarDismissed = false;
+      const onScrollSampleBar = () => {
+        if (sampleBarDismissed) return;
+        if (window.scrollY > window.innerHeight * 0.8) {
+          sampleBar.classList.add("visible");
+        } else {
+          sampleBar.classList.remove("visible");
         }
+      };
+      window.addEventListener("scroll", onScrollSampleBar, { passive: true });
+      sampleBarClose.addEventListener("click", () => {
+        sampleBar.classList.remove("visible");
+        sampleBarDismissed = true;
       });
-    }, { threshold: 0.4 });
-    const statsGrid = document.getElementById('statsGrid');
-    if (statsGrid) statsIo.observe(statsGrid);
-  }
 
-  // ---- Testimonial slider ----
-  const tSlides = document.querySelectorAll('.testimonial-slide');
-  const tDots = document.querySelectorAll('[data-dot]');
-  let tCurrent = 0;
-  function showTestimonial(i) {
-    tSlides.forEach((s, idx) => s.classList.toggle('hidden', idx !== i));
-    tDots.forEach((d, idx) => {
-      d.classList.toggle('bg-gold', idx === i);
-      d.classList.toggle('bg-gold/30', idx !== i);
-    });
-    tCurrent = i;
-  }
-  tDots.forEach(dot => dot.addEventListener('click', () => showTestimonial(parseInt(dot.dataset.dot, 10))));
-  if (!prefersReduced && tSlides.length > 1) {
-    setInterval(() => showTestimonial((tCurrent + 1) % tSlides.length), 6000);
-  }
-</script>
+      // ---- Mobile menu ----
+      const menuBtn = document.getElementById("menuBtn");
+      const menuCloseBtn = document.getElementById("menuCloseBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
 
-</body>
+      function openMenu() {
+        mobileMenu.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        mobileMenu.classList.add("translate-x-full");
+        menuOverlay.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      menuBtn.addEventListener("click", openMenu);
+      menuCloseBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMenu));
+
+      // ---- Hero slideshow crossfade ----
+      const slides = document.querySelectorAll(".hero-slide");
+      if (slides.length > 1 && !prefersReduced) {
+        let current = 0;
+        setInterval(() => {
+          slides[current].classList.remove("active");
+          current = (current + 1) % slides.length;
+          slides[current].classList.add("active");
+        }, 5000);
+      }
+
+      // ---- Scroll reveal ----
+      const revealEls = document.querySelectorAll(".reveal");
+      if (!prefersReduced && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, i) => {
+              if (entry.isIntersecting) {
+                setTimeout(
+                  () => entry.target.classList.add("reveal-visible"),
+                  (i % 6) * 60,
+                );
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("reveal-visible"));
+      }
+
+      // ---- Animated stat counters ----
+      const statEls = document.querySelectorAll("[data-count]");
+      function animateCount(el) {
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || "";
+        if (!target) {
+          el.textContent = suffix ? "0" + suffix : "—";
+          return;
+        }
+        const duration = 1400;
+        let start = null;
+        function step(ts) {
+          if (!start) start = ts;
+          const progress = Math.min((ts - start) / duration, 1);
+          const value = Math.floor(progress * target);
+          el.textContent = value + suffix;
+          if (progress < 1) requestAnimationFrame(step);
+          else el.textContent = target + suffix;
+        }
+        requestAnimationFrame(step);
+      }
+      if ("IntersectionObserver" in window) {
+        const statsIo = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                statEls.forEach((el) =>
+                  prefersReduced
+                    ? (el.textContent =
+                        el.dataset.count + (el.dataset.suffix || ""))
+                    : animateCount(el),
+                );
+                statsIo.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.4 },
+        );
+        const statsGrid = document.getElementById("statsGrid");
+        if (statsGrid) statsIo.observe(statsGrid);
+      }
+
+      // ---- Testimonial slider ----
+      const tSlides = document.querySelectorAll(".testimonial-slide");
+      const tDots = document.querySelectorAll("[data-dot]");
+      let tCurrent = 0;
+      function showTestimonial(i) {
+        tSlides.forEach((s, idx) => s.classList.toggle("hidden", idx !== i));
+        tDots.forEach((d, idx) => {
+          d.classList.toggle("bg-gold", idx === i);
+          d.classList.toggle("bg-gold/30", idx !== i);
+        });
+        tCurrent = i;
+      }
+      tDots.forEach((dot) =>
+        dot.addEventListener("click", () =>
+          showTestimonial(parseInt(dot.dataset.dot, 10)),
+        ),
+      );
+      if (!prefersReduced && tSlides.length > 1) {
+        setInterval(
+          () => showTestimonial((tCurrent + 1) % tSlides.length),
+          6000,
+        );
+      }
+    </script>
+  </body>
 </html>

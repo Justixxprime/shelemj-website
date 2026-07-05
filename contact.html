@@ -1,497 +1,1075 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact | ShelemJ</title>
-<meta name="description" content="Get in touch with ShelemJ to request samples, pricing, or start a partnership conversation. Based in Ejigbo, Lagos, Nigeria.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | ShelemJ</title>
+    <meta
+      name="description"
+      content="Get in touch with ShelemJ to request samples, pricing, or start a partnership conversation. Based in Ejigbo, Lagos, Nigeria."
+    />
 
-<meta property="og:title" content="Contact | ShelemJ">
-<meta property="og:description" content="Request samples, pricing, or start a partnership conversation.">
-<meta property="og:image" content="assets/images/og-image.jpeg">
-<meta property="og:url" content="https://shelemjresourcesltd.com">
+    <meta property="og:title" content="Contact | ShelemJ" />
+    <meta
+      property="og:description"
+      content="Request samples, pricing, or start a partnership conversation."
+    />
+    <meta property="og:image" content="assets/images/og-image.jpeg" />
+    <meta property="og:url" content="https://shelemjresourcesltd.com" />
 
-<!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
-<link rel="icon" href="assets/images/shelemj-logo.png">
-<link rel="apple-touch-icon" href="assets/images/shelemj-logo.png">
+    <!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
+    <link rel="icon" href="assets/images/shelemj-logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/shelemj-logo.png" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<!-- ⚙️ Same CDN integration note as the other pages — swap for /dist/output.css in your real project. -->
-<link rel="stylesheet" href="dist/output.css">
-<style>
-  html { scroll-behavior: smooth; }
-  body { -webkit-font-smoothing: antialiased; }
+    <!-- ⚙️ Same CDN integration note as the other pages — swap for /dist/output.css in your real project. -->
+    <link rel="stylesheet" href="dist/output.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
 
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
-  .reveal-visible { opacity: 1; transform: none; }
-  /* ===== Modern polish additions ===== */
-  /* Subtle film-grain texture over dark sections for depth */
-  .grain::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 1;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-  /* Soft radial gold glow for hero-type sections */
-  .gold-glow::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,164,76,0.10), transparent 70%);
-  }
-  /* Image zoom-on-hover wrapper */
-  .img-zoom { overflow: hidden; }
-  .img-zoom img { transition: transform .6s cubic-bezier(.2,.7,.2,1); }
-  .img-zoom:hover img { transform: scale(1.08); }
-  /* Elevated hover shadow for cards */
-  .card-lift { transition: transform .35s cubic-bezier(.2,.7,.2,1), box-shadow .35s ease, border-color .35s ease; }
-  .card-lift:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -12px rgba(0,0,0,0.55); }
-  /* Sticky sample bar slide-down */
-  #sampleBar { transform: translateY(-100%); transition: transform .4s cubic-bezier(.2,.7,.2,1); }
-  #sampleBar.visible { transform: translateY(0); }
-  /* FAQ accordion */
-  .faq-item[open] summary .faq-icon { transform: rotate(45deg); }
-  .faq-icon { transition: transform .3s ease; }
-  summary::-webkit-details-marker { display: none; }
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+          transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: none;
+      }
+      /* ===== Modern polish additions ===== */
+      /* Subtle film-grain texture over dark sections for depth */
+      .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      /* Soft radial gold glow for hero-type sections */
+      .gold-glow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          ellipse 60% 50% at 50% 0%,
+          rgba(201, 164, 76, 0.1),
+          transparent 70%
+        );
+      }
+      /* Image zoom-on-hover wrapper */
+      .img-zoom {
+        overflow: hidden;
+      }
+      .img-zoom img {
+        transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .img-zoom:hover img {
+        transform: scale(1.08);
+      }
+      /* Elevated hover shadow for cards */
+      .card-lift {
+        transition:
+          transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
+      }
+      .card-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.55);
+      }
+      /* Sticky sample bar slide-down */
+      #sampleBar {
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      #sampleBar.visible {
+        transform: translateY(0);
+      }
+      /* FAQ accordion */
+      .faq-item[open] summary .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
 
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: 2px solid #c9a44c;
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
 
-  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
-    outline: 2px solid #C9A44C;
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+      @media (min-width: 768px) {
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #0d0d0d;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #6b5b32;
+          border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #c9a44c;
+        }
+      }
 
-  @media (min-width: 768px) {
-    ::-webkit-scrollbar { width: 10px; }
-    ::-webkit-scrollbar-track { background: #0D0D0D; }
-    ::-webkit-scrollbar-thumb { background: #6B5B32; border-radius: 8px; }
-    ::-webkit-scrollbar-thumb:hover { background: #C9A44C; }
-  }
+      #mobileMenu {
+        transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
 
-  #mobileMenu { transition: transform .45s cubic-bezier(.2,.7,.2,1); }
+      input,
+      textarea,
+      select {
+        background-color: #17140f;
+        border: 1px solid rgba(201, 164, 76, 0.25);
+        color: #f3ede3;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: rgba(243, 237, 227, 0.35);
+      }
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: #c9a44c;
+      }
 
-  input, textarea, select {
-    background-color: #17140F;
-    border: 1px solid rgba(201,164,76,0.25);
-    color: #F3EDE3;
-  }
-  input::placeholder, textarea::placeholder { color: rgba(243,237,227,0.35); }
-  input:focus, textarea:focus, select:focus { border-color: #C9A44C; }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    </style>
+  </head>
 
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-    .reveal { opacity: 1 !important; transform: none !important; }
-  }
-</style>
-</head>
+  <body
+    class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded"
+      >Skip to content</a
+    >
 
-<body class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal">
+    <!-- ============ NAV (Contact active) ============ -->
+    <header
+      id="siteNav"
+      class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10"
+    >
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <a href="index.html" class="flex items-center gap-3 group">
+            <img
+              src="assets/images/shelemj-logo.png"
+              alt="ShelemJ"
+              class="h-11 w-auto"
+            />
+            <span class="font-serif text-xl tracking-wide text-cream"
+              >Shelem<span class="text-gold">J</span></span
+            >
+          </a>
 
-<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+          <nav
+            aria-label="Primary"
+            class="hidden lg:flex items-center gap-10 font-sans text-sm tracking-wide"
+          >
+            <a
+              href="index.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Home</a
+            >
+            <a
+              href="about.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >About</a
+            >
+            <a
+              href="products.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Products</a
+            >
+            <a
+              href="gallery.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Gallery</a
+            >
+            <a
+              href="supply-chain.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Supply Chain</a
+            >
+            <a
+              href="partnership.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Partnership</a
+            >
+            <a
+              href="contact.html"
+              class="inline-flex items-center px-5 py-2.5 border border-gold bg-gold text-charcoal rounded-sm"
+              >Contact</a
+            >
+          </nav>
 
-<!-- ============ NAV (Contact active) ============ -->
-<header id="siteNav" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div class="flex items-center justify-between h-20">
-
-      <a href="index.html" class="flex items-center gap-3 group">
-        <img src="assets/images/shelemj-logo.png" alt="ShelemJ" class="h-11 w-auto">
-        <span class="font-serif text-xl tracking-wide text-cream">Shelem<span class="text-gold">J</span></span>
-      </a>
-
-      <nav aria-label="Primary" class="hidden lg:flex items-center gap-10 font-sans text-sm tracking-wide">
-        <a href="index.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Home</a>
-        <a href="about.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">About</a>
-        <a href="products.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Products</a>
-        <a href="gallery.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Gallery</a>
-        <a href="supply-chain.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Supply Chain</a>
-        <a href="partnership.html" class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all">Partnership</a>
-        <a href="contact.html" class="inline-flex items-center px-5 py-2.5 border border-gold bg-gold text-charcoal rounded-sm">Contact</a>
-      </nav>
-
-      <button id="menuBtn" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu" class="lg:hidden text-gold p-2 -mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5" />
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <div id="mobileMenu" class="lg:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10">
-    <div class="flex justify-end">
-      <button id="menuCloseBtn" aria-label="Close menu" class="text-gold p-2 -mr-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
-    <nav aria-label="Mobile" class="mt-10 flex flex-col gap-7 font-serif text-2xl">
-      <a href="index.html" class="text-cream/90 hover:text-gold transition-colors">Home</a>
-      <a href="about.html" class="text-cream/90 hover:text-gold transition-colors">About</a>
-      <a href="products.html" class="text-cream/90 hover:text-gold transition-colors">Products</a>
-      <a href="gallery.html" class="text-cream/90 hover:text-gold transition-colors">Gallery</a>
-      <a href="supply-chain.html" class="text-cream/90 hover:text-gold transition-colors">Supply Chain</a>
-      <a href="partnership.html" class="text-cream/90 hover:text-gold transition-colors">Partnership</a>
-      <a href="contact.html" class="text-gold">Contact</a>
-    </nav>
-    <div class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase">
-      <span>Est. 2013</span>
-    </div>
-  </div>
-  <div id="menuOverlay" class="hidden fixed inset-0 bg-black/60 z-40 lg:hidden"></div>
-</header>
-
-<main id="main">
-
-  <!-- ============ HERO + FORM + INFO ============ -->
-  <section class="relative pt-32 pb-24 sm:pt-40 sm:pb-28 overflow-hidden">
-    <div class="pointer-events-none absolute -right-40 -top-32 w-[520px] h-[520px] opacity-25" aria-hidden="true">
-      <div class="absolute inset-0 rounded-full border border-gold/40"></div>
-      <div class="absolute inset-10 rounded-full border border-gold/30"></div>
-      <div class="absolute inset-20 rounded-full border border-gold/20"></div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
-      <div class="max-w-2xl reveal mb-14">
-        <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Contact & Next Steps</p>
-        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl text-cream leading-tight">Join the ShelemJ Family</h1>
-        <p class="text-cream/70 mt-6 leading-relaxed">Bring authentic African flavors to your customers. Schedule a consultation or request a sample today.</p>
+          <button
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+            class="lg:hidden text-gold p-2 -mr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
       </div>
 
-      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+      <div
+        id="mobileMenu"
+        class="lg:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10"
+      >
+        <div class="flex justify-end">
+          <button
+            id="menuCloseBtn"
+            aria-label="Close menu"
+            class="text-gold p-2 -mr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav
+          aria-label="Mobile"
+          class="mt-10 flex flex-col gap-7 font-serif text-2xl"
+        >
+          <a
+            href="index.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Home</a
+          >
+          <a
+            href="about.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >About</a
+          >
+          <a
+            href="products.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Products</a
+          >
+          <a
+            href="gallery.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Gallery</a
+          >
+          <a
+            href="supply-chain.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Supply Chain</a
+          >
+          <a
+            href="partnership.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Partnership</a
+          >
+          <a href="contact.html" class="text-gold">Contact</a>
+        </nav>
+        <div
+          class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase"
+        >
+          <span>Est. 2013</span>
+        </div>
+      </div>
+      <div
+        id="menuOverlay"
+        class="hidden fixed inset-0 bg-black/60 z-40 lg:hidden"
+      ></div>
+    </header>
 
-        <!-- ============ FORM ============ -->
-        <div class="lg:col-span-3 reveal">
-          <!--
+    <main id="main">
+      <!-- ============ HERO + FORM + INFO ============ -->
+      <section class="relative pt-32 pb-24 sm:pt-40 sm:pb-28 overflow-hidden">
+        <div
+          class="pointer-events-none absolute -right-40 -top-32 w-[520px] h-[520px] opacity-25"
+          aria-hidden="true"
+        >
+          <div
+            class="absolute inset-0 rounded-full border border-gold/40"
+          ></div>
+          <div
+            class="absolute inset-10 rounded-full border border-gold/30"
+          ></div>
+          <div
+            class="absolute inset-20 rounded-full border border-gold/20"
+          ></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+          <div class="max-w-2xl reveal mb-14">
+            <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+              Contact & Next Steps
+            </p>
+            <h1
+              class="font-serif text-4xl sm:text-5xl md:text-6xl text-cream leading-tight"
+            >
+              Join the ShelemJ Family
+            </h1>
+            <p class="text-cream/70 mt-6 leading-relaxed">
+              Bring authentic African flavors to your customers. Schedule a
+              consultation or request a sample today.
+            </p>
+          </div>
+
+          <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+            <!-- ============ FORM ============ -->
+            <div class="lg:col-span-3 reveal">
+              <!--
             ⚠️ NETLIFY FORMS: this works once deployed on Netlify (needs data-netlify="true" + the hidden form-name field below).
             The honeypot field ("bot-field") is invisible to real users and catches spam bots automatically.
             The category checkboxes auto-check based on a ?category=... URL parameter — see the script at the bottom.
           -->
-          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden"><input name="bot-field" /></p>
+              <form
+                id="contactForm"
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                class="space-y-6"
+              >
+                <input type="hidden" name="form-name" value="contact" />
+                <p class="hidden"><input name="bot-field" /></p>
 
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label for="company" class="block text-xs tracking-widest uppercase text-mutedgold mb-2">Company / Retailer Name *</label>
-                <input type="text" id="company" name="company" required class="w-full rounded-sm px-4 py-3 text-sm">
-              </div>
-              <div>
-                <label for="contactPerson" class="block text-xs tracking-widest uppercase text-mutedgold mb-2">Contact Person *</label>
-                <input type="text" id="contactPerson" name="contact_person" required class="w-full rounded-sm px-4 py-3 text-sm">
-              </div>
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="company"
+                      class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
+                      >Company / Retailer Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="company"
+                      name="company"
+                      required
+                      class="w-full rounded-sm px-4 py-3 text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="contactPerson"
+                      class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
+                      >Contact Person *</label
+                    >
+                    <input
+                      type="text"
+                      id="contactPerson"
+                      name="contact_person"
+                      required
+                      class="w-full rounded-sm px-4 py-3 text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="email"
+                      class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
+                      >Email *</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      class="w-full rounded-sm px-4 py-3 text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="phone"
+                      class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
+                      >Phone (with country code)</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      placeholder="+44 ..."
+                      class="w-full rounded-sm px-4 py-3 text-sm"
+                    />
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-6">
+                  <div>
+                    <label
+                      for="country"
+                      class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
+                      >Country</label
+                    >
+                    <input
+                      type="text"
+                      id="country"
+                      name="country"
+                      placeholder="e.g. United Kingdom"
+                      class="w-full rounded-sm px-4 py-3 text-sm"
+                    />
+                  </div>
+                  <div>
+                    <label
+                      for="volume"
+                      class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
+                      >Estimated Order Volume</label
+                    >
+                    <select
+                      id="volume"
+                      name="order_volume"
+                      class="w-full rounded-sm px-4 py-3 text-sm"
+                    >
+                      <option value="">Select one</option>
+                      <option value="trial">Trial / Sample Order</option>
+                      <option value="small">Small — occasional orders</option>
+                      <option value="medium">
+                        Medium — regular monthly orders
+                      </option>
+                      <option value="large">
+                        Large — wholesale / distributor
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <fieldset>
+                  <legend
+                    class="block text-xs tracking-widest uppercase text-mutedgold mb-3"
+                  >
+                    Products of Interest
+                  </legend>
+                  <div class="grid sm:grid-cols-2 gap-3">
+                    <label
+                      class="flex items-center gap-2 text-sm text-cream/80"
+                    >
+                      <input
+                        type="checkbox"
+                        name="category_spices"
+                        value="Spices & Seasonings"
+                        data-category="spices-seasonings"
+                        class="accent-gold w-4 h-4"
+                      />
+                      Spices & Seasonings
+                    </label>
+                    <label
+                      class="flex items-center gap-2 text-sm text-cream/80"
+                    >
+                      <input
+                        type="checkbox"
+                        name="category_beverages"
+                        value="African Made Beverages"
+                        data-category="african-made-beverages"
+                        class="accent-gold w-4 h-4"
+                      />
+                      African Made Beverages
+                    </label>
+                    <label
+                      class="flex items-center gap-2 text-sm text-cream/80"
+                    >
+                      <input
+                        type="checkbox"
+                        name="category_grains"
+                        value="Grains & Raw Materials"
+                        data-category="grains-raw-materials"
+                        class="accent-gold w-4 h-4"
+                      />
+                      Grains & Raw Materials
+                    </label>
+                    <label
+                      class="flex items-center gap-2 text-sm text-cream/80"
+                    >
+                      <input
+                        type="checkbox"
+                        name="category_oils"
+                        value="Premium Oils"
+                        data-category="premium-oils"
+                        class="accent-gold w-4 h-4"
+                      />
+                      Premium Oils
+                    </label>
+                    <label
+                      class="flex items-center gap-2 text-sm text-cream/80"
+                    >
+                      <input
+                        type="checkbox"
+                        name="category_dried"
+                        value="Dried Seeds & Vegetables"
+                        data-category="dried-seeds-vegetables"
+                        class="accent-gold w-4 h-4"
+                      />
+                      Dried Seeds & Vegetables
+                    </label>
+                    <label
+                      class="flex items-center gap-2 text-sm text-cream/80"
+                    >
+                      <input
+                        type="checkbox"
+                        name="category_packaged"
+                        value="Packaged Goods"
+                        data-category="packaged-goods"
+                        class="accent-gold w-4 h-4"
+                      />
+                      Packaged Goods
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div>
+                  <label
+                    for="message"
+                    class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
+                    >Message</label
+                  >
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    placeholder="Tell us a bit about your store and what you're looking for..."
+                    class="w-full rounded-sm px-4 py-3 text-sm"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  class="inline-flex items-center px-9 py-4 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors"
+                >
+                  Send Request
+                </button>
+
+                <p id="formStatus" class="text-sm mt-2" aria-live="polite"></p>
+              </form>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-6">
+            <!-- ============ CONTACT INFO + MAP ============ -->
+            <div class="lg:col-span-2 reveal space-y-8">
               <div>
-                <label for="email" class="block text-xs tracking-widest uppercase text-mutedgold mb-2">Email *</label>
-                <input type="email" id="email" name="email" required class="w-full rounded-sm px-4 py-3 text-sm">
+                <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+                  Reach Us Directly
+                </p>
+                <ul class="space-y-4 text-cream/80 text-sm">
+                  <li class="flex items-start gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 text-gold shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12 21c-4.5-4.5-7-8.25-7-12a7 7 0 1114 0c0 3.75-2.5 7.5-7 12z"
+                      />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    16 Kogberegbe Street, Ejigbo, Lagos, Nigeria
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 text-gold shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a11.25 11.25 0 01-6.16-6.16l1.292-.97a1.125 1.125 0 00.418-1.173L8.963 3.102a1.125 1.125 0 00-1.091-.852H6.5A2.25 2.25 0 004.25 4.5v2.25z"
+                      />
+                    </svg>
+                    +234 803 318 7724 · +234 803 347 9732
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 text-gold shrink-0 mt-0.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 6.75c0-1.036.84-1.875 1.875-1.875h15.75c1.035 0 1.875.84 1.875 1.875v10.5A1.875 1.875 0 0119.875 19.125H4.125A1.875 1.875 0 012.25 17.25V6.75zm1.5.75l8.25 6 8.25-6"
+                      />
+                    </svg>
+                    shelemjresourcesltd@gmail.com
+                  </li>
+                </ul>
+                <a
+                  href="https://wa.me/2348033187724"
+                  target="_blank"
+                  rel="noopener"
+                  class="inline-flex items-center gap-2 mt-6 px-6 py-3 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors text-sm"
+                >
+                  Chat on WhatsApp
+                </a>
               </div>
-              <div>
-                <label for="phone" class="block text-xs tracking-widest uppercase text-mutedgold mb-2">Phone (with country code)</label>
-                <input type="tel" id="phone" name="phone" placeholder="+44 ..." class="w-full rounded-sm px-4 py-3 text-sm">
+
+              <div class="rounded-lg overflow-hidden border border-gold/20">
+                <iframe
+                  title="ShelemJ Resources Ltd location"
+                  src="https://www.google.com/maps?q=16+Kogberegbe+Street,+Ejigbo,+Lagos,+Nigeria&output=embed"
+                  width="100%"
+                  height="280"
+                  style="
+                    border: 0;
+                    filter: grayscale(1) invert(0.92) contrast(0.9);
+                  "
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                >
+                </iframe>
               </div>
+              <p class="text-xs text-cream/40">
+                RC 7081228 · NEPC Reg. No. 0034317
+              </p>
             </div>
-
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div>
-                <label for="country" class="block text-xs tracking-widest uppercase text-mutedgold mb-2">Country</label>
-                <input type="text" id="country" name="country" placeholder="e.g. United Kingdom" class="w-full rounded-sm px-4 py-3 text-sm">
-              </div>
-              <div>
-                <label for="volume" class="block text-xs tracking-widest uppercase text-mutedgold mb-2">Estimated Order Volume</label>
-                <select id="volume" name="order_volume" class="w-full rounded-sm px-4 py-3 text-sm">
-                  <option value="">Select one</option>
-                  <option value="trial">Trial / Sample Order</option>
-                  <option value="small">Small — occasional orders</option>
-                  <option value="medium">Medium — regular monthly orders</option>
-                  <option value="large">Large — wholesale / distributor</option>
-                </select>
-              </div>
-            </div>
-
-            <fieldset>
-              <legend class="block text-xs tracking-widest uppercase text-mutedgold mb-3">Products of Interest</legend>
-              <div class="grid sm:grid-cols-2 gap-3">
-                <label class="flex items-center gap-2 text-sm text-cream/80">
-                  <input type="checkbox" name="category_spices" value="Spices & Seasonings" data-category="spices-seasonings" class="accent-gold w-4 h-4">
-                  Spices & Seasonings
-                </label>
-                <label class="flex items-center gap-2 text-sm text-cream/80">
-                  <input type="checkbox" name="category_beverages" value="African Made Beverages" data-category="african-made-beverages" class="accent-gold w-4 h-4">
-                  African Made Beverages
-                </label>
-                <label class="flex items-center gap-2 text-sm text-cream/80">
-                  <input type="checkbox" name="category_grains" value="Grains & Raw Materials" data-category="grains-raw-materials" class="accent-gold w-4 h-4">
-                  Grains & Raw Materials
-                </label>
-                <label class="flex items-center gap-2 text-sm text-cream/80">
-                  <input type="checkbox" name="category_oils" value="Premium Oils" data-category="premium-oils" class="accent-gold w-4 h-4">
-                  Premium Oils
-                </label>
-                <label class="flex items-center gap-2 text-sm text-cream/80">
-                  <input type="checkbox" name="category_dried" value="Dried Seeds & Vegetables" data-category="dried-seeds-vegetables" class="accent-gold w-4 h-4">
-                  Dried Seeds & Vegetables
-                </label>
-                <label class="flex items-center gap-2 text-sm text-cream/80">
-                  <input type="checkbox" name="category_packaged" value="Packaged Goods" data-category="packaged-goods" class="accent-gold w-4 h-4">
-                  Packaged Goods
-                </label>
-              </div>
-            </fieldset>
-
-            <div>
-              <label for="message" class="block text-xs tracking-widest uppercase text-mutedgold mb-2">Message</label>
-              <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your store and what you're looking for..." class="w-full rounded-sm px-4 py-3 text-sm"></textarea>
-            </div>
-
-            <button type="submit" class="inline-flex items-center px-9 py-4 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors">
-              Send Request
-            </button>
-
-            <p id="formStatus" class="text-sm mt-2" aria-live="polite"></p>
-          </form>
+          </div>
         </div>
+      </section>
 
-        <!-- ============ CONTACT INFO + MAP ============ -->
-        <div class="lg:col-span-2 reveal space-y-8">
+      <!-- ============ FAQ ============ -->
+      <section class="py-20 sm:py-24 bg-charcoal2 border-y border-gold/10">
+        <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div class="reveal max-w-2xl mb-12 text-center mx-auto">
+            <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">
+              Common Questions
+            </p>
+            <h2 class="font-serif text-3xl sm:text-4xl text-cream">
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div class="space-y-4">
+            <details
+              class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base"
+              >
+                How long does shipping typically take?
+                <span
+                  class="faq-icon text-gold text-xl leading-none shrink-0 ml-4"
+                  >+</span
+                >
+              </summary>
+              <p class="text-cream/65 text-sm leading-relaxed mt-4">
+                Shipping timelines vary by destination and order size. Contact
+                us with your target market and we'll provide an accurate
+                estimate for your order.
+              </p>
+            </details>
+
+            <details
+              class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base"
+              >
+                What is your minimum order quantity (MOQ)?
+                <span
+                  class="faq-icon text-gold text-xl leading-none shrink-0 ml-4"
+                  >+</span
+                >
+              </summary>
+              <p class="text-cream/65 text-sm leading-relaxed mt-4">
+                MOQs vary by product category. Reach out with the specific items
+                you're interested in and we'll confirm the minimums for your
+                order.
+              </p>
+            </details>
+
+            <details
+              class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base"
+              >
+                Can I request product samples before ordering?
+                <span
+                  class="faq-icon text-gold text-xl leading-none shrink-0 ml-4"
+                  >+</span
+                >
+              </summary>
+              <p class="text-cream/65 text-sm leading-relaxed mt-4">
+                Yes. Use the form above or select "Request a Sample" from any
+                product page, and we'll arrange samples for your review.
+              </p>
+            </details>
+
+            <details
+              class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base"
+              >
+                Do you offer private label or custom packaging?
+                <span
+                  class="faq-icon text-gold text-xl leading-none shrink-0 ml-4"
+                  >+</span
+                >
+              </summary>
+              <p class="text-cream/65 text-sm leading-relaxed mt-4">
+                Yes, we offer bespoke blends and private label packaging for
+                retail partners. Let us know what you're looking for and we'll
+                discuss options.
+              </p>
+            </details>
+
+            <details
+              class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors"
+            >
+              <summary
+                class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base"
+              >
+                Which markets do you currently export to?
+                <span
+                  class="faq-icon text-gold text-xl leading-none shrink-0 ml-4"
+                  >+</span
+                >
+              </summary>
+              <p class="text-cream/65 text-sm leading-relaxed mt-4">
+                We work with retailers across North America and Europe, with
+                capacity to expand to new markets. Get in touch to discuss your
+                region.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
-            <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Reach Us Directly</p>
-            <ul class="space-y-4 text-cream/80 text-sm">
-              <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-12a7 7 0 1114 0c0 3.75-2.5 7.5-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                16 Kogberegbe Street, Ejigbo, Lagos, Nigeria
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="assets/images/shelemj-logo.png"
+                alt="ShelemJ"
+                class="h-10 w-auto"
+              />
+              <span class="font-serif text-lg text-cream"
+                >Shelem<span class="text-gold">J</span></span
+              >
+            </div>
+            <p class="text-cream/60 text-sm leading-relaxed">
+              Rooted in Africa. Trusted by retailers worldwide.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Navigate
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>
+                <a href="about.html" class="hover:text-gold transition-colors"
+                  >About</a
+                >
               </li>
-              <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a11.25 11.25 0 01-6.16-6.16l1.292-.97a1.125 1.125 0 00.418-1.173L8.963 3.102a1.125 1.125 0 00-1.091-.852H6.5A2.25 2.25 0 004.25 4.5v2.25z"/></svg>
-                +234 803 318 7724 · +234 803 347 9732
+              <li>
+                <a
+                  href="products.html"
+                  class="hover:text-gold transition-colors"
+                  >Products</a
+                >
               </li>
-              <li class="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gold shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0-1.036.84-1.875 1.875-1.875h15.75c1.035 0 1.875.84 1.875 1.875v10.5A1.875 1.875 0 0119.875 19.125H4.125A1.875 1.875 0 012.25 17.25V6.75zm1.5.75l8.25 6 8.25-6"/></svg>
-                shelemjresourcesltd@gmail.com
+              <li>
+                <a href="gallery.html" class="hover:text-gold transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a
+                  href="supply-chain.html"
+                  class="hover:text-gold transition-colors"
+                  >Supply Chain</a
+                >
+              </li>
+              <li>
+                <a
+                  href="partnership.html"
+                  class="hover:text-gold transition-colors"
+                  >Partnership</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" class="hover:text-gold transition-colors"
+                  >Contact</a
+                >
               </li>
             </ul>
-            <a href="https://wa.me/2348033187724" target="_blank" rel="noopener" class="inline-flex items-center gap-2 mt-6 px-6 py-3 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors text-sm">
-              Chat on WhatsApp
-            </a>
           </div>
 
-          <div class="rounded-lg overflow-hidden border border-gold/20">
-            <iframe
-              title="ShelemJ Resources Ltd location"
-              src="https://www.google.com/maps?q=16+Kogberegbe+Street,+Ejigbo,+Lagos,+Nigeria&output=embed"
-              width="100%" height="280" style="border:0; filter: grayscale(1) invert(0.92) contrast(0.9);"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Contact
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
+              <li>+234 803 318 7724</li>
+              <li>+234 803 347 9732</li>
+              <li>+234 812 763 2037</li>
+              <li>shelemjresourcesltd@gmail.com</li>
+            </ul>
           </div>
-          <p class="text-xs text-cream/40">RC 7081228 · NEPC Reg. No. 0034317</p>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Follow
+            </p>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                aria-label="Facebook"
+                class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="#"
+                aria-label="LinkedIn"
+                class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M4 4h4v16H4zM4 4h4v4H4zM10 9h4v11h-4zM10 9c0-3 4-3 4 0M14 9h4v11h-4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
+        >
+          <p>
+            &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
+            All rights reserved.
+          </p>
+          <p>Est. 2013, as Jueco Foods</p>
+        </div>
+        <div class="mt-3 text-center text-[11px] text-mutedgold/40">
+          <p>
+            Website by
+            <a
+              href="https://wa.me/2349133058119"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-gold transition-colors"
+              >Obioma Chibueze Justice</a
+            >
+          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- ============ FAQ ============ -->
-  <section class="py-20 sm:py-24 bg-charcoal2 border-y border-gold/10">
-    <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
-      <div class="reveal max-w-2xl mb-12 text-center mx-auto">
-        <p class="text-xs tracking-[0.3em] uppercase text-gold mb-4">Common Questions</p>
-        <h2 class="font-serif text-3xl sm:text-4xl text-cream">Frequently Asked Questions</h2>
-      </div>
+    <a
+      href="https://wa.me/2348033187724"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite]"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-7 h-7"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"
+        />
+      </svg>
+    </a>
 
-      <div class="space-y-4">
-        <details class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base">
-            How long does shipping typically take?
-            <span class="faq-icon text-gold text-xl leading-none shrink-0 ml-4">+</span>
-          </summary>
-          <p class="text-cream/65 text-sm leading-relaxed mt-4">Shipping timelines vary by destination and order size. Contact us with your target market and we'll provide an accurate estimate for your order.</p>
-        </details>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
 
-        <details class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base">
-            What is your minimum order quantity (MOQ)?
-            <span class="faq-icon text-gold text-xl leading-none shrink-0 ml-4">+</span>
-          </summary>
-          <p class="text-cream/65 text-sm leading-relaxed mt-4">MOQs vary by product category. Reach out with the specific items you're interested in and we'll confirm the minimums for your order.</p>
-        </details>
+      const nav = document.getElementById("siteNav");
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (window.scrollY > 40) {
+            nav.classList.add("shadow-lg");
+          } else {
+            nav.classList.remove("shadow-lg");
+          }
+        },
+        { passive: true },
+      );
 
-        <details class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base">
-            Can I request product samples before ordering?
-            <span class="faq-icon text-gold text-xl leading-none shrink-0 ml-4">+</span>
-          </summary>
-          <p class="text-cream/65 text-sm leading-relaxed mt-4">Yes. Use the form above or select "Request a Sample" from any product page, and we'll arrange samples for your review.</p>
-        </details>
+      const menuBtn = document.getElementById("menuBtn");
+      const menuCloseBtn = document.getElementById("menuCloseBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+      function openMenu() {
+        mobileMenu.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        mobileMenu.classList.add("translate-x-full");
+        menuOverlay.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      menuBtn.addEventListener("click", openMenu);
+      menuCloseBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMenu));
 
-        <details class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base">
-            Do you offer private label or custom packaging?
-            <span class="faq-icon text-gold text-xl leading-none shrink-0 ml-4">+</span>
-          </summary>
-          <p class="text-cream/65 text-sm leading-relaxed mt-4">Yes, we offer bespoke blends and private label packaging for retail partners. Let us know what you're looking for and we'll discuss options.</p>
-        </details>
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      const revealEls = document.querySelectorAll(".reveal");
+      if (!prefersReduced && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, i) => {
+              if (entry.isIntersecting) {
+                setTimeout(
+                  () => entry.target.classList.add("reveal-visible"),
+                  (i % 4) * 80,
+                );
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("reveal-visible"));
+      }
 
-        <details class="faq-item reveal group border border-gold/20 rounded-lg px-6 py-5 open:border-gold/50 transition-colors">
-          <summary class="flex items-center justify-between cursor-pointer list-none font-sans text-cream text-base">
-            Which markets do you currently export to?
-            <span class="faq-icon text-gold text-xl leading-none shrink-0 ml-4">+</span>
-          </summary>
-          <p class="text-cream/65 text-sm leading-relaxed mt-4">We work with retailers across North America and Europe, with capacity to expand to new markets. Get in touch to discuss your region.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+      // Pre-check the relevant category checkbox based on ?category=slug from product pages
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get("category");
+      if (cat) {
+        const box = document.querySelector(`input[data-category="${cat}"]`);
+        if (box) box.checked = true;
+      }
 
-</main>
-
-<!-- ============ FOOTER ============ -->
-<footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
-      <div>
-        <div class="flex items-center gap-3 mb-4">
-          <img src="assets/images/shelemj-logo.png" alt="ShelemJ" class="h-10 w-auto">
-          <span class="font-serif text-lg text-cream">Shelem<span class="text-gold">J</span></span>
-        </div>
-        <p class="text-cream/60 text-sm leading-relaxed">Rooted in Africa. Trusted by retailers worldwide.</p>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Navigate</p>
-        <ul class="space-y-2.5 text-sm text-cream/70">
-          <li><a href="about.html" class="hover:text-gold transition-colors">About</a></li>
-          <li><a href="products.html" class="hover:text-gold transition-colors">Products</a></li>
-          <li><a href="gallery.html" class="hover:text-gold transition-colors">Gallery</a></li>
-          <li><a href="supply-chain.html" class="hover:text-gold transition-colors">Supply Chain</a></li>
-          <li><a href="partnership.html" class="hover:text-gold transition-colors">Partnership</a></li>
-          <li><a href="contact.html" class="hover:text-gold transition-colors">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Contact</p>
-        <ul class="space-y-2.5 text-sm text-cream/70">
-          <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
-          <li>+234 803 318 7724</li>
-          <li>+234 803 347 9732</li>
-          <li>+234 812 763 2037</li>
-          <li>shelemjresourcesltd@gmail.com</li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">Follow</p>
-        <div class="flex gap-4">
-          <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5z"/></svg>
-          </a>
-          <a href="#" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-gold/30 flex items-center justify-center hover:border-gold hover:text-gold transition-colors text-cream/70">
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 4h4v16H4zM4 4h4v4H4zM10 9h4v11h-4zM10 9c0-3 4-3 4 0M14 9h4v11h-4z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40">
-      <p>&copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228. All rights reserved.</p>
-      <p>Est. 2013, as Jueco Foods</p>
-    </div>
-    <div class="mt-3 text-center text-[11px] text-mutedgold/40">
-      <p>Website by <a href="https://wa.me/2349133058119" target="_blank" rel="noopener" class="hover:text-gold transition-colors">Obioma Chibueze Justice</a></p>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/2348033187724" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
-   class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite]">
-  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"/></svg>
-</a>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  const nav = document.getElementById('siteNav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) { nav.classList.add('shadow-lg'); } else { nav.classList.remove('shadow-lg'); }
-  }, { passive: true });
-
-  const menuBtn = document.getElementById('menuBtn');
-  const menuCloseBtn = document.getElementById('menuCloseBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const menuOverlay = document.getElementById('menuOverlay');
-  function openMenu() {
-    mobileMenu.classList.remove('translate-x-full');
-    menuOverlay.classList.remove('hidden');
-    menuBtn.setAttribute('aria-expanded', 'true');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeMenu() {
-    mobileMenu.classList.add('translate-x-full');
-    menuOverlay.classList.add('hidden');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-  menuBtn.addEventListener('click', openMenu);
-  menuCloseBtn.addEventListener('click', closeMenu);
-  menuOverlay.addEventListener('click', closeMenu);
-  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const revealEls = document.querySelectorAll('.reveal');
-  if (!prefersReduced && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add('reveal-visible'), (i % 4) * 80);
-          io.unobserve(entry.target);
-        }
+      // AJAX submit to Netlify — avoids a full page reload, shows an inline confirmation instead
+      const form = document.getElementById("contactForm");
+      const statusEl = document.getElementById("formStatus");
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const data = new FormData(form);
+        const encoded = new URLSearchParams(data).toString();
+        statusEl.textContent = "Sending...";
+        statusEl.className = "text-sm mt-2 text-mutedgold";
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: encoded,
+        })
+          .then(() => {
+            statusEl.textContent =
+              "Thank you — we've received your request and will be in touch soon.";
+            statusEl.className = "text-sm mt-2 text-gold";
+            form.reset();
+          })
+          .catch(() => {
+            statusEl.textContent =
+              "Something went wrong. Please try again, or email us directly at shelemjresourcesltd@gmail.com.";
+            statusEl.className = "text-sm mt-2 text-wine";
+          });
       });
-    }, { threshold: 0.1 });
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('reveal-visible'));
-  }
-
-  // Pre-check the relevant category checkbox based on ?category=slug from product pages
-  const params = new URLSearchParams(window.location.search);
-  const cat = params.get('category');
-  if (cat) {
-    const box = document.querySelector(`input[data-category="${cat}"]`);
-    if (box) box.checked = true;
-  }
-
-  // AJAX submit to Netlify — avoids a full page reload, shows an inline confirmation instead
-  const form = document.getElementById('contactForm');
-  const statusEl = document.getElementById('formStatus');
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const encoded = new URLSearchParams(data).toString();
-    statusEl.textContent = 'Sending...';
-    statusEl.className = 'text-sm mt-2 text-mutedgold';
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encoded,
-    })
-      .then(() => {
-        statusEl.textContent = "Thank you — we've received your request and will be in touch soon.";
-        statusEl.className = 'text-sm mt-2 text-gold';
-        form.reset();
-      })
-      .catch(() => {
-        statusEl.textContent = "Something went wrong. Please try again, or email us directly at shelemjresourcesltd@gmail.com.";
-        statusEl.className = 'text-sm mt-2 text-wine';
-      });
-  });
-</script>
-
-</body>
+    </script>
+  </body>
 </html>

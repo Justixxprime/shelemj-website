@@ -1,67 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" class="scroll-smooth">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found | ShelemJ</title>
-<meta name="robots" content="noindex">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | ShelemJ</title>
+    <meta name="robots" content="noindex" />
 
-<link rel="icon" href="assets/images/shelemj-logo.png">
-<link rel="apple-touch-icon" href="assets/images/shelemj-logo.png">
+    <link rel="icon" href="assets/images/shelemj-logo.png" />
+    <link rel="apple-touch-icon" href="assets/images/shelemj-logo.png" />
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-<link rel="stylesheet" href="/dist/output.css">
-<style>
-  html { scroll-behavior: smooth; }
-  body { -webkit-font-smoothing: antialiased; }
-  a:focus-visible, button:focus-visible { outline: 2px solid #C9A44C; outline-offset: 3px; border-radius: 2px; }
-  .gold-glow::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 0;
-    background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,164,76,0.12), transparent 70%);
-  }
-  .grain::before {
-    content: '';
-    position: absolute; inset: 0; pointer-events: none; z-index: 1;
-    opacity: 0.035;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  }
-</style>
-</head>
+    <link rel="stylesheet" href="dist/output.css" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid #c9a44c;
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+      .gold-glow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          ellipse 60% 50% at 50% 40%,
+          rgba(201, 164, 76, 0.12),
+          transparent 70%
+        );
+      }
+      .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+    </style>
+  </head>
 
-<body class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal">
+  <body
+    class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal"
+  >
+    <div
+      class="relative min-h-screen flex items-center justify-center overflow-hidden gold-glow grain px-5"
+    >
+      <div
+        class="pointer-events-none absolute -right-40 -top-32 w-[500px] h-[500px] opacity-20"
+        aria-hidden="true"
+      >
+        <div class="absolute inset-0 rounded-full border border-gold/40"></div>
+        <div class="absolute inset-10 rounded-full border border-gold/30"></div>
+        <div class="absolute inset-20 rounded-full border border-gold/20"></div>
+      </div>
 
-<div class="relative min-h-screen flex items-center justify-center overflow-hidden gold-glow grain px-5">
+      <div class="relative max-w-lg mx-auto text-center py-20">
+        <a
+          href="index.html"
+          class="inline-flex items-center gap-3 justify-center mb-10"
+        >
+          <img
+            src="assets/images/shelemj-logo.png"
+            alt="ShelemJ"
+            class="h-11 w-auto"
+          />
+          <span class="font-serif text-xl tracking-wide text-cream"
+            >Shelem<span class="text-gold">J</span></span
+          >
+        </a>
 
-  <div class="pointer-events-none absolute -right-40 -top-32 w-[500px] h-[500px] opacity-20" aria-hidden="true">
-    <div class="absolute inset-0 rounded-full border border-gold/40"></div>
-    <div class="absolute inset-10 rounded-full border border-gold/30"></div>
-    <div class="absolute inset-20 rounded-full border border-gold/20"></div>
-  </div>
+        <p class="font-serif text-7xl sm:text-8xl text-gold leading-none">
+          404
+        </p>
+        <h1 class="font-serif text-2xl sm:text-3xl text-cream mt-6">
+          This Page Has Wandered Off
+        </h1>
+        <p class="text-cream/65 mt-4 leading-relaxed max-w-sm mx-auto">
+          The page you're looking for doesn't exist, may have moved, or the link
+          may be outdated.
+        </p>
 
-  <div class="relative max-w-lg mx-auto text-center py-20">
-    <a href="index.html" class="inline-flex items-center gap-3 justify-center mb-10">
-      <img src="assets/images/shelemj-logo.png" alt="ShelemJ" class="h-11 w-auto">
-      <span class="font-serif text-xl tracking-wide text-cream">Shelem<span class="text-gold">J</span></span>
-    </a>
-
-    <p class="font-serif text-7xl sm:text-8xl text-gold leading-none">404</p>
-    <h1 class="font-serif text-2xl sm:text-3xl text-cream mt-6">This Page Has Wandered Off</h1>
-    <p class="text-cream/65 mt-4 leading-relaxed max-w-sm mx-auto">The page you're looking for doesn't exist, may have moved, or the link may be outdated.</p>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-9">
-      <a href="index.html" class="inline-flex justify-center items-center px-8 py-4 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors">
-        Back to Home
-      </a>
-      <a href="products.html" class="inline-flex justify-center items-center px-8 py-4 border border-cream/40 text-cream font-sans tracking-wide rounded-sm hover:border-gold hover:text-gold transition-colors">
-        Browse Products
-      </a>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-9">
+          <a
+            href="index.html"
+            class="inline-flex justify-center items-center px-8 py-4 bg-gold text-charcoal font-sans font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors"
+          >
+            Back to Home
+          </a>
+          <a
+            href="products.html"
+            class="inline-flex justify-center items-center px-8 py-4 border border-cream/40 text-cream font-sans tracking-wide rounded-sm hover:border-gold hover:text-gold transition-colors"
+          >
+            Browse Products
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
-
-</body>
+  </body>
 </html>
