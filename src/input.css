@@ -324,6 +324,203 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 /* -------------------------------------------------------------------------
+   CUSTOM ANIMATED DATE PICKER (progressively enhances input.js-datepicker)
+   Same visual language as the custom select: dark trigger field, floating
+   gold-bordered panel, smooth scale/fade transitions.
+   ------------------------------------------------------------------------- */
+.dp {
+  position: relative;
+}
+.dp input.js-datepicker {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.dp-trigger {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  background-color: #1c1812;
+  border: 1px solid rgba(201, 164, 76, 0.22);
+  border-radius: 0.375rem;
+  color: #f3ede3;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium), background-color 0.35s var(--ease-premium);
+}
+.dp-trigger .dp-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.dp-trigger .dp-value[data-empty="true"] {
+  color: rgba(243, 237, 227, 0.4);
+}
+.dp-trigger .dp-icon {
+  flex-shrink: 0;
+  width: 1.05rem;
+  height: 1.05rem;
+  color: #c9a44c;
+  transition: transform 0.4s var(--ease-premium);
+}
+.dp:hover .dp-trigger {
+  border-color: rgba(201, 164, 76, 0.45);
+}
+.dp.open .dp-trigger {
+  border-color: #c9a44c;
+  box-shadow: 0 0 0 3px rgba(201, 164, 76, 0.15);
+  background-color: #211b12;
+}
+.dp.open .dp-trigger .dp-icon {
+  transform: scale(1.08);
+}
+.dp-trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 164, 76, 0.35);
+}
+
+.dp-panel {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  width: 19.5rem;
+  max-width: 90vw;
+  background: #17140f;
+  border: 1px solid rgba(201, 164, 76, 0.28);
+  border-radius: 0.6rem;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(0, 0, 0, 0.2);
+  padding: 1rem 1rem 0.75rem;
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top left;
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-premium), transform 0.28s var(--ease-premium);
+}
+.dp.open .dp-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.dp-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+.dp-month-label {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: #f3ede3;
+}
+.dp-nav {
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9a44c;
+  background: transparent;
+  transition: background-color 0.25s ease, transform 0.25s var(--ease-premium);
+}
+.dp-nav:hover {
+  background: rgba(201, 164, 76, 0.14);
+  transform: scale(1.08);
+}
+.dp-nav svg {
+  width: 1rem;
+  height: 1rem;
+}
+.dp-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 0.35rem;
+}
+.dp-weekdays span {
+  text-align: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(166, 149, 114, 0.85);
+}
+.dp-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  row-gap: 0.2rem;
+}
+.dp-day {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: rgba(243, 237, 227, 0.85);
+  border-radius: 999px;
+  transition: background-color 0.22s ease, color 0.22s ease, transform 0.22s var(--ease-premium);
+}
+.dp-day:not(.dp-day--pad):hover {
+  background: rgba(201, 164, 76, 0.16);
+  transform: scale(1.08);
+}
+.dp-day--pad {
+  pointer-events: none;
+}
+.dp-day.today {
+  color: #c9a44c;
+  font-weight: 600;
+}
+.dp-day.today::after {
+  content: "";
+  position: absolute;
+  bottom: 0.18rem;
+  width: 3px;
+  height: 3px;
+  border-radius: 999px;
+  background: #c9a44c;
+}
+.dp-day.selected {
+  background: linear-gradient(135deg, #dab763, #b48f3b);
+  color: #0d0d0d;
+  font-weight: 600;
+}
+.dp-day.selected::after {
+  display: none;
+}
+.dp-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(201, 164, 76, 0.14);
+}
+.dp-link {
+  font-size: 0.78rem;
+  color: rgba(243, 237, 227, 0.55);
+  transition: color 0.25s ease;
+}
+.dp-link:hover {
+  color: #f3ede3;
+}
+.dp-link--gold {
+  color: #c9a44c;
+}
+.dp-link--gold:hover {
+  color: #e3c572;
+}
+
+/* -------------------------------------------------------------------------
    HERO SCROLL-DOWN CUE
    ------------------------------------------------------------------------- */
 .scroll-cue {
@@ -414,6 +611,38 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 /* -------------------------------------------------------------------------
+   TRUST BADGES — quiet, honest credibility strip (real registrations only)
+   ------------------------------------------------------------------------- */
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid rgba(201, 164, 76, 0.2);
+  border-radius: 999px;
+  background: rgba(201, 164, 76, 0.03);
+  color: rgba(243, 237, 227, 0.75);
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: border-color 0.35s var(--ease-premium), background-color 0.35s var(--ease-premium), transform 0.35s var(--ease-premium);
+}
+.trust-badge:hover {
+  border-color: rgba(201, 164, 76, 0.5);
+  background: rgba(201, 164, 76, 0.08);
+  transform: translateY(-2px);
+}
+.trust-badge svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: #c9a44c;
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .trust-badge { transition: none; }
+  .trust-badge:hover { transform: none; }
+}
+/* -------------------------------------------------------------------------
    TESTIMONIAL CARDS — real quotes, premium solid treatment
    ------------------------------------------------------------------------- */
 .testimonial-card {
@@ -427,74 +656,181 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 /* -------------------------------------------------------------------------
-   GALLERY — premium cinematic card treatment
+   MASONRY PHOTO GALLERY — CSS-columns masonry so portrait, landscape and
+   square photos all keep their natural aspect ratio instead of being
+   force-cropped into uniform squares. Cinematic, editorial feel.
    ------------------------------------------------------------------------- */
-.gallery-card {
+.masonry-grid {
+  column-count: 2;
+  column-gap: 1.1rem;
+}
+@media (min-width: 640px) {
+  .masonry-grid {
+    column-count: 3;
+    column-gap: 1.35rem;
+  }
+}
+@media (min-width: 1024px) {
+  .masonry-grid {
+    column-count: 4;
+    column-gap: 1.5rem;
+  }
+}
+.masonry-tile {
+  display: block;
   position: relative;
-  overflow: hidden;
+  break-inside: avoid;
+  margin-bottom: 1.1rem;
   border-radius: 0.6rem;
-  background: #17140f;
-  border: 1px solid rgba(201, 164, 76, 0.14);
-  transition: transform 0.55s var(--ease-premium), border-color 0.45s var(--ease-premium), box-shadow 0.55s var(--ease-premium);
-}
-.gallery-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(201, 164, 76, 0.5);
-  box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.65);
-}
-.gallery-card .gallery-media {
-  position: relative;
   overflow: hidden;
 }
-.gallery-card .gallery-media img,
-.gallery-card .gallery-media video {
-  transition: transform 0.9s var(--ease-premium), filter 0.6s ease;
+@media (min-width: 640px) {
+  .masonry-tile { margin-bottom: 1.35rem; }
 }
-.gallery-card:hover .gallery-media img,
-.gallery-card:hover .gallery-media video {
-  transform: scale(1.08);
+@media (min-width: 1024px) {
+  .masonry-tile { margin-bottom: 1.5rem; }
 }
-.gallery-card .gallery-media::after {
-  content: "";
+.masonry-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+/* When combined with the sitewide .gallery-tile hover system (fade + view
+   cue), cancel its forced 1:1 crop so photos keep their natural shape. */
+.masonry-tile.gallery-tile {
+  aspect-ratio: auto;
+}
+.masonry-tile.gallery-tile img {
+  position: static;
+  top: auto;
+  left: auto;
+  width: 100%;
+  height: auto;
+  object-fit: initial;
+}
+
+/* -------------------------------------------------------------------------
+   VIDEO ROW — widescreen 16:9 cards (instead of square-cropped video
+   posters), so motion content reads correctly at a glance.
+   ------------------------------------------------------------------------- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.25rem;
+}
+@media (min-width: 640px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .video-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+}
+.video-tile {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: block;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+.video-tile img {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(13, 13, 13, 0) 45%, rgba(13, 13, 13, 0.85) 100%);
-  opacity: 0.75;
-  transition: opacity 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.gallery-card:hover .gallery-media::after {
-  opacity: 0.9;
+/* Beat the sitewide .gallery-tile 1:1 crop when both classes combine */
+.video-tile.gallery-tile {
+  aspect-ratio: 16 / 10;
 }
-.gallery-play {
+.video-tile.gallery-tile img {
   position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video-tile .video-duration {
+  position: absolute;
+  left: 0.75rem;
+  bottom: 0.75rem;
   z-index: 2;
-}
-.gallery-play span {
-  width: 3.25rem;
-  height: 3.25rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+  color: #f3ede3;
+  background: rgba(13, 13, 13, 0.6);
+  border: 1px solid rgba(201, 164, 76, 0.35);
   border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  backdrop-filter: blur(3px);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.4s var(--ease-premium), transform 0.4s var(--ease-premium);
+}
+.card-lift:hover .video-tile .video-duration {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------
+   CATEGORY CARDS (products.html) — index numeral, sliding arrow, richer
+   hover glow to match the rest of the premium button/card language.
+   ------------------------------------------------------------------------- */
+.category-card {
+  position: relative;
+}
+.category-card .category-index {
+  position: absolute;
+  top: 0.9rem;
+  left: 0.9rem;
+  z-index: 3;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #f3ede3;
   background: rgba(13, 13, 13, 0.55);
-  border: 1px solid rgba(201, 164, 76, 0.6);
+  border: 1px solid rgba(201, 164, 76, 0.4);
+  border-radius: 999px;
+  width: 2.1rem;
+  height: 2.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(4px);
-  transition: transform 0.4s var(--ease-premium), background-color 0.4s var(--ease-premium);
+  backdrop-filter: blur(3px);
+  transition: transform 0.4s var(--ease-premium), background-color 0.35s ease;
 }
-.gallery-card:hover .gallery-play span {
-  transform: scale(1.12);
-  background: rgba(201, 164, 76, 0.85);
+.category-card:hover .category-index {
+  transform: scale(1.08);
+  background: rgba(201, 164, 76, 0.9);
+  color: #0d0d0d;
 }
-.gallery-play svg { color: #f3ede3; width: 1.1rem; height: 1.1rem; }
-.gallery-card:hover .gallery-play svg { color: #0d0d0d; }
+.category-card .category-arrow {
+  transition: transform 0.4s var(--ease-premium);
+}
+.category-card:hover .category-arrow {
+  transform: translateX(6px);
+}
+.category-card .category-tag {
+  transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+.category-card:hover .category-tag {
+  border-color: rgba(201, 164, 76, 0.45);
+  color: #e3c572;
+  background: rgba(201, 164, 76, 0.08);
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .gallery-card, .gallery-media img, .gallery-media video, .gallery-play span {
+  .category-card .category-index,
+  .category-card .category-arrow,
+  .video-tile .video-duration {
     transition: none !important;
   }
-  .gallery-card:hover { transform: none !important; }
+  .category-card:hover .category-index { transform: none; }
+  .category-card:hover .category-arrow { transform: none; }
 }

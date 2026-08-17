@@ -15,8 +15,10 @@
       content="Request samples, pricing, or start a partnership conversation."
     />
     <meta property="og:image" content="assets/images/og-image.jpeg" />
-    <meta property="og:url" content="https://shelemjresourcesltd.com" />
+    <meta property="og:url" content="https://justixxprime.github.io/shelemj-website/contact.html" />
+    <link rel="canonical" href="https://justixxprime.github.io/shelemj-website/contact.html" />
 
+    <!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -275,39 +277,32 @@
         }
       }
     </style>
-    <!-- ============ ORGANIZATION SCHEMA (structured data) ============ -->
+  
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "ShelemJ Resources Ltd",
-  "url": "https://shelemjresourcesltd.com",
-  "logo": "https://shelemjresourcesltd.com/assets/images/shelemj-logo.png",
-  "image": "https://shelemjresourcesltd.com/assets/images/og-image.jpeg",
-  "description": "ShelemJ Resources Ltd exports premium African spices, beverages, grains, oils, and packaged goods to retailers and distributors worldwide.",
+  "alternateName": "ShelemJ",
+  "url": "https://justixxprime.github.io/shelemj-website/",
+  "logo": "https://justixxprime.github.io/shelemj-website/assets/images/shelemj-logo.png",
+  "foundingDate": "2013",
+  "description": "Premium African food export company shipping spices, beverages, grains, oils and packaged goods to retailers worldwide.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "16 Kogberegbe Street, Ejigbo",
     "addressLocality": "Lagos",
     "addressCountry": "NG"
   },
-  "email": "shelemjresourcesltd@gmail.com",
-  "foundingDate": "2013"
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+234-803-318-7724",
+    "contactType": "sales",
+    "email": "shelemjresourcesltd@gmail.com",
+    "areaServed": "Worldwide"
+  }
 }
     </script>
-
-    <!-- ============ GOOGLE ANALYTICS 4 ============ -->
-    <!-- 🔑 SETUP NEEDED: replace G-XXXXXXXXXX (both places below) with your real
-         GA4 Measurement ID from analytics.google.com. Until you do this, these
-         two lines do nothing harmful — they just don't send any data yet. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
-
   </head>
 
   <body
@@ -332,7 +327,7 @@
               alt="ShelemJ"
               class="h-11 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
             />
-            <span translate="no" class="font-serif text-xl tracking-wide text-cream"
+            <span class="font-serif text-xl tracking-wide text-cream"
               >Shelem<span class="text-gold">J</span></span
             >
           </a>
@@ -626,8 +621,8 @@
             <!-- ============ FORM ============ -->
             <div class="lg:col-span-3 reveal">
               <!--
-            Submits via Web3Forms (AJAX, see script below) — no page reload, inline confirmation message.
-            The honeypot field ("botcheck") is invisible to real users and catches spam bots automatically.
+            ⚠️ NETLIFY FORMS: this works once deployed on Netlify (needs data-netlify="true" + the hidden form-name field below).
+            The honeypot field ("bot-field") is invisible to real users and catches spam bots automatically.
             The category checkboxes auto-check based on a ?category=... URL parameter, see the script at the bottom.
           -->
               <form
@@ -636,6 +631,7 @@
                 method="POST"
                 class="space-y-6"
               >
+                <!-- Delivers to shelemjresourcesltd@gmail.com via Web3Forms. -->
                 <input
                   type="hidden"
                   name="access_key"
@@ -771,69 +767,19 @@
                       <option value="EXW">EXW (Ex Works)</option>
                     </select>
                   </div>
-                  <div class="relative" id="targetDateWrapper">
+                  <div>
                     <label
                       for="targetDate"
                       class="block text-xs tracking-widest uppercase text-mutedgold mb-2"
                       >Needed By (optional)</label
                     >
-                    <div class="relative">
-                      <input
-                        type="text"
-                        id="targetDate"
-                        name="needed_by"
-                        placeholder="mm/dd/yyyy"
-                        autocomplete="off"
-                        readonly
-                        aria-haspopup="dialog"
-                        aria-expanded="false"
-                        class="w-full rounded-sm px-4 py-3 pr-11 text-base sm:text-sm cursor-pointer"
-                      />
-                      <button
-                        type="button"
-                        id="targetDateBtn"
-                        aria-label="Open calendar"
-                        class="absolute right-0 top-0 h-full px-3 flex items-center text-gold/60 hover:text-gold transition-colors"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-[18px] h-[18px]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3.75 8.25h16.5M4.5 6h15a.75.75 0 01.75.75v13.5a.75.75 0 01-.75.75h-15a.75.75 0 01-.75-.75V6.75A.75.75 0 014.5 6z" />
-                        </svg>
-                      </button>
-                    </div>
-
-                    <!-- ============ CUSTOM DATE PICKER ============ -->
-                    <div
-                      id="customDatePicker"
-                      role="dialog"
-                      aria-label="Choose a date"
-                      class="hidden absolute z-30 left-0 mt-3 w-[320px] rounded-2xl border border-gold/15 bg-charcoal2/95 backdrop-blur-xl shadow-[0_25px_70px_-20px_rgba(0,0,0,0.75)] p-5 origin-top opacity-0 scale-95 -translate-y-2 transition-all duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]"
-                    >
-                      <div class="flex items-center justify-between mb-5">
-                        <button type="button" id="dpPrevMonth" aria-label="Previous month" class="w-8 h-8 rounded-full flex items-center justify-center text-cream/60 hover:text-gold hover:bg-gold/10 active:scale-90 transition-all duration-150">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
-                        </button>
-                        <p id="dpMonthYear" class="font-serif text-base text-cream tracking-wide select-none"></p>
-                        <button type="button" id="dpNextMonth" aria-label="Next month" class="w-8 h-8 rounded-full flex items-center justify-center text-cream/60 hover:text-gold hover:bg-gold/10 active:scale-90 transition-all duration-150">
-                          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
-                        </button>
-                      </div>
-                      <div class="grid grid-cols-7 text-center mb-2">
-                        <span class="text-[10px] font-medium tracking-widest text-mutedgold/80 py-1">S</span>
-                        <span class="text-[10px] font-medium tracking-widest text-mutedgold/80 py-1">M</span>
-                        <span class="text-[10px] font-medium tracking-widest text-mutedgold/80 py-1">T</span>
-                        <span class="text-[10px] font-medium tracking-widest text-mutedgold/80 py-1">W</span>
-                        <span class="text-[10px] font-medium tracking-widest text-mutedgold/80 py-1">T</span>
-                        <span class="text-[10px] font-medium tracking-widest text-mutedgold/80 py-1">F</span>
-                        <span class="text-[10px] font-medium tracking-widest text-mutedgold/80 py-1">S</span>
-                      </div>
-                      <div class="overflow-hidden">
-                        <div id="dpGrid" class="grid grid-cols-7 gap-y-1.5 text-center transition-all duration-200 ease-out"></div>
-                      </div>
-                      <div class="flex items-center justify-between mt-5 pt-4 border-t border-gold/10">
-                        <button type="button" id="dpClear" class="text-xs tracking-wide text-cream/45 hover:text-cream/80 transition-colors">Clear</button>
-                        <button type="button" id="dpToday" class="text-xs font-medium tracking-wide text-gold hover:text-goldlight transition-colors">Today</button>
-                      </div>
-                    </div>
+                    <input
+                      type="date"
+                      id="targetDate"
+                      name="needed_by"
+                      class="js-datepicker"
+                      data-placeholder="Select a date"
+                    />
                   </div>
                 </div>
 
@@ -1044,7 +990,7 @@
                 >
                 </iframe>
               </div>
-              <p class="text-xs text-cream/65">
+              <p class="text-xs text-cream/40">
                 RC 7081228 · NEPC Reg. No. 0034317
               </p>
             </div>
@@ -1224,13 +1170,14 @@
 
                 <div class="footer-grid grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-x-10">
           <div class="footer-brand">
+            <!-- 🖼️ PLACEHOLDER: same logo replacement note as the nav -->
             <a href="index.html" class="footer-logo group inline-flex items-center gap-3 mb-4">
               <img
                 src="assets/images/shelemj-logo.png"
                 alt="ShelemJ"
                 class="h-10 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
               />
-              <span translate="no" class="font-serif text-lg text-cream"
+              <span class="font-serif text-lg text-cream"
                 >Shelem<span class="text-gold">J</span></span
               >
             </a>
@@ -1325,7 +1272,7 @@
         </div>
 
         <div
-          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/60"
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
         >
           <p>
             &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
@@ -1563,9 +1510,6 @@
           { title: "Certifications & Compliance", url: "certifications.html", desc: "Company registration and export compliance" },
           { title: "Testimonials", url: "testimonials.html", desc: "What retailers and partners say" },
           { title: "Insights & Guides", url: "blog.html", desc: "Guides on sourcing, shipping terms, getting started" },
-          { title: "FOB vs CIF: Choosing the Right Shipping Term", url: "blog/fob-vs-cif-shipping-terms.html", desc: "Understanding shipping terms for import/export" },
-          { title: "From Sample to Standing Order", url: "blog/sample-to-standing-order.html", desc: "A first-time buyer's roadmap" },
-          { title: "Choosing an African Food Export Partner", url: "blog/what-to-look-for-in-an-export-partner.html", desc: "What to look for in an export partner" },
         ];
 
         const inSubfolder = window.location.pathname.includes("/products/");
@@ -1745,197 +1689,6 @@
                 });
               }
             });
-          });
-        })();
-      </script>
-
-      <!-- ============ CUSTOM DATE PICKER LOGIC ============ -->
-      <script>
-        (function () {
-          const wrapper = document.getElementById("targetDateWrapper");
-          const input = document.getElementById("targetDate");
-          const openBtn = document.getElementById("targetDateBtn");
-          const panel = document.getElementById("customDatePicker");
-          const grid = document.getElementById("dpGrid");
-          const monthYearLabel = document.getElementById("dpMonthYear");
-          if (!wrapper || !input || !panel) return;
-
-          const MONTHS = [
-            "January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December",
-          ];
-
-          const today = new Date();
-          today.setHours(0, 0, 0, 0);
-          let viewYear = today.getFullYear();
-          let viewMonth = today.getMonth();
-          let selected = null; // { y, m, d }
-
-          function pad(n) {
-            return String(n).padStart(2, "0");
-          }
-
-          function formatDisplay(y, m, d) {
-            return `${pad(m + 1)}/${pad(d)}/${y}`;
-          }
-
-          function buildGridHTML() {
-            const firstOfMonth = new Date(viewYear, viewMonth, 1);
-            const startOffset = firstOfMonth.getDay(); // 0 = Sunday
-            const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
-            const daysInPrevMonth = new Date(viewYear, viewMonth, 0).getDate();
-
-            let html = "";
-            for (let i = startOffset - 1; i >= 0; i--) {
-              html += dayCell(daysInPrevMonth - i, true, viewMonth - 1, viewYear);
-            }
-            for (let d = 1; d <= daysInMonth; d++) {
-              html += dayCell(d, false, viewMonth, viewYear);
-            }
-            const totalCells = startOffset + daysInMonth;
-            const trailing = (7 - (totalCells % 7)) % 7;
-            for (let d = 1; d <= trailing; d++) {
-              html += dayCell(d, true, viewMonth + 1, viewYear);
-            }
-            return html;
-          }
-
-          // direction: 1 = advancing forward (slide in from right), -1 = going back (slide in from left), 0 = no animation
-          function render(direction) {
-            monthYearLabel.textContent = `${MONTHS[viewMonth]} ${viewYear}`;
-            const html = buildGridHTML();
-
-            if (!direction) {
-              grid.innerHTML = html;
-              return;
-            }
-
-            const outClass = direction > 0 ? "-translate-x-3" : "translate-x-3";
-            const inClass = direction > 0 ? "translate-x-3" : "-translate-x-3";
-
-            grid.style.opacity = "0";
-            grid.style.transform = outClass === "-translate-x-3" ? "translateX(-10px)" : "translateX(10px)";
-
-            setTimeout(() => {
-              grid.innerHTML = html;
-              grid.style.transform = inClass === "translate-x-3" ? "translateX(10px)" : "translateX(-10px)";
-              requestAnimationFrame(() => {
-                grid.style.transition = "opacity 220ms cubic-bezier(0.16,1,0.3,1), transform 220ms cubic-bezier(0.16,1,0.3,1)";
-                grid.style.opacity = "1";
-                grid.style.transform = "translateX(0)";
-              });
-            }, 130);
-          }
-
-          function dayCell(d, muted, m, y) {
-            let normM = m, normY = y;
-            if (normM < 0) { normM = 11; normY -= 1; }
-            if (normM > 11) { normM = 0; normY += 1; }
-
-            const isToday =
-              normY === today.getFullYear() &&
-              normM === today.getMonth() &&
-              d === today.getDate();
-            const isSelected =
-              selected &&
-              selected.y === normY &&
-              selected.m === normM &&
-              selected.d === d;
-
-            let cls =
-              "dp-day w-10 h-10 mx-auto flex items-center justify-center text-sm rounded-full transition-all duration-200 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]";
-
-            if (isSelected) {
-              cls += " bg-gradient-to-b from-goldlight to-gold text-charcoal font-semibold shadow-lg shadow-gold/40 scale-100";
-            } else if (isToday) {
-              cls += " ring-1 ring-inset ring-gold/60 text-gold hover:bg-gold/10";
-            } else if (muted) {
-              cls += " text-cream/20 hover:text-cream/45";
-            } else {
-              cls += " text-cream/80 hover:bg-gold/15 hover:text-gold hover:scale-[1.12] hover:shadow-[0_0_0_1px_rgba(201,164,76,0.25)]";
-            }
-
-            return `<button type="button" class="${cls}" data-y="${normY}" data-m="${normM}" data-d="${d}">${d}</button>`;
-          }
-
-          function openPanel() {
-            panel.classList.remove("hidden");
-            input.setAttribute("aria-expanded", "true");
-            requestAnimationFrame(() => {
-              panel.classList.remove("opacity-0", "scale-95", "-translate-y-2");
-            });
-            document.addEventListener("click", handleOutsideClick);
-            document.addEventListener("keydown", handleEscape);
-          }
-
-          function closePanel() {
-            panel.classList.add("opacity-0", "scale-95", "-translate-y-2");
-            input.setAttribute("aria-expanded", "false");
-            setTimeout(() => panel.classList.add("hidden"), 250);
-            document.removeEventListener("click", handleOutsideClick);
-            document.removeEventListener("keydown", handleEscape);
-          }
-
-          function handleOutsideClick(e) {
-            if (!wrapper.contains(e.target)) closePanel();
-          }
-          function handleEscape(e) {
-            if (e.key === "Escape") closePanel();
-          }
-
-          function togglePanel() {
-            if (panel.classList.contains("hidden")) {
-              if (selected) {
-                viewYear = selected.y;
-                viewMonth = selected.m;
-              }
-              render();
-              openPanel();
-            } else {
-              closePanel();
-            }
-          }
-
-          input.addEventListener("click", togglePanel);
-          openBtn.addEventListener("click", togglePanel);
-
-          grid.addEventListener("click", (e) => {
-            const btn = e.target.closest(".dp-day");
-            if (!btn) return;
-            const y = parseInt(btn.dataset.y, 10);
-            const m = parseInt(btn.dataset.m, 10);
-            const d = parseInt(btn.dataset.d, 10);
-            selected = { y, m, d };
-            viewYear = y;
-            viewMonth = m;
-            input.value = formatDisplay(y, m, d);
-            render();
-            setTimeout(closePanel, 150);
-          });
-
-          document.getElementById("dpPrevMonth").addEventListener("click", () => {
-            viewMonth -= 1;
-            if (viewMonth < 0) { viewMonth = 11; viewYear -= 1; }
-            render(-1);
-          });
-          document.getElementById("dpNextMonth").addEventListener("click", () => {
-            viewMonth += 1;
-            if (viewMonth > 11) { viewMonth = 0; viewYear += 1; }
-            render(1);
-          });
-          document.getElementById("dpToday").addEventListener("click", () => {
-            selected = { y: today.getFullYear(), m: today.getMonth(), d: today.getDate() };
-            viewYear = today.getFullYear();
-            viewMonth = today.getMonth();
-            input.value = formatDisplay(viewYear, viewMonth, today.getDate());
-            render();
-            setTimeout(closePanel, 150);
-          });
-          document.getElementById("dpClear").addEventListener("click", () => {
-            selected = null;
-            input.value = "";
-            render();
-            closePanel();
           });
         })();
       </script>

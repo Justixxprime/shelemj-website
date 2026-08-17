@@ -9,14 +9,17 @@
       content="ShelemJ brings Africa's finest spices, beverages, grains, oils and packaged goods to retailers worldwide. Rooted in Africa. Trusted by retailers worldwide."
     />
 
+    <!-- 🖼️ PLACEHOLDER: Open Graph share image, 1200x630px, logo + tagline on the gold/black background. Update the two URLs below once it exists. -->
     <meta property="og:title" content="ShelemJ | Premium African Food Export" />
     <meta
       property="og:description"
       content="Rooted in Africa. Trusted by retailers worldwide."
     />
     <meta property="og:image" content="assets/images/og-image.jpeg" />
-    <meta property="og:url" content="https://shelemjresourcesltd.com" />
+    <meta property="og:url" content="https://justixxprime.github.io/shelemj-website/index.html" />
+    <link rel="canonical" href="https://justixxprime.github.io/shelemj-website/index.html" />
 
+    <!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -287,39 +290,32 @@
         }
       }
     </style>
-    <!-- ============ ORGANIZATION SCHEMA (structured data) ============ -->
+  
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "ShelemJ Resources Ltd",
-  "url": "https://shelemjresourcesltd.com",
-  "logo": "https://shelemjresourcesltd.com/assets/images/shelemj-logo.png",
-  "image": "https://shelemjresourcesltd.com/assets/images/og-image.jpeg",
-  "description": "ShelemJ Resources Ltd exports premium African spices, beverages, grains, oils, and packaged goods to retailers and distributors worldwide.",
+  "alternateName": "ShelemJ",
+  "url": "https://justixxprime.github.io/shelemj-website/",
+  "logo": "https://justixxprime.github.io/shelemj-website/assets/images/shelemj-logo.png",
+  "foundingDate": "2013",
+  "description": "Premium African food export company shipping spices, beverages, grains, oils and packaged goods to retailers worldwide.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "16 Kogberegbe Street, Ejigbo",
     "addressLocality": "Lagos",
     "addressCountry": "NG"
   },
-  "email": "shelemjresourcesltd@gmail.com",
-  "foundingDate": "2013"
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+234-803-318-7724",
+    "contactType": "sales",
+    "email": "shelemjresourcesltd@gmail.com",
+    "areaServed": "Worldwide"
+  }
 }
     </script>
-
-    <!-- ============ GOOGLE ANALYTICS 4 ============ -->
-    <!-- 🔑 SETUP NEEDED: replace G-XXXXXXXXXX (both places below) with your real
-         GA4 Measurement ID from analytics.google.com. Until you do this, these
-         two lines do nothing harmful — they just don't send any data yet. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
-
   </head>
 
   <body
@@ -338,13 +334,14 @@
     >
       <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div class="flex items-center justify-between h-20">
+          <!-- Logo: cropped from the real business card your aunt sent. Swap for a proper vector/high-res file if she can provide one later. -->
           <a href="#main" class="flex items-center gap-3 group">
             <img
               src="assets/images/shelemj-logo.png"
               alt="ShelemJ"
               class="h-11 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
             />
-            <span translate="no" class="font-serif text-xl tracking-wide text-cream"
+            <span class="font-serif text-xl tracking-wide text-cream"
               >Shelem<span class="text-gold">J</span></span
             >
           </a>
@@ -774,26 +771,31 @@
         </button>
       </section>
 
-      <!-- ============ TRUST BADGES (verified, real registration facts) ============ -->
+      <!-- ============ TRUST BADGES ============ -->
       <section class="py-10 sm:py-12 bg-charcoal2/60 border-b border-gold/10">
         <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <p class="reveal text-center text-xs tracking-[0.3em] uppercase text-mutedgold mb-8">Verified & Registered</p>
-          <div class="reveal flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
-            <div class="flex items-center gap-2.5 px-5 py-2.5 border border-gold/25 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2 2 4-4M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" /></svg>
-              <span class="text-sm text-cream/85 whitespace-nowrap">CAC Registered</span>
+          <div
+            class="reveal flex flex-wrap items-center justify-center gap-x-10 gap-y-6"
+          >
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg>
+              <span>NEPC Registered</span>
             </div>
-            <div class="flex items-center gap-2.5 px-5 py-2.5 border border-gold/25 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75l2 2 4-4M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3z" /></svg>
-              <span class="text-sm text-cream/85 whitespace-nowrap">NEPC Registered</span>
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6l7-3Z"/><path stroke-linecap="round" stroke-linejoin="round" d="m9 12 2 2 4-4"/></svg>
+              <span>CAC Registered · RC 7081228</span>
             </div>
-            <div class="flex items-center gap-2.5 px-5 py-2.5 border border-gold/25 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l1.5-4.5h13.5l1.5 4.5m-16.5 0v5.25a.75.75 0 00.75.75h.75a.75.75 0 00.75-.75V15m14.25-1.5v5.25a.75.75 0 01-.75.75h-.75a.75.75 0 01-.75-.75V15M4.5 13.5h15" /></svg>
-              <span class="text-sm text-cream/85 whitespace-nowrap">100% Direct African Sourcing</span>
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c4.5-2 7-5.5 7-10V6l-7-3-7 3v5c0 4.5 2.5 8 7 10Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v5"/></svg>
+              <span>Est. 2013 &middot; Over 10 Years Exporting</span>
             </div>
-            <div class="flex items-center gap-2.5 px-5 py-2.5 border border-gold/25 rounded-full">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6l4 2M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" /></svg>
-              <span class="text-sm text-cream/85 whitespace-nowrap">Est. 2013</span>
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+              <span>100% Direct African Sourcing</span>
+            </div>
+            <div class="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.5 12h19M12 2.5c2.5 2.7 4 6 4 9.5s-1.5 6.8-4 9.5c-2.5-2.7-4-6-4-9.5s1.5-6.8 4-9.5Z"/></svg>
+              <span>Ships Worldwide from Lagos</span>
             </div>
           </div>
         </div>
@@ -1351,13 +1353,14 @@
 
                 <div class="footer-grid grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-x-10">
           <div class="footer-brand">
+            <!-- 🖼️ PLACEHOLDER: same logo replacement note as the nav -->
             <a href="index.html" class="footer-logo group inline-flex items-center gap-3 mb-4">
               <img
                 src="assets/images/shelemj-logo.png"
                 alt="ShelemJ"
                 class="h-10 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
               />
-              <span translate="no" class="font-serif text-lg text-cream"
+              <span class="font-serif text-lg text-cream"
                 >Shelem<span class="text-gold">J</span></span
               >
             </a>
@@ -1452,7 +1455,7 @@
         </div>
 
         <div
-          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/60"
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
         >
           <p>
             &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
@@ -1726,9 +1729,6 @@
           { title: "Certifications & Compliance", url: "certifications.html", desc: "Company registration and export compliance" },
           { title: "Testimonials", url: "testimonials.html", desc: "What retailers and partners say" },
           { title: "Insights & Guides", url: "blog.html", desc: "Guides on sourcing, shipping terms, getting started" },
-          { title: "FOB vs CIF: Choosing the Right Shipping Term", url: "blog/fob-vs-cif-shipping-terms.html", desc: "Understanding shipping terms for import/export" },
-          { title: "From Sample to Standing Order", url: "blog/sample-to-standing-order.html", desc: "A first-time buyer's roadmap" },
-          { title: "Choosing an African Food Export Partner", url: "blog/what-to-look-for-in-an-export-partner.html", desc: "What to look for in an export partner" },
         ];
 
         const inSubfolder = window.location.pathname.includes("/products/");

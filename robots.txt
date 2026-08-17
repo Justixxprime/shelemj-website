@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shelemjresourcesltd.com/sitemap.xml
+Sitemap: https://justixxprime.github.io/shelemj-website/sitemap.xml

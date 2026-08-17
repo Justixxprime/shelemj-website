@@ -17,8 +17,9 @@
     <meta property="og:image" content="../assets/images/og-image.jpeg" />
     <meta
       property="og:url"
-      content="https://shelemjresourcesltd.com/products/spices-seasonings.html"
+      content="https://justixxprime.github.io/shelemj-website/products/dried-seeds-vegetables.html"
     />
+    <link rel="canonical" href="https://justixxprime.github.io/shelemj-website/products/dried-seeds-vegetables.html" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png" />
@@ -381,39 +382,104 @@
         }
       }
     </style>
-    <!-- ============ ORGANIZATION SCHEMA (structured data) ============ -->
+  
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "ShelemJ Resources Ltd",
-  "url": "https://shelemjresourcesltd.com",
-  "logo": "https://shelemjresourcesltd.com/assets/images/shelemj-logo.png",
-  "image": "https://shelemjresourcesltd.com/assets/images/og-image.jpeg",
-  "description": "ShelemJ Resources Ltd exports premium African spices, beverages, grains, oils, and packaged goods to retailers and distributors worldwide.",
+  "alternateName": "ShelemJ",
+  "url": "https://justixxprime.github.io/shelemj-website/",
+  "logo": "https://justixxprime.github.io/shelemj-website/assets/images/shelemj-logo.png",
+  "foundingDate": "2013",
+  "description": "Premium African food export company shipping spices, beverages, grains, oils and packaged goods to retailers worldwide.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "16 Kogberegbe Street, Ejigbo",
     "addressLocality": "Lagos",
     "addressCountry": "NG"
   },
-  "email": "shelemjresourcesltd@gmail.com",
-  "foundingDate": "2013"
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+234-803-318-7724",
+    "contactType": "sales",
+    "email": "shelemjresourcesltd@gmail.com",
+    "areaServed": "Worldwide"
+  }
 }
     </script>
-
-    <!-- ============ GOOGLE ANALYTICS 4 ============ -->
-    <!-- 🔑 SETUP NEEDED: replace G-XXXXXXXXXX (both places below) with your real
-         GA4 Measurement ID from analytics.google.com. Until you do this, these
-         two lines do nothing harmful — they just don't send any data yet. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
+  
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Dried Seeds & Vegetables | ShelemJ",
+  "description": "Sun-dried seeds, nuts, and vegetables including ogbono, egusi, bitter kola, and dried peppers, carefully selected for freshness and flavor.",
+  "url": "https://justixxprime.github.io/shelemj-website/products/dried-seeds-vegetables.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "ShelemJ Resources Ltd",
+    "url": "https://justixxprime.github.io/shelemj-website/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "Product",
+          "name": "Ogbono",
+          "category": "Dried Seeds & Vegetables",
+          "brand": {
+            "@type": "Brand",
+            "name": "ShelemJ"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "Product",
+          "name": "Egusi",
+          "category": "Dried Seeds & Vegetables",
+          "brand": {
+            "@type": "Brand",
+            "name": "ShelemJ"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "Product",
+          "name": "Bitter Kola",
+          "category": "Dried Seeds & Vegetables",
+          "brand": {
+            "@type": "Brand",
+            "name": "ShelemJ"
+          }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "Product",
+          "name": "Dried Peppers",
+          "category": "Dried Seeds & Vegetables",
+          "brand": {
+            "@type": "Brand",
+            "name": "ShelemJ"
+          }
+        }
+      }
+    ]
+  }
+}
     </script>
-
   </head>
 
   <body
@@ -438,7 +504,7 @@
               alt="ShelemJ"
               class="h-11 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
             />
-            <span translate="no" class="font-serif text-xl tracking-wide text-cream"
+            <span class="font-serif text-xl tracking-wide text-cream"
               >Shelem<span class="text-gold">J</span></span
             >
           </a>
@@ -749,10 +815,10 @@
       <!-- ============ GALLERY ============ -->
       <section class="pb-20 sm:pb-24">
         <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-          <div class="gallery-grid" id="galleryGrid">
+          <div class="masonry-grid" id="galleryGrid">
             <a
               href="../assets/images/dried-seeds-vegetables-01.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -767,7 +833,7 @@
             </a>
             <a
               href="../assets/images/dried-seeds-vegetables-02.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -782,7 +848,7 @@
             </a>
             <a
               href="../assets/images/dried-seeds-vegetables-03.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -797,7 +863,7 @@
             </a>
             <a
               href="../assets/images/dried-seeds-vegetables-04.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -812,7 +878,7 @@
             </a>
             <a
               href="../assets/images/dried-seeds-vegetables-05.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -827,7 +893,7 @@
             </a>
             <a
               href="../assets/images/dried-seeds-vegetables-06.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -842,7 +908,7 @@
             </a>
             <a
               href="../assets/images/dried-seeds-vegetables-07.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -857,7 +923,7 @@
             </a>
             <a
               href="../assets/images/dried-seeds-vegetables-08.jpg"
-              class="glightbox reveal gallery-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra"
               data-gallery="dried-seeds-vegetables"
             >
               <img
@@ -1051,13 +1117,14 @@
 
                 <div class="footer-grid grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-x-10">
           <div class="footer-brand">
+            <!-- 🖼️ PLACEHOLDER: same logo replacement note as the nav -->
             <a href="../index.html" class="footer-logo group inline-flex items-center gap-3 mb-4">
               <img
                 src="../assets/images/shelemj-logo.png"
                 alt="ShelemJ"
                 class="h-10 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
               />
-              <span translate="no" class="font-serif text-lg text-cream"
+              <span class="font-serif text-lg text-cream"
                 >Shelem<span class="text-gold">J</span></span
               >
             </a>
@@ -1152,7 +1219,7 @@
         </div>
 
         <div
-          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/60"
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
         >
           <p>
             &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
@@ -1370,9 +1437,6 @@
           { title: "Certifications & Compliance", url: "certifications.html", desc: "Company registration and export compliance" },
           { title: "Testimonials", url: "testimonials.html", desc: "What retailers and partners say" },
           { title: "Insights & Guides", url: "blog.html", desc: "Guides on sourcing, shipping terms, getting started" },
-          { title: "FOB vs CIF: Choosing the Right Shipping Term", url: "blog/fob-vs-cif-shipping-terms.html", desc: "Understanding shipping terms for import/export" },
-          { title: "From Sample to Standing Order", url: "blog/sample-to-standing-order.html", desc: "A first-time buyer's roadmap" },
-          { title: "Choosing an African Food Export Partner", url: "blog/what-to-look-for-in-an-export-partner.html", desc: "What to look for in an export partner" },
         ];
 
         const inSubfolder = window.location.pathname.includes("/products/");

@@ -9,14 +9,17 @@
       content="Founded in 2013, ShelemJ has over a decade of expertise exporting premium African food to retailers worldwide. Rooted in Africa. Trusted by retailers worldwide."
     />
 
+    <!-- 🖼️ PLACEHOLDER: Open Graph share image, same as homepage, or a variant with the founder photo -->
     <meta property="og:title" content="About ShelemJ" />
     <meta
       property="og:description"
       content="Rooted in Africa. Trusted by retailers worldwide."
     />
     <meta property="og:image" content="assets/images/og-image.jpeg" />
-    <meta property="og:url" content="https://shelemjresourcesltd.com" />
+    <meta property="og:url" content="https://justixxprime.github.io/shelemj-website/about.html" />
+    <link rel="canonical" href="https://justixxprime.github.io/shelemj-website/about.html" />
 
+    <!-- 🖼️ PLACEHOLDER: Favicon + Apple touch icon, cropped from the logo mark -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png" />
     <link rel="shortcut icon" href="favicon.ico" />
@@ -270,39 +273,32 @@
         }
       }
     </style>
-    <!-- ============ ORGANIZATION SCHEMA (structured data) ============ -->
+  
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "ShelemJ Resources Ltd",
-  "url": "https://shelemjresourcesltd.com",
-  "logo": "https://shelemjresourcesltd.com/assets/images/shelemj-logo.png",
-  "image": "https://shelemjresourcesltd.com/assets/images/og-image.jpeg",
-  "description": "ShelemJ Resources Ltd exports premium African spices, beverages, grains, oils, and packaged goods to retailers and distributors worldwide.",
+  "alternateName": "ShelemJ",
+  "url": "https://justixxprime.github.io/shelemj-website/",
+  "logo": "https://justixxprime.github.io/shelemj-website/assets/images/shelemj-logo.png",
+  "foundingDate": "2013",
+  "description": "Premium African food export company shipping spices, beverages, grains, oils and packaged goods to retailers worldwide.",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "16 Kogberegbe Street, Ejigbo",
     "addressLocality": "Lagos",
     "addressCountry": "NG"
   },
-  "email": "shelemjresourcesltd@gmail.com",
-  "foundingDate": "2013"
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+234-803-318-7724",
+    "contactType": "sales",
+    "email": "shelemjresourcesltd@gmail.com",
+    "areaServed": "Worldwide"
+  }
 }
     </script>
-
-    <!-- ============ GOOGLE ANALYTICS 4 ============ -->
-    <!-- 🔑 SETUP NEEDED: replace G-XXXXXXXXXX (both places below) with your real
-         GA4 Measurement ID from analytics.google.com. Until you do this, these
-         two lines do nothing harmful — they just don't send any data yet. -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXXXXX");
-    </script>
-
   </head>
 
   <body
@@ -327,7 +323,7 @@
               alt="ShelemJ"
               class="h-11 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
             />
-            <span translate="no" class="font-serif text-xl tracking-wide text-cream"
+            <span class="font-serif text-xl tracking-wide text-cream"
               >Shelem<span class="text-gold">J</span></span
             >
           </a>
@@ -900,13 +896,14 @@
 
                 <div class="footer-grid grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-x-10">
           <div class="footer-brand">
+            <!-- 🖼️ PLACEHOLDER: same logo replacement note as the nav -->
             <a href="index.html" class="footer-logo group inline-flex items-center gap-3 mb-4">
               <img
                 src="assets/images/shelemj-logo.png"
                 alt="ShelemJ"
                 class="h-10 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
               />
-              <span translate="no" class="font-serif text-lg text-cream"
+              <span class="font-serif text-lg text-cream"
                 >Shelem<span class="text-gold">J</span></span
               >
             </a>
@@ -1001,7 +998,7 @@
         </div>
 
         <div
-          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/60"
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
         >
           <p>
             &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
@@ -1224,9 +1221,6 @@
           { title: "Certifications & Compliance", url: "certifications.html", desc: "Company registration and export compliance" },
           { title: "Testimonials", url: "testimonials.html", desc: "What retailers and partners say" },
           { title: "Insights & Guides", url: "blog.html", desc: "Guides on sourcing, shipping terms, getting started" },
-          { title: "FOB vs CIF: Choosing the Right Shipping Term", url: "blog/fob-vs-cif-shipping-terms.html", desc: "Understanding shipping terms for import/export" },
-          { title: "From Sample to Standing Order", url: "blog/sample-to-standing-order.html", desc: "A first-time buyer's roadmap" },
-          { title: "Choosing an African Food Export Partner", url: "blog/what-to-look-for-in-an-export-partner.html", desc: "What to look for in an export partner" },
         ];
 
         const inSubfolder = window.location.pathname.includes("/products/");
