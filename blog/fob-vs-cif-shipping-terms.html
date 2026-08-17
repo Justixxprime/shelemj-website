@@ -1,0 +1,1324 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOB vs CIF: Choosing the Right Shipping Term | ShelemJ</title>
+    <meta
+      name="description"
+      content="A plain-language breakdown of FOB and CIF shipping terms to help you choose the right one for your first African food import order."
+    />
+
+    <meta property="og:title" content="FOB vs CIF: Choosing the Right Shipping Term | ShelemJ" />
+    <meta
+      property="og:description"
+      content="A plain-language breakdown of FOB and CIF shipping terms to help you choose the right one for your first African food import order."
+    />
+    <meta property="og:image" content="../assets/images/og-image.jpeg" />
+    <meta
+      property="og:url"
+      content="https://shelemjresourcesltd.com/blog/fob-vs-cif-shipping-terms.html"
+    />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16x16.png" />
+    <link rel="shortcut icon" href="../favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/android-chrome-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="../assets/icons/android-chrome-512x512.png" />
+    <link rel="manifest" href="../site.webmanifest" />
+    <meta name="theme-color" content="#0D0D0D" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ⚙️ Same CDN integration note as the other pages, swap for /dist/output.css in your real project.
+     Note this file lives in /products/, so that link would be href="../dist/output.css" from here. -->
+    <link rel="stylesheet" href="../dist/output.css" />
+    <!-- GLightbox, for the product gallery. Free CDN library, no build step needed.
+     Currently has nothing to open since the gallery below uses placeholders, see the comment
+     above the gallery for the exact markup to switch to once real photos are added. -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(28px);
+        transition:
+          opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+          transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: none;
+      }
+      /* ===== Modern polish additions ===== */
+      /* Subtle film-grain texture over dark sections for depth */
+      .grain::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      }
+      /* Soft radial gold glow for hero-type sections */
+      .gold-glow::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        background: radial-gradient(
+          ellipse 60% 50% at 50% 0%,
+          rgba(201, 164, 76, 0.1),
+          transparent 70%
+        );
+      }
+      /* Image zoom-on-hover wrapper */
+      .img-zoom {
+        overflow: hidden;
+      }
+      .img-zoom img {
+        transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+      }
+      .img-zoom:hover img {
+        transform: scale(1.1);
+        filter: saturate(1.08) brightness(1.03);
+      }
+      /* Elevated hover shadow for cards */
+      .card-lift {
+        position: relative;
+        transition:
+          transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.4s ease;
+      }
+      .card-lift:hover {
+        transform: translateY(-6px);
+        border-color: rgba(201, 164, 76, 0.55) !important;
+        box-shadow: 0 28px 55px -20px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(201, 164, 76, 0.15);
+      }
+      /* Sticky sample bar slide-down */
+      #sampleBar {
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      #sampleBar.visible {
+        transform: translateY(0);
+      }
+      /* FAQ accordion */
+      .faq-item[open] summary .faq-icon {
+        transform: rotate(45deg);
+      }
+      .faq-icon {
+        transition: transform 0.3s ease;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      .hidden-extra {
+        display: none;
+      }
+      /* Cinematic bottom-fade + corner "view" cue on every gallery tile */
+      .gallery-tile::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(13, 13, 13, 0) 55%, rgba(13, 13, 13, 0.78) 100%);
+        opacity: 0.55;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+      }
+      .card-lift:hover .gallery-tile::after {
+        opacity: 0.35;
+      }
+      .gallery-tile .gallery-view-cue {
+        position: absolute;
+        right: 0.65rem;
+        bottom: 0.65rem;
+        z-index: 2;
+        width: 2.1rem;
+        height: 2.1rem;
+        border-radius: 999px;
+        background: rgba(13, 13, 13, 0.55);
+        border: 1px solid rgba(201, 164, 76, 0.55);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transform: translateY(6px) scale(0.9);
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+        backdrop-filter: blur(3px);
+      }
+      .card-lift:hover .gallery-view-cue {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        background: rgba(201, 164, 76, 0.9);
+      }
+      .gallery-view-cue svg {
+        width: 0.95rem;
+        height: 0.95rem;
+        color: #f3ede3;
+        transition: color 0.3s ease;
+      }
+      .card-lift:hover .gallery-view-cue svg {
+        color: #0d0d0d;
+      }
+      /* Gallery grid, hand-written CSS so it never depends on a rebuilt Tailwind file */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.1rem;
+      }
+      @media (min-width: 640px) {
+        .gallery-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1.35rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        .gallery-grid.gallery-grid--4col {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .gallery-grid {
+          gap: 1.5rem;
+        }
+      }
+      .gallery-tile {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        display: block;
+      }
+      .gallery-tile img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      /* Video tile play button — gentle pulse + confident pop on hover */
+      .gallery-tile .bg-gold\/90 {
+        transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.35s ease, box-shadow 0.45s ease;
+        animation: playPulse 2.8s ease-in-out infinite;
+      }
+      .card-lift:hover .bg-gold\/90 {
+        transform: scale(1.14);
+        background-color: #e3c572;
+        box-shadow: 0 0 0 10px rgba(201, 164, 76, 0.12);
+      }
+      @keyframes playPulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(201, 164, 76, 0.25); }
+        50% { box-shadow: 0 0 0 10px rgba(201, 164, 76, 0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-tile .bg-gold\/90 { animation: none; }
+      }
+
+      .img-slot {
+        background-image: repeating-linear-gradient(
+          135deg,
+          rgba(201, 164, 76, 0.06) 0px,
+          rgba(201, 164, 76, 0.06) 2px,
+          transparent 2px,
+          transparent 10px
+        );
+      }
+
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible {
+        outline: 2px solid #c9a44c;
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+
+      @media (min-width: 768px) {
+        ::-webkit-scrollbar {
+          width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+          background: #0d0d0d;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: #6b5b32;
+          border-radius: 8px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background: #c9a44c;
+        }
+      }
+
+      #mobileMenu {
+        transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
+    
+      /* ===== Ultra pass: cinematic + vibrant upgrade ===== */
+      /* ===== Form input contrast fix =====
+         Tailwind's base reset sets `color: inherit` on inputs, so any
+         input sitting inside dark-themed (text-cream) markup silently
+         inherits light text on its own white background, making typed
+         text nearly invisible. This is a permanent floor so it can never
+         regress, even if a new form gets added without explicit color
+         classes later. */
+      input,
+      select,
+      textarea {
+        color: #0d0d0d !important;
+        background-color: #ffffff !important;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: #8a8a8a !important;
+        opacity: 1;
+      }
+
+      /* ===== iOS Safari zoom-on-focus prevention =====
+         iOS auto-zooms the page when a tapped input's font-size is under
+         16px. This is a permanent floor so it can never regress, even if
+         a Tailwind text-sm class gets used on a form control later. */
+      @media (max-width: 640px) {
+        input,
+        select,
+        textarea {
+          font-size: 16px !important;
+        }
+      }
+
+      @keyframes kenburns {
+        0% {
+          transform: scale(1) translate3d(0, 0, 0);
+        }
+        100% {
+          transform: scale(1.12) translate3d(-1.2%, -1%, 0);
+        }
+      }
+      .kenburns {
+        animation: kenburns 22s ease-in-out infinite alternate;
+        will-change: transform;
+      }
+      .cinematic-grade {
+        filter: saturate(1.18) contrast(1.07) brightness(0.97);
+      }
+      @keyframes shimmerSweep {
+        0% {
+          background-position: -150% 0;
+        }
+        100% {
+          background-position: 250% 0;
+        }
+      }
+      .shimmer-text {
+        background-image: linear-gradient(
+          100deg,
+          #e3c572 0%,
+          #e3c572 35%,
+          #fff6dc 50%,
+          #e3c572 65%,
+          #e3c572 100%
+        );
+        background-size: 250% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmerSweep 3.2s ease-in-out 0.5s 1;
+      }
+      .glow-pulse {
+        transition:
+          box-shadow 0.4s ease,
+          transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .glow-pulse:hover {
+        box-shadow:
+          0 0 0 1px rgba(201, 164, 76, 0.5),
+          0 10px 34px -8px rgba(201, 164, 76, 0.5);
+        transform: translateY(-2px);
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .kenburns {
+          animation: none;
+        }
+        .shimmer-text {
+          animation: none;
+          background: none;
+          -webkit-text-fill-color: currentColor;
+        }
+        .glow-pulse:hover {
+          transform: none;
+        }
+      }
+    </style>
+    <!-- ============ ORGANIZATION SCHEMA (structured data) ============ -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ShelemJ Resources Ltd",
+  "url": "https://shelemjresourcesltd.com",
+  "logo": "https://shelemjresourcesltd.com/assets/images/shelemj-logo.png",
+  "image": "https://shelemjresourcesltd.com/assets/images/og-image.jpeg",
+  "description": "ShelemJ Resources Ltd exports premium African spices, beverages, grains, oils, and packaged goods to retailers and distributors worldwide.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "16 Kogberegbe Street, Ejigbo",
+    "addressLocality": "Lagos",
+    "addressCountry": "NG"
+  },
+  "email": "shelemjresourcesltd@gmail.com",
+  "foundingDate": "2013"
+}
+    </script>
+
+    <!-- ============ GOOGLE ANALYTICS 4 ============ -->
+    <!-- 🔑 SETUP NEEDED: replace G-XXXXXXXXXX (both places below) with your real
+         GA4 Measurement ID from analytics.google.com. Until you do this, these
+         two lines do nothing harmful — they just don't send any data yet. -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXXXXX");
+    </script>
+
+  </head>
+
+  <body
+    class="bg-charcoal text-cream font-sans antialiased selection:bg-gold selection:text-charcoal"
+  >
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-gold focus:text-charcoal focus:px-4 focus:py-2 focus:rounded"
+      >Skip to content</a
+    >
+
+    <!-- ============ NAV (Products active) ============ -->
+    <header
+      id="siteNav"
+      class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10"
+    >
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div class="flex items-center justify-between h-20">
+          <a href="../index.html" class="flex items-center gap-3 group">
+            <img
+              src="../assets/images/shelemj-logo.png"
+              alt="ShelemJ"
+              class="h-11 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
+            />
+            <span translate="no" class="font-serif text-xl tracking-wide text-cream"
+              >Shelem<span class="text-gold">J</span></span
+            >
+          </a>
+
+          <nav
+            aria-label="Primary"
+            class="hidden xl:flex items-center gap-10 font-sans text-sm tracking-wide"
+          >
+            <a data-navlink="index.html"
+              href="../index.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Home</a
+            >
+            <a data-navlink="about.html"
+              href="../about.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >About</a
+            >
+            <a data-navlink="products.html"
+              href="../products.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Products</a
+            >
+            <a data-navlink="gallery.html"
+              href="../gallery.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Gallery</a
+            >
+            <a data-navlink="supply-chain.html"
+              href="../supply-chain.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Supply Chain</a
+            >
+            <a data-navlink="partnership.html"
+              href="../partnership.html"
+              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >Partnership</a
+            >
+
+            <!-- ============ RESOURCES DROPDOWN ============ -->
+            <div class="relative" id="resourcesDropdown">
+              <button
+                id="resourcesTrigger"
+                aria-expanded="false"
+                aria-haspopup="true"
+                class="flex items-center gap-1.5 text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+              >
+                Resources
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-3.5 h-3.5 transition-transform duration-200"
+                  id="resourcesChevron"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </button>
+              <div
+                id="resourcesPanel"
+                class="invisible opacity-0 scale-95 -translate-y-2 pointer-events-none absolute top-full right-0 pt-4 w-72 transition-all duration-300 ease-out"
+              >
+                <div
+                  class="bg-charcoal2 border border-gold/25 rounded-lg shadow-2xl overflow-hidden"
+                >
+                  <a data-navlink="faq.html"
+                    href="../faq.html"
+                    class="flex items-start gap-3 px-5 py-3.5 hover:bg-gold/10 transition-colors border-b border-gold/10"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z" /></svg>
+                    <span>
+                      <span class="block text-sm text-cream font-medium">FAQ</span>
+                      <span class="block text-xs text-cream/50 mt-0.5">Orders, shipping, payment</span>
+                    </span>
+                  </a>
+                  <a data-navlink="certifications.html"
+                    href="../certifications.html"
+                    class="flex items-start gap-3 px-5 py-3.5 hover:bg-gold/10 transition-colors border-b border-gold/10"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                    <span>
+                      <span class="block text-sm text-cream font-medium">Certifications</span>
+                      <span class="block text-xs text-cream/50 mt-0.5">Registration & compliance</span>
+                    </span>
+                  </a>
+                  <a data-navlink="testimonials.html"
+                    href="../testimonials.html"
+                    class="flex items-start gap-3 px-5 py-3.5 hover:bg-gold/10 transition-colors border-b border-gold/10"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M7.17 6A5.17 5.17 0 0 0 2 11.17v6.66A1.17 1.17 0 0 0 3.17 19h5.66A1.17 1.17 0 0 0 10 17.83v-5.66A1.17 1.17 0 0 0 8.83 11H4.5a2.67 2.67 0 0 1 2.67-2.67h.5A.83.83 0 0 0 8.5 7.5V6.83A.83.83 0 0 0 7.67 6zm10 0A5.17 5.17 0 0 0 12 11.17v6.66A1.17 1.17 0 0 0 13.17 19h5.66A1.17 1.17 0 0 0 20 17.83v-5.66A1.17 1.17 0 0 0 18.83 11H14.5a2.67 2.67 0 0 1 2.67-2.67h.5a.83.83 0 0 0 .83-.83V6.83a.83.83 0 0 0-.83-.83z"/></svg>
+                    <span>
+                      <span class="block text-sm text-cream font-medium">Testimonials</span>
+                      <span class="block text-xs text-cream/50 mt-0.5">What partners say</span>
+                    </span>
+                  </a>
+                  <a data-navlink="blog.html"
+                    href="../blog.html"
+                    class="flex items-start gap-3 px-5 py-3.5 hover:bg-gold/10 transition-colors"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gold shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>
+                    <span>
+                      <span class="block text-sm text-cream font-medium">Insights & Guides</span>
+                      <span class="block text-xs text-cream/50 mt-0.5">Sourcing & shipping tips</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <button
+              id="searchBtn"
+              aria-label="Search the site"
+              class="text-cream/85 hover:text-gold transition-colors p-1"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
+            </button>
+            <a data-navlink="contact.html"
+              href="../contact.html"
+              class="inline-flex items-center px-5 py-2.5 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors"
+              >Contact</a
+            >
+          </nav>
+
+          <button
+            id="searchBtnMobile"
+            aria-label="Search the site"
+            class="xl:hidden text-gold p-2"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
+          </button>
+
+          <button
+            id="menuBtn"
+            aria-expanded="false"
+            aria-controls="mobileMenu"
+            aria-label="Open menu"
+            class="xl:hidden text-gold p-2 -mr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div
+        id="mobileMenu"
+        class="xl:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10"
+      >
+        <div class="flex justify-end">
+          <button
+            id="menuCloseBtn"
+            aria-label="Close menu"
+            class="text-gold p-2 -mr-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-7 h-7"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <nav
+          aria-label="Mobile"
+          class="mt-10 flex flex-col gap-7 font-serif text-2xl"
+        >
+          <a data-navlink="index.html"
+            href="../index.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Home</a
+          >
+          <a data-navlink="about.html"
+            href="../about.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >About</a
+          >
+          <a data-navlink="products.html"
+            href="../products.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Products</a
+          >
+          <a data-navlink="gallery.html"
+            href="../gallery.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Gallery</a
+          >
+          <a data-navlink="supply-chain.html"
+            href="../supply-chain.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Supply Chain</a
+          >
+          <a data-navlink="partnership.html"
+            href="../partnership.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Partnership</a
+          >
+          <a data-navlink="contact.html"
+            href="../contact.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Contact</a
+          >
+          <a data-navlink="faq.html"
+            href="../faq.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >FAQ</a
+          >
+          <a data-navlink="certifications.html"
+            href="../certifications.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Certifications</a
+          >
+          <a data-navlink="testimonials.html"
+            href="../testimonials.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Testimonials</a
+          >
+          <a data-navlink="blog.html"
+            href="../blog.html"
+            class="text-cream/90 hover:text-gold transition-colors"
+            >Insights</a
+          >
+        </nav>
+        <div
+          class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase"
+        >
+          <span>Est. 2013</span>
+        </div>
+      </div>
+      <div
+        id="menuOverlay"
+        class="hidden fixed inset-0 bg-black/60 z-40 xl:hidden"
+      ></div>
+    </header>
+
+    <main id="main">
+      <!-- ============ ARTICLE HERO ============ -->
+      <section class="relative pt-36 pb-12 sm:pt-44 sm:pb-16 overflow-hidden grain gold-glow">
+        <div
+          class="pointer-events-none absolute -right-40 -top-24 w-[520px] h-[520px] opacity-25"
+          aria-hidden="true"
+        >
+          <div class="absolute inset-0 rounded-full border border-gold/40"></div>
+          <div class="absolute inset-10 rounded-full border border-gold/30"></div>
+          <div class="absolute inset-20 rounded-full border border-gold/20"></div>
+        </div>
+        <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12 relative">
+          <a
+            href="../blog.html"
+            class="reveal inline-flex items-center gap-2 text-gold text-sm hover:text-goldlight transition-colors mb-6"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" /></svg>
+            Back to Insights & Guides
+          </a>
+          <p class="reveal text-[11px] tracking-wider uppercase text-gold mb-3">Logistics</p>
+          <h1 class="reveal font-serif text-3xl sm:text-4xl md:text-5xl text-cream leading-tight">
+            FOB vs CIF: Choosing the Right Shipping Term for Your First Order
+          </h1>
+        </div>
+      </section>
+
+      <!-- ============ ARTICLE BODY ============ -->
+      <section class="pb-20">
+        <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div class="reveal text-cream/70 leading-relaxed space-y-4 text-[15px]">
+            <p>If you're new to importing, "FOB" and "CIF" can look like alphabet soup. They're actually just answers to one simple question: at what point does responsibility for the shipment pass from seller to buyer?</p>
+            <p>Under <span class="text-gold font-medium">FOB (Free on Board)</span>, the seller's job ends once goods are loaded onto the ship at the port of origin. From there, you (or your freight forwarder) arrange and pay for ocean freight, insurance, and everything on the receiving end. This gives you more control, and more responsibility.</p>
+            <p>Under <span class="text-gold font-medium">CIF (Cost, Insurance & Freight)</span>, the seller arranges and pays for freight and insurance all the way to your destination port. This is usually the simpler option for a first-time buyer who doesn't yet have an established freight forwarder relationship.</p>
+            <p>A practical rule of thumb: if you already import regularly and have a freight forwarder you trust, FOB often works out cheaper. If this is your first import or you don't have logistics relationships in place yet, CIF removes a lot of the coordination burden, at a slightly higher price.</p>
+            <p>Either way, ask your supplier to walk you through the total landed cost under both terms before you decide, a five-minute conversation can save a lot of confusion later.</p>
+          </div>
+
+          <div class="reveal border-t border-gold/10 mt-14 pt-10 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <p class="text-cream/60 text-sm text-center sm:text-left">
+              Have questions about shipping terms for your order?
+            </p>
+            <a
+              href="../faq.html"
+              class="glow-pulse inline-flex items-center justify-center px-6 py-3 bg-gold text-charcoal text-sm font-medium tracking-wide rounded-sm hover:bg-goldlight transition-colors whitespace-nowrap"
+            >
+              Read Our Shipping FAQ
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MORE ARTICLES ============ -->
+      <section class="pb-20 border-t border-gold/10 pt-16">
+        <div class="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
+          <p class="reveal text-xs tracking-[0.25em] uppercase text-gold mb-6">
+            More Insights
+          </p>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <a
+              href="what-to-look-for-in-an-export-partner.html"
+              class="reveal card-lift border border-gold/20 rounded-lg p-6 block"
+            >
+              <p class="text-[11px] tracking-wider uppercase text-gold mb-2">Sourcing</p>
+              <h3 class="font-serif text-base text-cream leading-snug">
+                What to Look For in an Export Partner
+              </h3>
+            </a>
+            <a
+              href="sample-to-standing-order.html"
+              class="reveal card-lift border border-gold/20 rounded-lg p-6 block"
+            >
+              <p class="text-[11px] tracking-wider uppercase text-gold mb-2">Getting Started</p>
+              <h3 class="font-serif text-base text-cream leading-snug">
+                From Sample to Standing Order: A Roadmap
+              </h3>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-charcoal2 border-t border-gold/15 pt-16 pb-8">
+      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <!-- ============ NEWSLETTER SIGNUP ============ -->
+        <div
+          class="reveal flex flex-col sm:flex-row items-center justify-between gap-6 pb-12 mb-12 border-b border-gold/15"
+        >
+          <div class="text-center sm:text-left">
+            <p class="font-serif text-lg text-cream">Stay in the loop</p>
+            <p class="text-cream/60 text-sm mt-1">
+              Occasional updates on new products and seasonal availability, no spam.
+            </p>
+          </div>
+          <div class="w-full sm:w-auto">
+            <form class="newsletter-form flex flex-col sm:flex-row gap-3 w-full" data-form>
+              <input
+                type="hidden"
+                name="access_key"
+                value="0082d43e-b512-413b-9ef5-9ed1dd271a6e"
+              />
+              <input
+                type="hidden"
+                name="subject"
+                value="New newsletter signup, ShelemJ website"
+              />
+              <input
+                type="checkbox"
+                name="botcheck"
+                class="hidden"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+              />
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="you@company.com"
+                class="flex-1 min-w-0 w-full sm:w-64 rounded-sm px-4 py-3 text-base sm:text-sm"
+              />
+              <button
+                type="submit"
+                class="glow-pulse shrink-0 w-full sm:w-auto px-5 py-3 bg-gold text-charcoal text-sm font-medium rounded-sm hover:bg-goldlight transition-colors"
+              >
+                Subscribe
+              </button>
+            </form>
+            <p
+              class="newsletter-status text-xs mt-2 text-center sm:text-right"
+              aria-live="polite"
+            ></p>
+          </div>
+        </div>
+
+                <div class="footer-grid grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 sm:gap-x-10">
+          <div class="footer-brand">
+            <a href="../index.html" class="footer-logo group inline-flex items-center gap-3 mb-4">
+              <img
+                src="../assets/images/shelemj-logo.png"
+                alt="ShelemJ"
+                class="h-10 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
+              />
+              <span translate="no" class="font-serif text-lg text-cream"
+                >Shelem<span class="text-gold">J</span></span
+              >
+            </a>
+            <p class="text-cream/60 text-sm leading-relaxed max-w-xs">
+              Rooted in Africa. Trusted by retailers worldwide.
+            </p>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Company
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>
+                <a data-navlink="about.html" href="../about.html" class="hover:text-gold transition-colors"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a data-navlink="products.html"
+                  href="../products.html"
+                  class="hover:text-gold transition-colors"
+                  >Products</a
+                >
+              </li>
+              <li>
+                <a data-navlink="gallery.html" href="../gallery.html" class="hover:text-gold transition-colors"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a data-navlink="supply-chain.html"
+                  href="../supply-chain.html"
+                  class="hover:text-gold transition-colors"
+                  >Supply Chain</a
+                >
+              </li>
+              <li>
+                <a data-navlink="partnership.html"
+                  href="../partnership.html"
+                  class="hover:text-gold transition-colors"
+                  >Partnership</a
+                >
+              </li>
+              <li>
+                <a data-navlink="contact.html" href="../contact.html" class="hover:text-gold transition-colors"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Resources
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>
+                <a data-navlink="faq.html" href="../faq.html" class="hover:text-gold transition-colors"
+                  >FAQ</a
+                >
+              </li>
+              <li>
+                <a data-navlink="certifications.html" href="../certifications.html" class="hover:text-gold transition-colors"
+                  >Certifications</a
+                >
+              </li>
+              <li>
+                <a data-navlink="testimonials.html" href="../testimonials.html" class="hover:text-gold transition-colors"
+                  >Testimonials</a
+                >
+              </li>
+              <li>
+                <a data-navlink="blog.html" href="../blog.html" class="hover:text-gold transition-colors"
+                  >Insights</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
+              Contact
+            </p>
+            <ul class="space-y-2.5 text-sm text-cream/70">
+              <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
+              <li>+234 803 318 7724</li>
+              <li>+234 812 763 2037</li>
+              <li>shelemjresourcesltd@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <div
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/60"
+        >
+          <p>
+            &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
+            All rights reserved.
+          </p>
+          <p>Est. 2013, as Jueco Foods</p>
+        </div>
+        <div class="mt-3 text-center text-[11px] text-mutedgold/40">
+          <p>
+            Website by
+            <a
+              href="https://wa.me/2349133058119"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-gold transition-colors"
+              >Justice</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      const prefersReduced = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+
+      const nav = document.getElementById("siteNav");
+      const onScroll = () => {
+        if (window.scrollY > 40) {
+          nav.classList.add("shadow-lg");
+        } else {
+          nav.classList.remove("shadow-lg");
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+
+      const menuBtn = document.getElementById("menuBtn");
+      const menuCloseBtn = document.getElementById("menuCloseBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const menuOverlay = document.getElementById("menuOverlay");
+
+      function openMenu() {
+        mobileMenu.classList.remove("translate-x-full");
+        menuOverlay.classList.remove("hidden");
+        menuBtn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+      function closeMenu() {
+        mobileMenu.classList.add("translate-x-full");
+        menuOverlay.classList.add("hidden");
+        menuBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      }
+      menuBtn.addEventListener("click", openMenu);
+      menuCloseBtn.addEventListener("click", closeMenu);
+      menuOverlay.addEventListener("click", closeMenu);
+      mobileMenu
+        .querySelectorAll("a")
+        .forEach((a) => a.addEventListener("click", closeMenu));
+
+      const revealEls = document.querySelectorAll(".reveal");
+      if (!prefersReduced && "IntersectionObserver" in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry, i) => {
+              if (entry.isIntersecting) {
+                setTimeout(
+                  () => entry.target.classList.add("reveal-visible"),
+                  (i % 6) * 60,
+                );
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 },
+        );
+        revealEls.forEach((el) => io.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("reveal-visible"));
+      }
+
+      // GLightbox, ready and waiting, currently has no .glightbox elements to bind to (see gallery comment above)
+      if (typeof GLightbox !== "undefined") {
+        GLightbox({ selector: ".glightbox" });
+      }
+
+      // Gallery "Show More" toggle
+      const galleryShowMore = document.getElementById("galleryShowMore");
+      if (galleryShowMore) {
+        galleryShowMore.addEventListener("click", () => {
+          document
+            .querySelectorAll("#galleryGrid .hidden-extra")
+            .forEach((el) => {
+              el.classList.remove("hidden-extra");
+              el.classList.add("reveal-visible");
+            });
+          galleryShowMore.style.display = "none";
+        });
+      }
+    </script>
+  
+    <!-- ============ FLOATING WHATSAPP ============ -->
+    <a
+      href="https://wa.me/2348033187724"
+      target="_blank"
+      rel="noopener"
+      aria-label="Chat on WhatsApp"
+      class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-gold text-charcoal flex items-center justify-center shadow-lg hover:bg-goldlight transition-colors animate-[pulse_3s_ease-in-out_infinite] glow-pulse"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-7 h-7"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.13c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.14.11-1.84-.12-.42-.13-.97-.31-1.66-.62-2.93-1.26-4.84-4.2-4.99-4.4-.15-.19-1.2-1.6-1.2-3.05 0-1.45.76-2.16 1.03-2.46.27-.3.59-.37.79-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.24.6.83 2.05.9 2.2.07.15.12.33.02.53-.1.2-.15.32-.3.49-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.3.75 1.24 1.62 2 1.11.99 2.05 1.3 2.35 1.45.3.15.47.13.65-.08.18-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.72.81 2.02.96.3.15.5.22.57.34.07.13.07.75-.17 1.43z"
+        />
+      </svg>
+    </a>
+      <script>
+      // Newsletter signup, Web3Forms
+      (function () {
+        const form = document.querySelector(".newsletter-form");
+        if (!form) return;
+        const statusEl = document.querySelector(".newsletter-status");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const data = new FormData(form);
+          statusEl.textContent = "Sending...";
+          statusEl.className = "newsletter-status text-xs mt-2 text-center sm:text-right text-mutedgold";
+          fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: data,
+          })
+            .then((res) => res.json())
+            .then((json) => {
+              if (json.success) {
+                statusEl.textContent = "Thanks for subscribing!";
+                statusEl.className = "newsletter-status text-xs mt-2 text-center sm:text-right text-gold";
+                form.reset();
+              } else {
+                throw new Error(json.message || "Failed");
+              }
+            })
+            .catch(() => {
+              statusEl.textContent = "Something went wrong. Please try again.";
+              statusEl.className = "newsletter-status text-xs mt-2 text-center sm:text-right text-wine";
+            });
+        });
+      })();
+    </script>
+      <!-- ============ SEARCH MODAL ============ -->
+    <div
+      id="searchModal"
+      class="fixed inset-0 z-[100] hidden items-start justify-center pt-24 sm:pt-32 px-5"
+    >
+      <div
+        id="searchOverlay"
+        class="absolute inset-0 bg-charcoal/90 backdrop-blur-sm"
+      ></div>
+      <div
+        class="relative w-full max-w-xl bg-charcoal2 border border-gold/25 rounded-lg shadow-2xl overflow-hidden"
+      >
+        <div class="flex items-center gap-3 px-5 py-4 border-b border-gold/15">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-gold shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Search products, pages..."
+            class="flex-1 bg-transparent outline-none text-cream text-base sm:text-sm placeholder:text-cream/40"
+          />
+          <button
+            id="searchClose"
+            aria-label="Close search"
+            class="text-cream/50 hover:text-gold transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+        <div id="searchResults" class="max-h-96 overflow-y-auto py-2"></div>
+        <p
+          id="searchEmpty"
+          class="hidden px-5 py-8 text-center text-sm text-cream/50"
+        >
+          No results. Try a different word.
+        </p>
+      </div>
+    </div>
+    <script>
+      // ---- Site search ----
+      (function () {
+        const SEARCH_INDEX = [
+          { title: "Home", url: "index.html", desc: "ShelemJ, Premium African food export" },
+          { title: "About Us", url: "about.html", desc: "Our story, founded 2013 as Jueco Foods" },
+          { title: "Product Portfolio", url: "products.html", desc: "All product categories overview" },
+          { title: "Spices & Seasonings", url: "products/spices-seasonings.html", desc: "African spices and seasonings for export" },
+          { title: "African Made Beverages", url: "products/african-made-beverages.html", desc: "Beverages sourced and exported from Africa" },
+          { title: "Grains & Raw Materials", url: "products/grains-raw-materials.html", desc: "Raw grains and staple materials" },
+          { title: "Premium Oils", url: "products/premium-oils.html", desc: "Premium African oils for export" },
+          { title: "Dried Seeds & Vegetables", url: "products/dried-seeds-vegetables.html", desc: "Dried seeds and vegetable products" },
+          { title: "Packaged Goods", url: "products/packaged-goods.html", desc: "Packaged African food products" },
+          { title: "Gallery", url: "gallery.html", desc: "Photos and videos from our operations" },
+          { title: "Supply Chain", url: "supply-chain.html", desc: "How a shipment moves from sourcing to your door" },
+          { title: "Partnership", url: "partnership.html", desc: "Direct sourcing, dependable delivery" },
+          { title: "Contact / Request a Quote", url: "contact.html", desc: "Get in touch, request samples or a quote" },
+          { title: "FAQ", url: "faq.html", desc: "Minimum orders, shipping terms, payment, Incoterms" },
+          { title: "Certifications & Compliance", url: "certifications.html", desc: "Company registration and export compliance" },
+          { title: "Testimonials", url: "testimonials.html", desc: "What retailers and partners say" },
+          { title: "Insights & Guides", url: "blog.html", desc: "Guides on sourcing, shipping terms, getting started" },
+          { title: "FOB vs CIF: Choosing the Right Shipping Term", url: "blog/fob-vs-cif-shipping-terms.html", desc: "Understanding shipping terms for import/export" },
+          { title: "From Sample to Standing Order", url: "blog/sample-to-standing-order.html", desc: "A first-time buyer's roadmap" },
+          { title: "Choosing an African Food Export Partner", url: "blog/what-to-look-for-in-an-export-partner.html", desc: "What to look for in an export partner" },
+        ];
+
+        const inSubfolder = window.location.pathname.includes("/products/");
+        const prefix = inSubfolder ? "../" : "";
+
+        const btn = document.getElementById("searchBtn");
+        const btnMobile = document.getElementById("searchBtnMobile");
+        const modal = document.getElementById("searchModal");
+        const overlay = document.getElementById("searchOverlay");
+        const closeBtn = document.getElementById("searchClose");
+        const input = document.getElementById("searchInput");
+        const results = document.getElementById("searchResults");
+        const empty = document.getElementById("searchEmpty");
+        if (!modal || !input) return;
+
+        function resolveUrl(url) {
+          if (url.startsWith("products/")) {
+            return inSubfolder ? url.replace("products/", "") : url;
+          }
+          return prefix + url;
+        }
+
+        function render(items) {
+          results.innerHTML = "";
+          empty.classList.toggle("hidden", items.length > 0);
+          items.forEach((item) => {
+            const a = document.createElement("a");
+            a.href = resolveUrl(item.url);
+            a.className =
+              "block px-5 py-3 hover:bg-gold/10 transition-colors border-b border-gold/5 last:border-0";
+            a.innerHTML = `<p class="font-serif text-cream">${item.title}</p><p class="text-cream/50 text-xs mt-0.5">${item.desc}</p>`;
+            results.appendChild(a);
+          });
+        }
+
+        function openModal() {
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+          render(SEARCH_INDEX);
+          setTimeout(() => input.focus(), 50);
+          document.body.style.overflow = "hidden";
+        }
+        function closeModal() {
+          modal.classList.add("hidden");
+          modal.classList.remove("flex");
+          input.value = "";
+          document.body.style.overflow = "";
+        }
+
+        [btn, btnMobile].forEach((b) => b && b.addEventListener("click", openModal));
+        overlay.addEventListener("click", closeModal);
+        closeBtn.addEventListener("click", closeModal);
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeModal();
+          if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+            e.preventDefault();
+            openModal();
+          }
+        });
+
+        input.addEventListener("input", () => {
+          const q = input.value.trim().toLowerCase();
+          if (!q) return render(SEARCH_INDEX);
+          const filtered = SEARCH_INDEX.filter(
+            (item) =>
+              item.title.toLowerCase().includes(q) ||
+              item.desc.toLowerCase().includes(q),
+          );
+          render(filtered);
+        });
+      })();
+    </script>
+      <script>
+      // ---- Active page highlighting: footer, mobile menu, desktop nav ----
+      (function () {
+        let current = window.location.pathname.split("/").pop();
+        if (!current) current = "index.html";
+        // Product category pages (products/spices-seasonings.html etc.)
+        // should highlight the parent "Products" nav item, same idea for
+        // blog articles and "Insights" (handled separately by the
+        // Resources dropdown script since Insights lives in that menu).
+        const inProducts = window.location.pathname.indexOf("/products/") !== -1;
+        document.querySelectorAll("[data-navlink]").forEach((el) => {
+          const cls = el.className || "";
+          // Skip CTA-styled buttons (e.g. the "Contact" button), those
+          // already have their own correct filled/outlined per-page style.
+          if (cls.indexOf("inline-flex") !== -1) return;
+          const navTarget = el.getAttribute("data-navlink");
+          const isMatch =
+            navTarget === current ||
+            (inProducts && navTarget === "products.html");
+          if (isMatch) {
+            el.classList.add("text-gold");
+            el.classList.remove(
+              "text-cream/90",
+              "text-cream/85",
+              "text-cream/70",
+              "hover:text-gold",
+            );
+            el.setAttribute("aria-current", "page");
+            // Desktop nav: pin the underline visible too
+            if (cls.indexOf("after:w-0") !== -1) {
+              el.classList.remove("after:w-0");
+              el.classList.add("after:w-full");
+            }
+          }
+        });
+      })();
+    </script>
+      <script>
+      // ---- Resources dropdown (desktop nav) ----
+      (function () {
+        const wrap = document.getElementById("resourcesDropdown");
+        if (!wrap) return;
+        const trigger = document.getElementById("resourcesTrigger");
+        const panel = document.getElementById("resourcesPanel");
+        const chevron = document.getElementById("resourcesChevron");
+
+        function open() {
+          panel.classList.remove("invisible", "opacity-0", "scale-95", "-translate-y-2", "pointer-events-none");
+          panel.classList.add("visible", "opacity-100", "scale-100", "translate-y-0", "pointer-events-auto");
+          trigger.setAttribute("aria-expanded", "true");
+          chevron.classList.add("rotate-180");
+        }
+        function close() {
+          panel.classList.remove("visible", "opacity-100", "scale-100", "translate-y-0", "pointer-events-auto");
+          panel.classList.add("invisible", "opacity-0", "scale-95", "-translate-y-2", "pointer-events-none");
+          trigger.setAttribute("aria-expanded", "false");
+          chevron.classList.remove("rotate-180");
+        }
+        function isOpen() {
+          return panel.classList.contains("visible");
+        }
+
+        trigger.addEventListener("click", (e) => {
+          e.stopPropagation();
+          isOpen() ? close() : open();
+        });
+        wrap.addEventListener("mouseenter", open);
+        wrap.addEventListener("mouseleave", close);
+        document.addEventListener("click", (e) => {
+          if (!wrap.contains(e.target)) close();
+        });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") close();
+        });
+
+        // Highlight the trigger itself if the current page lives inside
+        // the dropdown (e.g. viewing an Insights article), and open the
+        // panel by default in that case so its own link shows as active.
+        let current = window.location.pathname.split("/").pop();
+        if (!current) current = "index.html";
+        const isBlogArticle = window.location.pathname.indexOf("/blog/") !== -1;
+        const items = panel.querySelectorAll("[data-navlink]");
+        let matched = false;
+        items.forEach((el) => {
+          if (el.getAttribute("data-navlink") === current || (isBlogArticle && el.getAttribute("data-navlink") === "blog.html")) {
+            matched = true;
+          }
+        });
+        if (matched) {
+          trigger.classList.add("text-gold");
+          trigger.classList.remove("text-cream/85");
+        }
+      })();
+    </script>
+      <script src="../assets/js/site.js" defer></script>
+  </body>
+</html>

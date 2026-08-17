@@ -1,0 +1,500 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =========================================================================
+   SHELEMJ — PREMIUM UI LAYER
+   Buttons, custom selects, scroll cue, footer, cards, gallery, misc polish.
+   ========================================================================= */
+
+:root {
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Disable the iOS/Android double-tap-to-zoom gesture site-wide (keeps
+   pinch-zoom available for accessibility, only removes the accidental
+   "double tap zooms the page" behavior on buttons/cards/links). */
+html,
+body {
+  touch-action: manipulation;
+}
+
+/* -------------------------------------------------------------------------
+   PREMIUM BUTTONS
+   Applies to the primary gold CTA buttons and secondary outline buttons.
+   Adds a soft sheen sweep, magnetic-feeling lift, and a refined focus ring.
+   ------------------------------------------------------------------------- */
+.btn-gold,
+a.btn-gold,
+button.btn-gold {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #d9b45e 0%, #c9a44c 45%, #b8923a 100%);
+  color: #0d0d0d;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 10px 25px -10px rgba(201, 164, 76, 0.55);
+  transition: transform 0.45s var(--ease-premium), box-shadow 0.45s var(--ease-premium), background-position 0.6s ease;
+  will-change: transform;
+}
+.btn-gold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.55) 48%, transparent 66%);
+  background-size: 220% 100%;
+  background-position: 140% 0;
+  transition: background-position 0.85s var(--ease-premium);
+  mix-blend-mode: overlay;
+}
+.btn-gold:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 18px 34px -12px rgba(201, 164, 76, 0.7);
+}
+.btn-gold:hover::before {
+  background-position: -40% 0;
+}
+.btn-gold:active {
+  transform: translateY(-1px) scale(0.98);
+}
+.btn-gold:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #0d0d0d, 0 0 0 4px rgba(201, 164, 76, 0.8);
+}
+
+.btn-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(201, 164, 76, 0.4);
+  color: #f3ede3;
+  border-radius: 0.25rem;
+  background: rgba(201, 164, 76, 0.04);
+  backdrop-filter: blur(2px);
+  transition: border-color 0.4s var(--ease-premium), color 0.4s var(--ease-premium), transform 0.4s var(--ease-premium), background-color 0.4s var(--ease-premium);
+}
+.btn-outline:hover {
+  border-color: #c9a44c;
+  color: #c9a44c;
+  background: rgba(201, 164, 76, 0.1);
+  transform: translateY(-2px);
+}
+.btn-outline:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #0d0d0d, 0 0 0 4px rgba(201, 164, 76, 0.6);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-gold, .btn-outline { transition: none !important; }
+  .btn-gold:hover, .btn-outline:hover { transform: none !important; }
+}
+
+/* -------------------------------------------------------------------------
+   SITE-WIDE BUTTON UPGRADE
+   Rather than touching every button's markup individually, this applies the
+   premium sheen + lift treatment directly to the existing solid-gold and
+   gold-outline utility combinations already used across every page.
+   ------------------------------------------------------------------------- */
+a.bg-gold.text-charcoal,
+button.bg-gold.text-charcoal {
+  isolation: isolate;
+  overflow: hidden;
+  background-image: linear-gradient(135deg, #dab763 0%, #c9a44c 45%, #b48f3b 100%);
+  transition: transform 0.45s var(--ease-premium), box-shadow 0.45s var(--ease-premium), background-color 0.3s ease;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.22) inset, 0 10px 24px -12px rgba(201, 164, 76, 0.55);
+}
+/* Only force a positioning context when the element isn't already
+   positioned — position:fixed/sticky/absolute already provide one, and
+   overriding those to "relative" breaks floating elements like the
+   WhatsApp bubble and the sticky notice bar. */
+a.bg-gold.text-charcoal:not(.fixed):not(.sticky):not(.absolute),
+button.bg-gold.text-charcoal:not(.fixed):not(.sticky):not(.absolute) {
+  position: relative;
+}
+a.bg-gold.text-charcoal::before,
+button.bg-gold.text-charcoal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.5) 48%, transparent 66%);
+  background-size: 220% 100%;
+  background-position: 140% 0;
+  transition: background-position 0.85s var(--ease-premium);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+a.bg-gold.text-charcoal:hover,
+button.bg-gold.text-charcoal:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.28) inset, 0 18px 32px -14px rgba(201, 164, 76, 0.7);
+}
+a.bg-gold.text-charcoal:hover::before,
+button.bg-gold.text-charcoal:hover::before {
+  background-position: -40% 0;
+}
+a.bg-gold.text-charcoal:active,
+button.bg-gold.text-charcoal:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Gold outline buttons — subtle lift + smoother fill-in on hover */
+a.border-gold.text-gold.hover\:bg-gold:not(.fixed),
+a.border-gold\/40.text-gold.hover\:bg-gold:not(.fixed) {
+  position: relative;
+  transition: transform 0.4s var(--ease-premium), border-color 0.4s var(--ease-premium), background-color 0.45s var(--ease-premium), color 0.45s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+}
+a.border-gold.text-gold.hover\:bg-gold:hover,
+a.border-gold\/40.text-gold.hover\:bg-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -16px rgba(201, 164, 76, 0.55);
+}
+a.border-gold.text-gold.hover\:bg-gold:active,
+a.border-gold\/40.text-gold.hover\:bg-gold:active {
+  transform: translateY(0);
+}
+
+/* Exclude the floating WhatsApp bubble + sticky notice bar from the lift
+   (a circular icon button and a full-width bar shouldn't float on hover) */
+a.fixed.bg-gold.text-charcoal:hover,
+.fixed.bg-gold.text-charcoal:hover {
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.bg-gold.text-charcoal, button.bg-gold.text-charcoal,
+  a.border-gold.text-gold, a.border-gold\/40.text-gold {
+    transition: none !important;
+  }
+  a.bg-gold.text-charcoal:hover, button.bg-gold.text-charcoal:hover,
+  a.border-gold.text-gold:hover, a.border-gold\/40.text-gold:hover {
+    transform: none !important;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   CUSTOM ANIMATED SELECT (progressively enhances a native <select>)
+   Markup: wrap a real <select class="js-select"> in <div class="cs" data-cs>
+   The JS in assets/js/site.js builds the styled trigger + animated panel.
+   The native select stays in the DOM (visually hidden) so forms still work
+   exactly as before, with full keyboard + screen-reader support.
+   ------------------------------------------------------------------------- */
+.cs {
+  position: relative;
+}
+.cs select.js-select {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.cs-trigger {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+  background-color: #1c1812;
+  border: 1px solid rgba(201, 164, 76, 0.22);
+  border-radius: 0.375rem;
+  color: #f3ede3;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: border-color 0.35s var(--ease-premium), box-shadow 0.35s var(--ease-premium), background-color 0.35s var(--ease-premium);
+}
+.cs-trigger .cs-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.cs-trigger .cs-value[data-empty="true"] {
+  color: rgba(243, 237, 227, 0.4);
+}
+.cs-trigger .cs-chevron {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: #c9a44c;
+  transition: transform 0.4s var(--ease-premium);
+}
+.cs:hover .cs-trigger {
+  border-color: rgba(201, 164, 76, 0.45);
+}
+.cs.open .cs-trigger {
+  border-color: #c9a44c;
+  box-shadow: 0 0 0 3px rgba(201, 164, 76, 0.15);
+  background-color: #211b12;
+}
+.cs.open .cs-trigger .cs-chevron {
+  transform: rotate(180deg);
+}
+.cs-trigger:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 164, 76, 0.35);
+}
+
+.cs-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  background: #17140f;
+  border: 1px solid rgba(201, 164, 76, 0.28);
+  border-radius: 0.5rem;
+  box-shadow: 0 24px 48px -16px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(0, 0, 0, 0.2);
+  padding: 0.4rem;
+  max-height: 16rem;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-6px) scale(0.98);
+  transform-origin: top center;
+  pointer-events: none;
+  transition: opacity 0.28s var(--ease-premium), transform 0.28s var(--ease-premium);
+}
+.cs.open .cs-panel {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+.cs-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.3rem;
+  font-size: 0.875rem;
+  color: rgba(243, 237, 227, 0.85);
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.25s var(--ease-premium);
+}
+.cs-option:hover,
+.cs-option.active {
+  background: rgba(201, 164, 76, 0.14);
+  color: #f3ede3;
+  padding-left: 1rem;
+}
+.cs-option.selected {
+  color: #c9a44c;
+}
+.cs-option .cs-check {
+  width: 0.9rem;
+  height: 0.9rem;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.2s ease, transform 0.2s var(--ease-premium);
+  color: #c9a44c;
+  flex-shrink: 0;
+}
+.cs-option.selected .cs-check {
+  opacity: 1;
+  transform: scale(1);
+}
+.cs-panel::-webkit-scrollbar { width: 6px; }
+.cs-panel::-webkit-scrollbar-thumb { background: rgba(201, 164, 76, 0.35); border-radius: 999px; }
+
+/* Native date/text inputs get the same refined field treatment for consistency */
+input[type="date"] {
+  color-scheme: dark;
+  cursor: pointer;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(70%) sepia(40%) saturate(400%) hue-rotate(0deg) brightness(1.1);
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------------------------
+   HERO SCROLL-DOWN CUE
+   ------------------------------------------------------------------------- */
+.scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.25rem, 4vh, 2.75rem);
+  transform: translateX(-50%);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  color: #f3ede3;
+  opacity: 0.9;
+  animation: scrollCueFloat 2.6s ease-in-out infinite;
+}
+.scroll-cue:hover { opacity: 1; }
+.scroll-cue:focus-visible {
+  outline: none;
+  opacity: 1;
+}
+.scroll-cue .scroll-cue-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(243, 237, 227, 0.7);
+}
+.scroll-cue .scroll-cue-ring {
+  position: relative;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 164, 76, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroll-cue .scroll-cue-ring::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 164, 76, 0.2);
+  animation: scrollCuePulse 2.6s ease-out infinite;
+}
+.scroll-cue svg {
+  width: 1rem;
+  height: 1rem;
+  color: #c9a44c;
+  animation: scrollCueChevron 2.6s ease-in-out infinite;
+}
+@keyframes scrollCueFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+}
+@keyframes scrollCueChevron {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(3px); opacity: 1; }
+}
+@keyframes scrollCuePulse {
+  0% { transform: scale(0.85); opacity: 0.9; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue, .scroll-cue-ring::before, .scroll-cue svg { animation: none !important; }
+}
+
+/* -------------------------------------------------------------------------
+   FOOTER — clean 2x2 grid on mobile, quiet dividers, tidy spacing
+   ------------------------------------------------------------------------- */
+.footer-grid {
+  row-gap: 2.75rem;
+}
+.footer-grid > div p.text-xs {
+  position: relative;
+}
+.footer-brand p {
+  max-width: 15rem;
+}
+@media (max-width: 639px) {
+  .footer-grid > div:not(.footer-brand) ul li {
+    font-size: 0.83rem;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   TESTIMONIAL CARDS — real quotes, premium solid treatment
+   ------------------------------------------------------------------------- */
+.testimonial-card {
+  background: linear-gradient(160deg, rgba(201, 164, 76, 0.06), rgba(201, 164, 76, 0) 60%);
+  border: 1px solid rgba(201, 164, 76, 0.18);
+  transition: border-color 0.4s var(--ease-premium), transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
+}
+.testimonial-card:hover {
+  border-color: rgba(201, 164, 76, 0.4);
+  box-shadow: 0 20px 40px -20px rgba(201, 164, 76, 0.35);
+}
+
+/* -------------------------------------------------------------------------
+   GALLERY — premium cinematic card treatment
+   ------------------------------------------------------------------------- */
+.gallery-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  background: #17140f;
+  border: 1px solid rgba(201, 164, 76, 0.14);
+  transition: transform 0.55s var(--ease-premium), border-color 0.45s var(--ease-premium), box-shadow 0.55s var(--ease-premium);
+}
+.gallery-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(201, 164, 76, 0.5);
+  box-shadow: 0 30px 60px -24px rgba(0, 0, 0, 0.65);
+}
+.gallery-card .gallery-media {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-card .gallery-media img,
+.gallery-card .gallery-media video {
+  transition: transform 0.9s var(--ease-premium), filter 0.6s ease;
+}
+.gallery-card:hover .gallery-media img,
+.gallery-card:hover .gallery-media video {
+  transform: scale(1.08);
+}
+.gallery-card .gallery-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(13, 13, 13, 0) 45%, rgba(13, 13, 13, 0.85) 100%);
+  opacity: 0.75;
+  transition: opacity 0.5s ease;
+}
+.gallery-card:hover .gallery-media::after {
+  opacity: 0.9;
+}
+.gallery-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+.gallery-play span {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 999px;
+  background: rgba(13, 13, 13, 0.55);
+  border: 1px solid rgba(201, 164, 76, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: transform 0.4s var(--ease-premium), background-color 0.4s var(--ease-premium);
+}
+.gallery-card:hover .gallery-play span {
+  transform: scale(1.12);
+  background: rgba(201, 164, 76, 0.85);
+}
+.gallery-play svg { color: #f3ede3; width: 1.1rem; height: 1.1rem; }
+.gallery-card:hover .gallery-play svg { color: #0d0d0d; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-card, .gallery-media img, .gallery-media video, .gallery-play span {
+    transition: none !important;
+  }
+  .gallery-card:hover { transform: none !important; }
+}
