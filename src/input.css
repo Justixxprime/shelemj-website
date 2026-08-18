@@ -11,6 +11,24 @@
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Global safety net: nothing on the page should ever be able to force
+   horizontal scroll (a long unbroken word, an overflowing grid cell,
+   etc.) — the page must always fill exactly one screen width. */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Mobile nav panel — must scroll internally when the link list is taller
+   than the viewport (short phones, or with browser chrome eating height),
+   otherwise items below the fold are simply unreachable. */
+#mobileMenu {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100dvh;
+}
+
 /* Disable the iOS/Android double-tap-to-zoom gesture site-wide (keeps
    pinch-zoom available for accessibility, only removes the accidental
    "double tap zooms the page" behavior on buttons/cards/links). */
@@ -598,8 +616,21 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 .footer-grid {
   row-gap: 2.75rem;
 }
+/* Grid children default to a min-width that matches their content's
+   intrinsic size, which stops long unbreakable strings (like the contact
+   email) from ever wrapping — that was forcing the whole grid, and the
+   whole page, wider than the viewport on mobile. min-width: 0 lets the
+   column actually shrink so the text below can wrap properly. */
+.footer-grid > div {
+  min-width: 0;
+}
 .footer-grid > div p.text-xs {
   position: relative;
+}
+.footer-grid a,
+.footer-grid li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .footer-brand p {
   max-width: 15rem;

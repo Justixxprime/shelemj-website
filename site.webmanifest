@@ -2,7 +2,7 @@
   "name": "ShelemJ Resources Ltd",
   "short_name": "ShelemJ",
   "description": "Premium African food export — spices, beverages, grains, oils and packaged goods for retailers worldwide.",
-  "start_url": "/shelemj-website/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0D0D0D",
   "theme_color": "#0D0D0D",
