@@ -133,8 +133,101 @@
       summary::-webkit-details-marker {
         display: none;
       }
-      .hidden-extra {
-        display: none;
+
+      /* ===== Cinematic "Show More" button ===== */
+      .gallery-showmore-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .gallery-showmore-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          transparent 20%,
+          rgba(255, 255, 255, 0.35) 50%,
+          transparent 80%
+        );
+        background-size: 250% 100%;
+        background-position: -150% 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .gallery-showmore-btn:hover::before {
+        opacity: 1;
+        animation: shimmerSweep 1.4s ease-in-out infinite;
+      }
+      @keyframes shimmerSweep {
+        0% {
+          background-position: -150% 0;
+        }
+        100% {
+          background-position: 150% 0;
+        }
+      }
+      .gallery-showmore-chevron {
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .gallery-showmore-btn:hover .gallery-showmore-chevron {
+        transform: translateY(3px);
+      }
+      .gallery-showmore-pulse {
+        animation: showmorePulse 0.5s ease;
+      }
+      @keyframes showmorePulse {
+        0% {
+          transform: scale(1);
+        }
+        35% {
+          transform: scale(0.94);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .gallery-showmore-done {
+        opacity: 0.55;
+        cursor: default;
+        border-style: dashed;
+      }
+      .gallery-showmore-done:hover {
+        background: transparent !important;
+        color: #c9a44c !important;
+        border-color: rgba(201, 164, 76, 0.4) !important;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-showmore-btn:hover::before {
+          animation: none;
+          opacity: 0;
+        }
+        .gallery-showmore-pulse {
+          animation: none;
+        }
+      }
+
+      /* ===== GLightbox caption styling, matching site theme ===== */
+      .gdesc-inner {
+        background: linear-gradient(0deg, rgba(13, 13, 13, 0.96), rgba(13, 13, 13, 0.75)) !important;
+      }
+      .glightbox-clean .gslide-title {
+        font-family: "Playfair Display", serif !important;
+        color: #e3c572 !important;
+        text-transform: uppercase;
+        font-size: 0.75rem !important;
+        letter-spacing: 0.14em !important;
+        margin-bottom: 0.35rem !important;
+      }
+      .glightbox-clean .gslide-desc {
+        font-family: "Poppins", sans-serif !important;
+        color: #f3ede3 !important;
+        font-size: 0.9rem !important;
+        opacity: 0.85;
+      }
+      .glightbox-clean .gclose:hover svg,
+      .glightbox-clean .gnext:hover svg,
+      .glightbox-clean .gprev:hover svg {
+        color: #c9a44c !important;
       }
       /* Cinematic bottom-fade + corner "view" cue on every gallery tile */
       .gallery-tile::after {
@@ -818,14 +911,14 @@
             <a
               href="../assets/images/african-made-beverages-01.JPG"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
-              data-gallery="african-made-beverages"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 1;"
             >
               <img
                 src="../assets/images/african-made-beverages-01.JPG"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 1"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -833,14 +926,14 @@
             <a
               href="../assets/images/african-made-beverages-02.jpg"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
-              data-gallery="african-made-beverages"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 2;"
             >
               <img
                 src="../assets/images/african-made-beverages-02.jpg"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 2"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -848,14 +941,14 @@
             <a
               href="../assets/images/african-made-beverages-03.jpg"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
-              data-gallery="african-made-beverages"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 3;"
             >
               <img
                 src="../assets/images/african-made-beverages-03.jpg"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 3"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -863,14 +956,14 @@
             <a
               href="../assets/images/african-made-beverages-04.jpeg"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
-              data-gallery="african-made-beverages"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 4;"
             >
               <img
                 src="../assets/images/african-made-beverages-04.jpeg"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 4"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -878,14 +971,14 @@
             <a
               href="../assets/images/african-made-beverages-05.webp"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
-              data-gallery="african-made-beverages"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 5;"
             >
               <img
                 src="../assets/images/african-made-beverages-05.webp"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 5"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -893,44 +986,44 @@
             <a
               href="../assets/images/african-made-beverages-06.JPG"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
-              data-gallery="african-made-beverages"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 6;"
             >
               <img
                 src="../assets/images/african-made-beverages-06.JPG"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 6"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
               href="../assets/images/african-made-beverages-07.jpg"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra"
-              data-gallery="african-made-beverages"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 7;"
             >
               <img
                 src="../assets/images/african-made-beverages-07.jpg"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 7"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
               href="../assets/images/african-made-beverages-08.jpg"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom hidden-extra"
-              data-gallery="african-made-beverages"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 hover:border-gold/60 transition-colors img-zoom"
+              data-gallery="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-Made Beverages, packed for export – lot 8;"
             >
               <img
                 src="../assets/images/african-made-beverages-08.jpg"
-                alt="African Made Beverages product photo"
+                alt="African-Made Beverages, packed for export – lot 8"
                 loading="lazy"
               />
-            
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -939,12 +1032,13 @@
           <div class="text-center mt-8">
             <button
               id="galleryShowMore"
-              class="inline-flex items-center px-9 py-4 mt-9 border border-gold/40 text-gold text-sm tracking-wide rounded-sm hover:border-gold hover:bg-gold hover:text-charcoal transition-colors"
+              class="gallery-showmore-btn group inline-flex items-center gap-2 px-9 py-4 mt-9 border border-gold/40 text-gold text-sm tracking-wide rounded-sm hover:border-gold hover:bg-gold hover:text-charcoal transition-colors"
             >
-              Show More
+              <span class="gallery-showmore-label">Show More</span>
+              <span class="gallery-showmore-count text-xs text-gold/70 group-hover:text-charcoal"></span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4"
+                class="w-4 h-4 gallery-showmore-chevron"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -1308,22 +1402,72 @@
 
       // GLightbox, ready and waiting, currently has no .glightbox elements to bind to (see gallery comment above)
       if (typeof GLightbox !== "undefined") {
-        GLightbox({ selector: ".glightbox" });
-      }
-
-      // Gallery "Show More" toggle
-      const galleryShowMore = document.getElementById("galleryShowMore");
-      if (galleryShowMore) {
-        galleryShowMore.addEventListener("click", () => {
-          document
-            .querySelectorAll("#galleryGrid .hidden-extra")
-            .forEach((el) => {
-              el.classList.remove("hidden-extra");
-              el.classList.add("reveal-visible");
-            });
-          galleryShowMore.style.display = "none";
+        GLightbox({
+          selector: ".glightbox",
+          touchNavigation: true,
+          loop: false,
+          descPosition: "bottom",
+          moreLength: 0,
         });
       }
+
+      // Gallery "Show More": real pagination with staggered cascade reveal
+      (function () {
+        const grid = document.getElementById("galleryGrid");
+        const btn = document.getElementById("galleryShowMore");
+        if (!grid || !btn) return;
+        const tiles = Array.from(grid.querySelectorAll(".gallery-tile"));
+        const pageSize = 6;
+        let visibleCount = pageSize;
+
+        function render(justRevealedFrom) {
+          tiles.forEach((t, i) => {
+            if (i < visibleCount) {
+              t.style.display = "";
+              if (
+                typeof justRevealedFrom === "number" &&
+                i >= justRevealedFrom &&
+                !t.classList.contains("reveal-visible")
+              ) {
+                t.style.transitionDelay = (i - justRevealedFrom) * 55 + "ms";
+                requestAnimationFrame(() =>
+                  requestAnimationFrame(() => t.classList.add("reveal-visible")),
+                );
+              } else {
+                t.style.transitionDelay = "";
+                t.classList.add("reveal-visible");
+              }
+            } else {
+              t.style.display = "none";
+            }
+          });
+          const remaining = tiles.length - visibleCount;
+          if (remaining <= 0) {
+            btn.classList.add("gallery-showmore-done");
+            btn.querySelector(".gallery-showmore-label").textContent = "That's everything ✦";
+            btn.querySelector(".gallery-showmore-count").textContent = "";
+            btn.querySelector(".gallery-showmore-chevron").style.display = "none";
+            btn.disabled = true;
+          } else {
+            btn.classList.remove("gallery-showmore-done");
+            btn.disabled = false;
+            btn.querySelector(".gallery-showmore-label").textContent = "Show More";
+            btn.querySelector(".gallery-showmore-chevron").style.display = "";
+            btn.querySelector(".gallery-showmore-count").textContent =
+              "(+" + Math.min(remaining, pageSize) + ")";
+          }
+        }
+
+        btn.addEventListener("click", () => {
+          const from = visibleCount;
+          visibleCount += pageSize;
+          btn.classList.add("gallery-showmore-pulse");
+          setTimeout(() => btn.classList.remove("gallery-showmore-pulse"), 500);
+          render(from);
+        });
+
+        render();
+      })();
     </script>
   
     <!-- ============ FLOATING WHATSAPP ============ -->
