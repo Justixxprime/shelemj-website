@@ -188,8 +188,167 @@
         height: 100%;
         object-fit: cover;
       }
-      .hidden-extra {
-        display: none;
+      /* ===== Gallery filter tabs ===== */
+      .gallery-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.75rem;
+      }
+      .gallery-tab {
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 0.55rem 1.1rem;
+        border-radius: 999px;
+        border: 1px solid rgba(201, 164, 76, 0.28);
+        color: rgba(243, 237, 227, 0.75);
+        background: rgba(201, 164, 76, 0.04);
+        white-space: nowrap;
+        transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+      }
+      .gallery-tab:hover {
+        border-color: rgba(201, 164, 76, 0.7);
+        color: #e3c572;
+        background: rgba(201, 164, 76, 0.1);
+        transform: translateY(-1px);
+      }
+      .gallery-tab--active {
+        background: #c9a44c;
+        border-color: #c9a44c;
+        color: #0d0d0d;
+        font-weight: 600;
+        box-shadow: 0 8px 22px -8px rgba(201, 164, 76, 0.6);
+      }
+      .gallery-tab--active:hover {
+        color: #0d0d0d;
+        transform: none;
+      }
+
+      /* ===== Gallery tile category caption ===== */
+      .gallery-tag {
+        position: absolute;
+        left: 0.65rem;
+        bottom: 0.65rem;
+        z-index: 2;
+        font-size: 0.6rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #f3ede3;
+        background: rgba(13, 13, 13, 0.55);
+        border: 1px solid rgba(201, 164, 76, 0.4);
+        padding: 0.3rem 0.6rem;
+        border-radius: 999px;
+        backdrop-filter: blur(3px);
+        opacity: 0;
+        transform: translateY(6px);
+        transition:
+          opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        pointer-events: none;
+        max-width: calc(100% - 3.5rem);
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .card-lift:hover .gallery-tag {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ===== Cinematic "Show More" button ===== */
+      .gallery-showmore-btn {
+        position: relative;
+        overflow: hidden;
+      }
+      .gallery-showmore-btn::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          100deg,
+          transparent 20%,
+          rgba(255, 255, 255, 0.35) 50%,
+          transparent 80%
+        );
+        background-size: 250% 100%;
+        background-position: -150% 0;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .gallery-showmore-btn:hover::before {
+        opacity: 1;
+        animation: shimmerSweep 1.4s ease-in-out infinite;
+      }
+      .gallery-showmore-chevron {
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .gallery-showmore-btn:hover .gallery-showmore-chevron {
+        transform: translateY(3px);
+      }
+      .gallery-showmore-pulse {
+        animation: showmorePulse 0.5s ease;
+      }
+      @keyframes showmorePulse {
+        0% {
+          transform: scale(1);
+        }
+        35% {
+          transform: scale(0.94);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      .gallery-showmore-done {
+        opacity: 0.55;
+        cursor: default;
+        border-style: dashed;
+      }
+      .gallery-showmore-done:hover {
+        background: transparent !important;
+        color: #c9a44c !important;
+        border-color: rgba(201, 164, 76, 0.4) !important;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .gallery-showmore-btn:hover::before {
+          animation: none;
+          opacity: 0;
+        }
+        .gallery-showmore-pulse {
+          animation: none;
+        }
+      }
+
+      /* ===== GLightbox caption styling, matching site theme ===== */
+      .gdesc-inner {
+        background: linear-gradient(0deg, rgba(13, 13, 13, 0.96), rgba(13, 13, 13, 0.75)) !important;
+      }
+      .glightbox-clean .gslide-title {
+        font-family: "Playfair Display", serif !important;
+        color: #e3c572 !important;
+        font-size: 1.05rem !important;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        font-size: 0.75rem !important;
+        letter-spacing: 0.14em !important;
+        margin-bottom: 0.35rem !important;
+      }
+      .glightbox-clean .gslide-desc {
+        font-family: "Poppins", sans-serif !important;
+        color: #f3ede3 !important;
+        font-size: 0.9rem !important;
+        opacity: 0.85;
+      }
+      .glightbox-clean .gclose,
+      .glightbox-clean .gnext,
+      .glightbox-clean .gprev {
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+      }
+      .glightbox-clean .gclose:hover svg,
+      .glightbox-clean .gnext:hover svg,
+      .glightbox-clean .gprev:hover svg {
+        color: #c9a44c !important;
       }
 
       /* Video tile play button — gentle pulse + confident pop on hover */
@@ -708,8 +867,23 @@
               Photo Gallery
             </p>
             <h2 class="font-serif text-3xl sm:text-4xl text-cream">
-              Sourcing, Warehouse & Product Shots
+              Sourcing, Warehouse &amp; Product Shots
             </h2>
+            <p class="text-cream/60 mt-4 text-sm leading-relaxed">
+              62 photos across sourcing, warehousing, and every product line we export &mdash; filter by category or browse everything.
+            </p>
+          </div>
+
+          <div class="gallery-tabs reveal" role="tablist" aria-label="Filter gallery by category">
+            <button type="button" data-filter="all" class="gallery-tab gallery-tab--active">All Photos</button>
+            <button type="button" data-filter="process" class="gallery-tab">Sourcing &amp; Process</button>
+            <button type="button" data-filter="spices" class="gallery-tab">Spices</button>
+            <button type="button" data-filter="grains" class="gallery-tab">Grains &amp; Raw Materials</button>
+            <button type="button" data-filter="oils" class="gallery-tab">Premium Oils</button>
+            <button type="button" data-filter="beverages" class="gallery-tab">African-Made Beverages</button>
+            <button type="button" data-filter="dried-seeds" class="gallery-tab">Dried Seeds &amp; Vegetables</button>
+            <button type="button" data-filter="packaged-goods" class="gallery-tab">Packaged Goods</button>
+            <button type="button" data-filter="team" class="gallery-tab">Team &amp; Facility</button>
           </div>
 
           <div class="masonry-grid" id="photoGalleryGrid">
@@ -717,12 +891,15 @@
               href="assets/images/Export-warehouse-and-dock.jpeg"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: ShelemJ export warehouse and shipping dock;"
             >
               <img
                 src="assets/images/Export-warehouse-and-dock.jpeg"
-                alt="ShelemJ gallery photo"
+                alt="ShelemJ export warehouse and shipping dock"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -731,12 +908,15 @@
               href="assets/images/ShelemJ-team.JPG"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="team"
+              data-glightbox="title: Team &amp; Facility; description: The ShelemJ team at the warehouse;"
             >
               <img
                 src="assets/images/ShelemJ-team.JPG"
-                alt="ShelemJ gallery photo"
+                alt="The ShelemJ team at the warehouse"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Team &amp; Facility</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -745,12 +925,15 @@
               href="assets/images/ShelemJ-products-ready-for-retail.JPG"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Finished ShelemJ products staged and ready for retail;"
             >
               <img
                 src="assets/images/ShelemJ-products-ready-for-retail.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Finished ShelemJ products staged and ready for retail"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -759,12 +942,15 @@
               href="assets/images/warehouse-04.JPG"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Warehouse storage ahead of export;"
             >
               <img
                 src="assets/images/warehouse-04.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Warehouse storage ahead of export"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -773,12 +959,15 @@
               href="assets/images/dispatch-05.JPG"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Order dispatch and preparation for shipment;"
             >
               <img
                 src="assets/images/dispatch-05.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Order dispatch and preparation for shipment"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
@@ -787,110 +976,983 @@
               href="assets/images/loading-01.JPG"
               class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Loading goods for export shipment;"
             >
               <img
                 src="assets/images/loading-01.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Loading goods for export shipment"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
               href="assets/images/loading-02.JPG"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom hidden-extra"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Pallets loaded and staged for export;"
             >
               <img
                 src="assets/images/loading-02.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Pallets loaded and staged for export"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
               href="assets/images/offloading-02.JPG"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom hidden-extra"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Offloading shipment at the dock;"
             >
               <img
                 src="assets/images/offloading-02.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Offloading shipment at the dock"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
               href="assets/images/offloading-03.JPG"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom hidden-extra"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Dock offloading operations;"
             >
               <img
                 src="assets/images/offloading-03.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Dock offloading operations"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
               href="assets/images/container-prep-03.JPG"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom hidden-extra"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Preparing a shipping container for loading;"
             >
               <img
                 src="assets/images/container-prep-03.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Preparing a shipping container for loading"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
-              href="assets/images/spices-01.JPG"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom hidden-extra"
+              href="assets/images/spices-01.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices prepared for export;"
             >
               <img
-                src="assets/images/spices-01.JPG"
-                alt="ShelemJ gallery photo"
+                src="assets/images/spices-01.jpg"
+                alt="Premium African spices prepared for export"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
             <a
               href="assets/images/grains-raw-materials-01.JPG"
-              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom hidden-extra"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
               data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials sourced for export;"
             >
               <img
                 src="assets/images/grains-raw-materials-01.JPG"
-                alt="ShelemJ gallery photo"
+                alt="Grains and raw materials sourced for export"
                 loading="lazy"
               />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-02.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 1;"
+            >
+              <img
+                src="assets/images/spices-02.jpg"
+                alt="Premium African spices, lot 1"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-03.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 2;"
+            >
+              <img
+                src="assets/images/spices-03.JPG"
+                alt="Premium African spices, lot 2"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-04.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 3;"
+            >
+              <img
+                src="assets/images/spices-04.JPG"
+                alt="Premium African spices, lot 3"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-05.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 4;"
+            >
+              <img
+                src="assets/images/spices-05.JPG"
+                alt="Premium African spices, lot 4"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-06.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 5;"
+            >
+              <img
+                src="assets/images/spices-06.JPG"
+                alt="Premium African spices, lot 5"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-07.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 6;"
+            >
+              <img
+                src="assets/images/spices-07.JPG"
+                alt="Premium African spices, lot 6"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-08.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 7;"
+            >
+              <img
+                src="assets/images/spices-08.JPG"
+                alt="Premium African spices, lot 7"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/spices-09.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Premium African spices, lot 8;"
+            >
+              <img
+                src="assets/images/spices-09.JPG"
+                alt="Premium African spices, lot 8"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Spices</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-01.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 1;"
+            >
+              <img
+                src="assets/images/african-made-beverages-01.JPG"
+                alt="African-made beverages packaged for export, lot 1"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-02.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 2;"
+            >
+              <img
+                src="assets/images/african-made-beverages-02.jpg"
+                alt="African-made beverages packaged for export, lot 2"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-03.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 3;"
+            >
+              <img
+                src="assets/images/african-made-beverages-03.jpg"
+                alt="African-made beverages packaged for export, lot 3"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-04.jpeg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 4;"
+            >
+              <img
+                src="assets/images/african-made-beverages-04.jpeg"
+                alt="African-made beverages packaged for export, lot 4"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-05.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 5;"
+            >
+              <img
+                src="assets/images/african-made-beverages-05.jpg"
+                alt="African-made beverages packaged for export, lot 5"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-06.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 6;"
+            >
+              <img
+                src="assets/images/african-made-beverages-06.JPG"
+                alt="African-made beverages packaged for export, lot 6"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-07.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 7;"
+            >
+              <img
+                src="assets/images/african-made-beverages-07.jpg"
+                alt="African-made beverages packaged for export, lot 7"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/african-made-beverages-08.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="beverages"
+              data-glightbox="title: African-Made Beverages; description: African-made beverages packaged for export, lot 8;"
+            >
+              <img
+                src="assets/images/african-made-beverages-08.jpg"
+                alt="African-made beverages packaged for export, lot 8"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">African-Made Beverages</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-01.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 1;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-01.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 1"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-02.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 2;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-02.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 2"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-03.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 3;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-03.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 3"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-04.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 4;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-04.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 4"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-05.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 5;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-05.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 5"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-06.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 6;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-06.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 6"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-07.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 7;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-07.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 7"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/dried-seeds-vegetables-08.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="dried-seeds"
+              data-glightbox="title: Dried Seeds &amp; Vegetables; description: Dried seeds and vegetables prepared for export, lot 8;"
+            >
+              <img
+                src="assets/images/dried-seeds-vegetables-08.jpg"
+                alt="Dried seeds and vegetables prepared for export, lot 8"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Dried Seeds &amp; Vegetables</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-01.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 1;"
+            >
+              <img
+                src="assets/images/packaged-goods-01.JPG"
+                alt="Packaged goods ready for export, lot 1"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-02.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 2;"
+            >
+              <img
+                src="assets/images/packaged-goods-02.JPG"
+                alt="Packaged goods ready for export, lot 2"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-03.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 3;"
+            >
+              <img
+                src="assets/images/packaged-goods-03.JPG"
+                alt="Packaged goods ready for export, lot 3"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-04.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 4;"
+            >
+              <img
+                src="assets/images/packaged-goods-04.JPG"
+                alt="Packaged goods ready for export, lot 4"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-05.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 5;"
+            >
+              <img
+                src="assets/images/packaged-goods-05.JPG"
+                alt="Packaged goods ready for export, lot 5"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-06.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 6;"
+            >
+              <img
+                src="assets/images/packaged-goods-06.JPG"
+                alt="Packaged goods ready for export, lot 6"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-07.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 7;"
+            >
+              <img
+                src="assets/images/packaged-goods-07.JPG"
+                alt="Packaged goods ready for export, lot 7"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-08.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Packaged goods ready for export, lot 8;"
+            >
+              <img
+                src="assets/images/packaged-goods-08.JPG"
+                alt="Packaged goods ready for export, lot 8"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-09.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Retail cartons loaded into export container;"
+            >
+              <img
+                src="assets/images/packaged-goods-09.jpg"
+                alt="Retail cartons loaded into export container"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/packaged-goods-10.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Cartons stacked and ready inside the export container;"
+            >
+              <img
+                src="assets/images/packaged-goods-10.jpg"
+                alt="Cartons stacked and ready inside the export container"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Packaged Goods</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-01.webp"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 1;"
+            >
+              <img
+                src="assets/images/premium-oils-01.webp"
+                alt="Premium oils packaged for export, lot 1"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-02.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 2;"
+            >
+              <img
+                src="assets/images/premium-oils-02.jpg"
+                alt="Premium oils packaged for export, lot 2"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-03.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 3;"
+            >
+              <img
+                src="assets/images/premium-oils-03.jpg"
+                alt="Premium oils packaged for export, lot 3"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-04.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 4;"
+            >
+              <img
+                src="assets/images/premium-oils-04.jpg"
+                alt="Premium oils packaged for export, lot 4"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-05.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 5;"
+            >
+              <img
+                src="assets/images/premium-oils-05.jpg"
+                alt="Premium oils packaged for export, lot 5"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-06.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 6;"
+            >
+              <img
+                src="assets/images/premium-oils-06.jpg"
+                alt="Premium oils packaged for export, lot 6"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-07.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 7;"
+            >
+              <img
+                src="assets/images/premium-oils-07.jpg"
+                alt="Premium oils packaged for export, lot 7"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/premium-oils-08.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="oils"
+              data-glightbox="title: Premium Oils; description: Premium oils packaged for export, lot 8;"
+            >
+              <img
+                src="assets/images/premium-oils-08.jpg"
+                alt="Premium oils packaged for export, lot 8"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Premium Oils</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/loading-01.jpeg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Export goods being loaded for shipment;"
+            >
+              <img
+                src="assets/images/loading-01.jpeg"
+                alt="Export goods being loaded for shipment"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Sourcing &amp; Process</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/grains-raw-materials-02.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials, lot 1;"
+            >
+              <img
+                src="assets/images/grains-raw-materials-02.JPG"
+                alt="Grains and raw materials, lot 1"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/grains-raw-materials-03.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials, lot 2;"
+            >
+              <img
+                src="assets/images/grains-raw-materials-03.JPG"
+                alt="Grains and raw materials, lot 2"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/grains-raw-materials-04.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials, lot 3;"
+            >
+              <img
+                src="assets/images/grains-raw-materials-04.JPG"
+                alt="Grains and raw materials, lot 3"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/grains-raw-materials-05.JPG"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials, lot 4;"
+            >
+              <img
+                src="assets/images/grains-raw-materials-05.JPG"
+                alt="Grains and raw materials, lot 4"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/grains-raw-materials-06.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials, lot 5;"
+            >
+              <img
+                src="assets/images/grains-raw-materials-06.jpg"
+                alt="Grains and raw materials, lot 5"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/grains-raw-materials-07.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials, lot 6;"
+            >
+              <img
+                src="assets/images/grains-raw-materials-07.jpg"
+                alt="Grains and raw materials, lot 6"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
+              <span class="gallery-view-cue" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
+              </span>
+            </a>
+            <a
+              href="assets/images/grains-raw-materials-08.jpg"
+              class="glightbox reveal gallery-tile masonry-tile rounded-lg overflow-hidden border border-gold/20 card-lift img-zoom"
+              data-gallery="gallery-photos"
+              data-category="grains"
+              data-glightbox="title: Grains &amp; Raw Materials; description: Grains and raw materials, lot 7;"
+            >
+              <img
+                src="assets/images/grains-raw-materials-08.jpg"
+                alt="Grains and raw materials, lot 7"
+                loading="lazy"
+              />
+              <span class="gallery-tag" aria-hidden="true">Grains &amp; Raw Materials</span>
               <span class="gallery-view-cue" aria-hidden="true">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg>
               </span>
             </a>
           </div>
+          <p id="photoEmptyState" class="hidden text-center text-cream/50 py-10">No photos in this category yet.</p>
           <div class="text-center mt-8">
             <button
               id="photoShowMore"
-              class="inline-flex items-center px-9 py-4 mt-9 border border-gold/40 text-gold text-sm tracking-wide rounded-sm hover:border-gold hover:bg-gold hover:text-charcoal transition-colors"
+              class="gallery-showmore-btn group inline-flex items-center gap-2 px-9 py-4 mt-9 border border-gold/40 text-gold text-sm tracking-wide rounded-sm hover:border-gold hover:bg-gold hover:text-charcoal transition-colors"
             >
-              Show More
+              <span class="gallery-showmore-label">Show More</span>
+              <span class="gallery-showmore-count text-xs text-gold/70 group-hover:text-charcoal"></span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4"
+                class="w-4 h-4 gallery-showmore-chevron"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -915,7 +1977,7 @@
               Video Gallery
             </p>
             <h2 class="font-serif text-3xl sm:text-4xl text-cream">
-              Loading, Dispatch & Behind the Scenes
+              Loading, Dispatch &amp; Behind the Scenes
             </h2>
           </div>
 
@@ -925,10 +1987,12 @@
               class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift"
               data-type="video"
               data-gallery="gallery-videos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Trailer loading for export;"
             >
               <img
                 src="assets/images/trailer-loading-poster.jpg"
-                alt="Loading video"
+                alt="Trailer loading for export"
                 loading="lazy"
               />
               <div
@@ -953,10 +2017,12 @@
               class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift"
               data-type="video"
               data-gallery="gallery-videos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Dispatch and supply chain process;"
             >
               <img
                 src="assets/images/supply-chain-video-01-poster.jpg"
-                alt="Dispatch video"
+                alt="Dispatch and supply chain process"
                 loading="lazy"
               />
               <div
@@ -981,10 +2047,12 @@
               class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift"
               data-type="video"
               data-gallery="gallery-videos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Warehouse operations in motion;"
             >
               <img
                 src="assets/images/supply-chain-video-02-poster.jpg"
-                alt="Warehouse video"
+                alt="Warehouse operations in motion"
                 loading="lazy"
               />
               <div
@@ -1006,13 +2074,15 @@
             </a>
             <a
               href="assets/videos/supply-chain-video-03.MP4"
-              class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift hidden-extra"
+              class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift"
               data-type="video"
               data-gallery="gallery-videos"
+              data-category="process"
+              data-glightbox="title: Sourcing &amp; Process; description: Container preparation before shipment;"
             >
               <img
                 src="assets/images/supply-chain-video-03-poster.jpg"
-                alt="Container prep video"
+                alt="Container preparation before shipment"
                 loading="lazy"
               />
               <div
@@ -1034,13 +2104,45 @@
             </a>
             <a
               href="assets/videos/spices-video-01.MP4"
-              class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift hidden-extra"
+              class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift"
               data-type="video"
               data-gallery="gallery-videos"
+              data-category="spices"
+              data-glightbox="title: Spices; description: Behind the scenes with our spices;"
             >
               <img
                 src="assets/images/spices-video-01-poster.jpg"
-                alt="Behind the scenes video"
+                alt="Behind the scenes with our spices"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-0 flex items-center justify-center bg-charcoal/30"
+              >
+                <div
+                  class="w-14 h-14 rounded-full bg-gold/90 flex items-center justify-center shadow-lg"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-charcoal ml-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+            <a
+              href="assets/videos/container-loading-04.MP4"
+              class="glightbox reveal gallery-tile video-tile rounded-lg overflow-hidden border border-gold/20 card-lift"
+              data-type="video"
+              data-gallery="gallery-videos"
+              data-category="packaged-goods"
+              data-glightbox="title: Packaged Goods; description: Retail cartons being loaded into the export container;"
+            >
+              <img
+                src="assets/images/container-loading-04-poster.jpg"
+                alt="Retail cartons being loaded into the export container"
                 loading="lazy"
               />
               <div
@@ -1064,12 +2166,13 @@
           <div class="text-center mt-8">
             <button
               id="videoShowMore"
-              class="inline-flex items-center px-9 py-4 mt-9 border border-gold/40 text-gold text-sm tracking-wide rounded-sm hover:border-gold hover:bg-gold hover:text-charcoal transition-colors"
+              class="gallery-showmore-btn group inline-flex items-center gap-2 px-9 py-4 mt-9 border border-gold/40 text-gold text-sm tracking-wide rounded-sm hover:border-gold hover:bg-gold hover:text-charcoal transition-colors"
             >
-              Show More
+              <span class="gallery-showmore-label">Show More</span>
+              <span class="gallery-showmore-count text-xs text-gold/70 group-hover:text-charcoal"></span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                class="w-4 h-4"
+                class="w-4 h-4 gallery-showmore-chevron"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -1366,36 +2469,126 @@
       }
 
       if (typeof GLightbox !== "undefined") {
-        GLightbox({ selector: ".glightbox" });
-      }
-
-      // Photo gallery "Show More" toggle
-      const photoShowMore = document.getElementById("photoShowMore");
-      if (photoShowMore) {
-        photoShowMore.addEventListener("click", () => {
-          document
-            .querySelectorAll("#photoGalleryGrid .hidden-extra")
-            .forEach((el) => {
-              el.classList.remove("hidden-extra");
-              el.classList.add("reveal-visible");
-            });
-          photoShowMore.style.display = "none";
+        GLightbox({
+          selector: ".glightbox",
+          touchNavigation: true,
+          loop: false,
+          descPosition: "bottom",
+          moreLength: 0,
         });
       }
 
-      // Video gallery "Show More" toggle
-      const videoShowMore = document.getElementById("videoShowMore");
-      if (videoShowMore) {
-        videoShowMore.addEventListener("click", () => {
-          document
-            .querySelectorAll("#videoGalleryGrid .hidden-extra")
-            .forEach((el) => {
-              el.classList.remove("hidden-extra");
-              el.classList.add("reveal-visible");
+      // ============ Gallery grids: category filtering + real "Show More" pagination ============
+      function initGalleryGrid({ gridId, showMoreId, pageSize, hasTabs, emptyStateId }) {
+        const grid = document.getElementById(gridId);
+        if (!grid) return;
+        const tiles = Array.from(grid.querySelectorAll(".gallery-tile"));
+        const btn = showMoreId ? document.getElementById(showMoreId) : null;
+        const emptyState = emptyStateId ? document.getElementById(emptyStateId) : null;
+        let activeFilter = "all";
+        let visibleCount = pageSize;
+
+        function matching() {
+          return tiles.filter(
+            (t) => activeFilter === "all" || t.dataset.category === activeFilter,
+          );
+        }
+
+        function render(justRevealedFrom) {
+          const match = matching();
+          tiles.forEach((t) => {
+            const isMatch = activeFilter === "all" || t.dataset.category === activeFilter;
+            if (!isMatch) t.style.display = "none";
+          });
+          match.forEach((t, i) => {
+            if (i < visibleCount) {
+              t.style.display = "";
+              if (
+                typeof justRevealedFrom === "number" &&
+                i >= justRevealedFrom &&
+                !t.classList.contains("reveal-visible")
+              ) {
+                t.style.transitionDelay = (i - justRevealedFrom) * 55 + "ms";
+                requestAnimationFrame(() =>
+                  requestAnimationFrame(() => t.classList.add("reveal-visible")),
+                );
+              } else {
+                t.style.transitionDelay = "";
+                t.classList.add("reveal-visible");
+              }
+            } else {
+              t.style.display = "none";
+            }
+          });
+          if (btn) {
+            const remaining = match.length - visibleCount;
+            if (remaining <= 0) {
+              btn.classList.add("gallery-showmore-done");
+              btn.querySelector(".gallery-showmore-label").textContent =
+                match.length === 0 ? "" : "That's everything ✦";
+              btn.querySelector(".gallery-showmore-count").textContent = "";
+              btn.querySelector(".gallery-showmore-chevron").style.display = "none";
+              if (match.length === 0) btn.style.display = "none";
+              else btn.disabled = true;
+            } else {
+              btn.classList.remove("gallery-showmore-done");
+              btn.disabled = false;
+              btn.style.display = "";
+              btn.querySelector(".gallery-showmore-label").textContent = "Show More";
+              btn.querySelector(".gallery-showmore-chevron").style.display = "";
+              btn.querySelector(".gallery-showmore-count").textContent =
+                "(+" + Math.min(remaining, pageSize) + ")";
+            }
+          }
+          if (emptyState) emptyState.classList.toggle("hidden", match.length !== 0);
+        }
+
+        if (btn) {
+          btn.addEventListener("click", () => {
+            const from = visibleCount;
+            visibleCount += pageSize;
+            btn.classList.add("gallery-showmore-pulse");
+            setTimeout(() => btn.classList.remove("gallery-showmore-pulse"), 500);
+            render(from);
+          });
+        }
+
+        if (hasTabs) {
+          const tabsWrap = grid.parentElement.querySelector(".gallery-tabs");
+          if (tabsWrap) {
+            tabsWrap.querySelectorAll(".gallery-tab").forEach((tab) => {
+              tab.addEventListener("click", () => {
+                if (tab.classList.contains("gallery-tab--active")) return;
+                tabsWrap
+                  .querySelectorAll(".gallery-tab")
+                  .forEach((t) => t.classList.remove("gallery-tab--active"));
+                tab.classList.add("gallery-tab--active");
+                activeFilter = tab.dataset.filter;
+                visibleCount = pageSize;
+                tiles.forEach((t) => t.classList.remove("reveal-visible"));
+                render(0);
+                grid.scrollIntoView({ behavior: "smooth", block: "start" });
+              });
             });
-          videoShowMore.style.display = "none";
-        });
+          }
+        }
+
+        render();
       }
+
+      initGalleryGrid({
+        gridId: "photoGalleryGrid",
+        showMoreId: "photoShowMore",
+        pageSize: 12,
+        hasTabs: true,
+        emptyStateId: "photoEmptyState",
+      });
+      initGalleryGrid({
+        gridId: "videoGalleryGrid",
+        showMoreId: "videoShowMore",
+        pageSize: 3,
+        hasTabs: false,
+      });
     </script>
   
     <!-- ============ FLOATING WHATSAPP ============ -->

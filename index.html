@@ -127,15 +127,6 @@
         display: none;
       }
 
-      /* Hero slideshow crossfade */
-      .hero-slide {
-        opacity: 0;
-        transition: opacity 1.4s ease-in-out;
-      }
-      .hero-slide.active {
-        opacity: 1;
-      }
-
       /* Placeholder image slot pattern */
       .img-slot {
         background-image: repeating-linear-gradient(
@@ -287,6 +278,76 @@
         }
         .glow-pulse:hover {
           transform: none;
+        }
+      }
+
+      /* ===== Cinematic hero video ===== */
+      .hero-video-wrap {
+        position: absolute;
+        inset: 0;
+      }
+      .hero-video-wrap video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .hero-video-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(13, 13, 13, 0.15) 0%, rgba(13, 13, 13, 0.55) 100%);
+      }
+      /* ===== Cinematic stats counter ===== */
+      .stat-card {
+        position: relative;
+        transition-delay: var(--stat-delay, 0ms);
+      }
+      .stat-icon {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin: 0 auto 0.85rem;
+        color: rgba(201, 164, 76, 0.65);
+        transition: color 0.4s ease, transform 0.4s ease;
+      }
+      .stat-card:hover .stat-icon {
+        color: #e3c572;
+        transform: translateY(-2px) scale(1.08);
+      }
+      .stat-number {
+        font-variant-numeric: tabular-nums;
+        position: relative;
+        display: inline-block;
+      }
+      .stat-number::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -0.6rem;
+        transform: translateX(-50%);
+        width: 2rem;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #c9a44c, transparent);
+        opacity: 0.6;
+      }
+      .stat-label {
+        margin-top: 1.1rem;
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(243, 237, 227, 0.6);
+      }
+      .stats-cinematic .grid > .stat-card:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        right: -0.75rem;
+        top: 10%;
+        bottom: 10%;
+        width: 1px;
+        background: rgba(201, 164, 76, 0.14);
+        display: none;
+      }
+      @media (min-width: 768px) {
+        .stats-cinematic .grid > .stat-card:not(:last-child)::before {
+          display: block;
         }
       }
     </style>
@@ -648,27 +709,28 @@
           <div
             class="relative h-[62vw] max-h-[480px] lg:h-auto lg:max-h-none overflow-hidden"
           >
-            <div class="hero-slide active absolute inset-0">
+            <div class="hero-video-wrap cinematic-grade">
+              <video
+                id="heroVideo"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                poster="assets/images/hero-1.jpg"
+                aria-hidden="true"
+              >
+                <source src="assets/videos/trailer-loading.MP4" type="video/mp4" />
+              </video>
               <img
                 src="assets/images/hero-1.jpg"
-                alt="Ingredient and product spread"
-                class="w-full h-full object-cover kenburns cinematic-grade"
+                alt="ShelemJ products loaded for export"
+                class="w-full h-full object-cover kenburns"
+                id="heroFallbackImg"
+                style="display: none"
               />
             </div>
-            <div class="hero-slide absolute inset-0">
-              <img
-                src="assets/images/hero-2.jpeg"
-                alt="Sourcing and farms"
-                class="w-full h-full object-cover kenburns cinematic-grade"
-              />
-            </div>
-            <div class="hero-slide absolute inset-0">
-              <img
-                src="assets/images/hero-3.jpeg"
-                alt="Packaged goods"
-                class="w-full h-full object-cover kenburns cinematic-grade"
-              />
-            </div>
+            <div class="hero-video-scrim"></div>
             <!-- edge blend into the text panel -->
             <div
               class="hidden lg:block absolute inset-y-0 right-0 w-28 bg-gradient-to-r from-transparent to-charcoal"
@@ -802,66 +864,76 @@
       </section>
 
       <!-- ============ STATS ============ -->
-      <section class="bg-charcoal2 border-y border-gold/10 py-14 sm:py-16">
-        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <section class="stats-cinematic relative bg-charcoal2 border-y border-gold/10 py-16 sm:py-20 overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 gold-glow" aria-hidden="true"></div>
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative">
           <div
             id="statsGrid"
-            class="grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 text-center"
+            class="grid grid-cols-2 md:grid-cols-5 gap-x-6 gap-y-12 text-center"
           >
-            <div class="reveal">
+            <div class="reveal stat-card">
+              <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="17" rx="2"/><path stroke-linecap="round" d="M3 9h18M8 2v4M16 2v4"/></svg>
               <p
-                class="font-serif text-4xl sm:text-5xl text-gold"
+                class="font-serif text-4xl sm:text-5xl text-gold stat-number"
                 data-count="2013"
                 data-suffix=""
               >
                 0
               </p>
-              <p
-                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
-              >
+              <p class="stat-label">
                 Est. / Founded
               </p>
             </div>
-            <div class="reveal">
+            <div class="reveal stat-card" style="--stat-delay: 90ms">
+              <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l9 4.5-9 4.5-9-4.5L12 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg>
               <p
-                class="font-serif text-4xl sm:text-5xl text-gold"
+                class="font-serif text-4xl sm:text-5xl text-gold stat-number"
                 data-count="6"
                 data-suffix=""
               >
                 0
               </p>
-              <p
-                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
-              >
+              <p class="stat-label">
                 Product Categories
               </p>
             </div>
-            <div class="reveal">
+            <div class="reveal stat-card" style="--stat-delay: 180ms">
+              <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" d="M3 12h18M12 3c2.5 2.6 3.8 5.7 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.7-3.8-9S9.5 5.6 12 3z"/></svg>
               <p
-                class="font-serif text-4xl sm:text-5xl text-gold"
+                class="font-serif text-4xl sm:text-5xl text-gold stat-number"
                 data-count="100"
                 data-suffix="%"
               >
                 0%
               </p>
-              <p
-                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
-              >
+              <p class="stat-label">
                 Direct African Sourcing
               </p>
             </div>
-            <div class="reveal">
+            <div class="reveal stat-card" style="--stat-delay: 270ms">
+              <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17s2 2 9 2 9-2 9-2M5 17l-1.5-6.5L12 8l8.5 2.5L19 17"/><path stroke-linecap="round" d="M12 8V3M9 5h6"/></svg>
               <p
-                class="font-serif text-4xl sm:text-5xl text-gold"
+                class="font-serif text-4xl sm:text-5xl text-gold stat-number"
                 data-count="100"
                 data-suffix="+"
               >
                 0+
               </p>
-              <p
-                class="mt-2 text-xs sm:text-sm tracking-widest uppercase text-cream/60"
-              >
+              <p class="stat-label">
                 Export Markets
+              </p>
+            </div>
+            <div class="reveal stat-card col-span-2 md:col-span-1" style="--stat-delay: 360ms">
+              <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3.5 2"/></svg>
+              <p
+                class="font-serif text-4xl sm:text-5xl text-gold stat-number"
+                data-count="13"
+                data-suffix="+"
+              >
+                0+
+              </p>
+              <p class="stat-label">
+                Years Exporting
               </p>
             </div>
           </div>
@@ -1561,15 +1633,24 @@
         .querySelectorAll("a")
         .forEach((a) => a.addEventListener("click", closeMenu));
 
-      // ---- Hero slideshow crossfade ----
-      const slides = document.querySelectorAll(".hero-slide");
-      if (slides.length > 1 && !prefersReduced) {
-        let current = 0;
-        setInterval(() => {
-          slides[current].classList.remove("active");
-          current = (current + 1) % slides.length;
-          slides[current].classList.add("active");
-        }, 5000);
+      // ---- Cinematic hero video background ----
+      const heroVideo = document.getElementById("heroVideo");
+      const heroFallbackImg = document.getElementById("heroFallbackImg");
+      if (heroVideo) {
+        if (prefersReduced) {
+          // Respect reduced-motion: show the static poster frame instead of an autoplaying video.
+          heroVideo.style.display = "none";
+          heroFallbackImg.style.display = "block";
+        } else {
+          heroVideo.addEventListener("error", () => {
+            heroVideo.style.display = "none";
+            heroFallbackImg.style.display = "block";
+          });
+          // Some mobile browsers still block autoplay even when muted; retry on first touch.
+          const tryPlay = () => heroVideo.play().catch(() => {});
+          tryPlay();
+          document.addEventListener("touchstart", tryPlay, { once: true, passive: true });
+        }
       }
 
       // ---- Scroll reveal ----
@@ -1594,21 +1675,30 @@
         revealEls.forEach((el) => el.classList.add("reveal-visible"));
       }
 
-      // ---- Animated stat counters ----
+      // ---- Cinematic animated stat counters (eased, staggered) ----
       const statEls = document.querySelectorAll("[data-count]");
-      function animateCount(el) {
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+      function animateCount(el, delay) {
         const target = parseInt(el.dataset.count, 10);
         const suffix = el.dataset.suffix || "";
         if (!target) {
           el.textContent = suffix ? "0" + suffix : "—";
           return;
         }
-        const duration = 1400;
+        const duration = 1600;
         let start = null;
         function step(ts) {
           if (!start) start = ts;
-          const progress = Math.min((ts - start) / duration, 1);
-          const value = Math.floor(progress * target);
+          const elapsed = ts - start - delay;
+          if (elapsed < 0) {
+            requestAnimationFrame(step);
+            return;
+          }
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = easeOutCubic(progress);
+          const value = Math.floor(eased * target);
           el.textContent = value + suffix;
           if (progress < 1) requestAnimationFrame(step);
           else el.textContent = target + suffix;
@@ -1620,11 +1710,11 @@
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                statEls.forEach((el) =>
+                statEls.forEach((el, i) =>
                   prefersReduced
                     ? (el.textContent =
                         el.dataset.count + (el.dataset.suffix || ""))
-                    : animateCount(el),
+                    : animateCount(el, i * 130),
                 );
                 statsIo.unobserve(entry.target);
               }
