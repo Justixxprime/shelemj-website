@@ -29,12 +29,24 @@ Contact/newsletter forms: Web3Forms (works on GitHub Pages).
 
 ---
 
+### Icons & brand identity everywhere (2026-11-03)
+- Full icon set generated from the crest: favicon.ico (16/32/48), PNG favicons 16/32/48/96
+  (tiny sizes use the bold gold "S" monogram so they stay readable; 96+ use the full crest),
+  Apple touch icon 180 (opaque), Android/PWA 192/512 + maskable 192/512, Windows tile 150
+  + browserconfig.xml, site.webmanifest (installable app identity, theme #0D0D0D).
+- Icon tags standardised on every page with root-absolute paths (work in subfolders).
+- New branded share card `assets/images/og-share-1200x630.jpg` (1200x630, 92 KB, no contact
+  details on it). Added og:type/site_name/locale/image size+alt and twitter:image:alt.
+- Organization schema logo now points to the square 512 icon.
+- NOTE: social apps cache previews. After deploy use the Facebook Sharing Debugger / LinkedIn
+  Post Inspector "re-scrape", and re-share on WhatsApp in a new chat to see the new card.
+
 ## ⏳ Still to do (accounts only the owner can complete)
 
 Rule: the CLIENT (ShelemJ owner) should own every account below. Add the
 developer as a user/manager, not the other way round.
 
-1. **Zoho Mail** — add domain, verify via TXT, set MX (mx.zoho.com 10,
+1. **Zoho Mail (LAST — waiting for payment; Mail Lite 5GB, listed ₦770/user/month billed yearly)** — add domain, verify via TXT, set MX (mx.zoho.com 10,
    mx2.zoho.com 20, mx3.zoho.com 50), SPF TXT `v=spf1 include:zoho.com ~all`,
    DKIM TXT (value from Zoho), DMARC TXT at `_dmarc`. In Namecheap set Mail
    Settings to Custom MX. Do NOT delete the GitHub A records / www CNAME.
@@ -46,9 +58,7 @@ developer as a user/manager, not the other way round.
    then use URL Inspection → Request indexing on the key pages.
 4. **Google Business Profile** — name exactly "ShelemJ Resources Ltd", keep name /
    address / phone identical everywhere, real photos, verify, add developer as manager.
-5. **GA4** — NOT installed (an older version of these notes wrongly said it was).
-   Create a GA4 property, copy the Measurement ID (G-XXXXXXXXXX), then add the
-   snippet to every page.
+5. **GA4** — DONE: installed on all pages with Measurement ID G-4DVRHQ6KFN (property "ShelemJ Website"). Data shows in GA4 within ~24-48h of the deploy. If you serve EU/UK visitors, consider a cookie notice + privacy page.
 6. **Bing Webmaster Tools** — import the site from Search Console (2 minutes).
 7. **Off-site** — LinkedIn company page, Facebook/Instagram linking to the site,
    NEPC exporters directory listing, B2B marketplaces.
