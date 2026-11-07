@@ -439,7 +439,7 @@
         }
       }
       .kenburns {
-        animation: kenburns 22s ease-in-out infinite alternate;
+        animation: kenburns 22s ease-out 1 forwards;
         will-change: transform;
       }
       .cinematic-grade {
@@ -514,7 +514,7 @@
     "@type": "ContactPoint",
     "telephone": "+234-803-318-7724",
     "contactType": "sales",
-    "email": "shelemjresourcesltd@gmail.com",
+    "email": "info@shelemjresourcesltd.com",
     "areaServed": "Worldwide"
   }
 }
@@ -611,65 +611,37 @@
     >
 
     <!-- ============ NAV (Products active) ============ -->
-    <header
-      id="siteNav"
-      class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-charcoal/95 backdrop-blur border-b border-gold/10"
-    >
-      <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
-        <div class="flex items-center justify-between h-20">
-          <a href="../index.html" class="flex items-center gap-3 group">
-            <img
-              src="../assets/images/shelemj-logo.png"
-              alt="ShelemJ"
-              class="h-11 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
-            />
-            <span class="font-serif text-xl tracking-wide text-cream"
-              >Shelem<span class="text-gold">J</span></span
-            >
-          </a>
-
-          <nav
-            aria-label="Primary"
-            class="hidden xl:flex items-center gap-10 font-sans text-sm tracking-wide"
-          >
-            <a data-navlink="index.html"
-              href="../index.html"
-              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
-              >Home</a
-            >
-            <a data-navlink="about.html"
-              href="../about.html"
-              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
-              >About</a
-            >
-            <a data-navlink="products.html"
-              href="../products.html"
-              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
-              >Products</a
-            >
-            <a data-navlink="gallery.html"
-              href="../gallery.html"
-              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
-              >Gallery</a
-            >
-            <a data-navlink="supply-chain.html"
-              href="../supply-chain.html"
-              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
-              >Supply Chain</a
-            >
-            <a data-navlink="partnership.html"
-              href="../partnership.html"
-              class="text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
-              >Partnership</a
-            >
-
-            <!-- ============ RESOURCES DROPDOWN ============ -->
-            <div class="relative" id="resourcesDropdown">
+    <header id="siteNav" class="site-header">
+      <div class="site-topbar hidden lg:block">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
+          <p class="topbar-tag">Premium African food export &middot; Lagos, Nigeria</p>
+          <div class="topbar-links">
+            <a href="tel:+2348033187724">+234 803 318 7724</a>
+            <span class="topbar-sep" aria-hidden="true"></span>
+            <a href="mailto:info@shelemjresourcesltd.com">info@shelemjresourcesltd.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="site-navbar">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+          <div class="site-navbar__row">
+            <a href="../index.html" class="brand-link flex items-center gap-3" aria-label="ShelemJ, home">
+              <img decoding="async" src="../assets/images/shelemj-logo.png" alt="" width="480" height="438" class="h-11 w-auto" />
+              <span class="font-serif text-xl text-cream">Shelem<span class="text-gold">J</span></span>
+            </a>
+            <nav aria-label="Primary" class="hidden xl:flex items-center nav-group">
+          <a data-navlink="index.html" href="../index.html" class="nav-link">Home</a>
+          <a data-navlink="about.html" href="../about.html" class="nav-link">About</a>
+          <a data-navlink="products.html" href="../products.html" class="nav-link">Products</a>
+          <a data-navlink="gallery.html" href="../gallery.html" class="nav-link">Gallery</a>
+          <a data-navlink="supply-chain.html" href="../supply-chain.html" class="nav-link">Supply Chain</a>
+          <a data-navlink="partnership.html" href="../partnership.html" class="nav-link">Partnership</a>
+              <div class="relative" id="resourcesDropdown">
               <button
                 id="resourcesTrigger"
                 aria-expanded="false"
                 aria-haspopup="true"
-                class="flex items-center gap-1.5 text-cream/85 hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 hover:after:w-full after:bg-gold after:transition-all"
+                class="nav-link"
               >
                 Resources
                 <svg
@@ -689,7 +661,7 @@
                 class="invisible opacity-0 scale-95 -translate-y-2 pointer-events-none absolute top-full right-0 pt-4 w-72 transition-all duration-300 ease-out"
               >
                 <div
-                  class="bg-charcoal2 border border-gold/25 rounded-lg shadow-2xl overflow-hidden"
+                  class="nav-panel overflow-hidden"
                 >
                   <a data-navlink="faq.html"
                     href="../faq.html"
@@ -734,150 +706,49 @@
                 </div>
               </div>
             </div>
-            <button
-              id="searchBtn"
-              aria-label="Search the site"
-              class="text-cream/85 hover:text-gold transition-colors p-1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
-            </button>
-            <a data-navlink="contact.html"
-              href="../contact.html"
-              class="inline-flex items-center px-5 py-2.5 border border-gold text-gold rounded-sm hover:bg-gold hover:text-charcoal transition-colors"
-              >Contact</a
-            >
-          </nav>
-
-          <button
-            id="searchBtnMobile"
-            aria-label="Search the site"
-            class="xl:hidden text-gold p-2"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-4.35-4.35M18 10.5a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z" /></svg>
-          </button>
-
-          <button
-            id="menuBtn"
-            aria-expanded="false"
-            aria-controls="mobileMenu"
-            aria-label="Open menu"
-            class="xl:hidden text-gold p-2 -mr-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5M3.75 17.25h16.5"
-              />
-            </svg>
-          </button>
+            </nav>
+            <div class="hidden xl:flex items-center gap-3">
+              <button id="searchBtn" type="button" class="icon-btn" aria-label="Search the site"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.2-5.2m2.2-5.3a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg></button>
+              <a data-navlink="contact.html" href="../contact.html" class="nav-cta inline-flex">Request a Sample <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg></a>
+            </div>
+            <div class="flex xl:hidden items-center gap-1">
+              <button id="searchBtnMobile" type="button" class="icon-btn" aria-label="Search the site"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.2-5.2m2.2-5.3a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg></button>
+              <button id="menuBtn" type="button" class="icon-btn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 7.5h16.5M3.75 12h16.5M3.75 16.5h16.5"/></svg></button>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div
-        id="mobileMenu"
-        class="xl:hidden fixed top-0 right-0 h-screen w-[78%] max-w-sm bg-charcoal2 border-l border-gold/20 translate-x-full z-50 flex flex-col px-8 pt-8 pb-10"
-      >
-        <div class="flex justify-end">
-          <button
-            id="menuCloseBtn"
-            aria-label="Close menu"
-            class="text-gold p-2 -mr-2"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-7 h-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="1.5"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-        </div>
-        <nav
-          aria-label="Mobile"
-          class="mt-10 flex flex-col gap-7 font-serif text-2xl"
-        >
-          <a data-navlink="index.html"
-            href="../index.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Home</a
-          >
-          <a data-navlink="about.html"
-            href="../about.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >About</a
-          >
-          <a data-navlink="products.html"
-            href="../products.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Products</a
-          >
-          <a data-navlink="gallery.html"
-            href="../gallery.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Gallery</a
-          >
-          <a data-navlink="supply-chain.html"
-            href="../supply-chain.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Supply Chain</a
-          >
-          <a data-navlink="partnership.html"
-            href="../partnership.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Partnership</a
-          >
-          <a data-navlink="contact.html"
-            href="../contact.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Contact</a
-          >
-          <a data-navlink="faq.html"
-            href="../faq.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >FAQ</a
-          >
-          <a data-navlink="certifications.html"
-            href="../certifications.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Certifications</a
-          >
-          <a data-navlink="testimonials.html"
-            href="../testimonials.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Testimonials</a
-          >
-          <a data-navlink="blog.html"
-            href="../blog.html"
-            class="text-cream/90 hover:text-gold transition-colors"
-            >Insights</a
-          >
-        </nav>
-        <div
-          class="mt-auto pt-10 border-t border-gold/15 flex gap-5 text-mutedgold text-xs tracking-widest uppercase"
-        >
-          <span>Est. 2013</span>
-        </div>
-      </div>
-      <div
-        id="menuOverlay"
-        class="hidden fixed inset-0 bg-black/60 z-40 xl:hidden"
-      ></div>
     </header>
+
+    <div id="menuOverlay" class="hidden fixed inset-0 z-[60] xl:hidden menu-overlay"></div>
+    <div id="mobileMenu" class="xl:hidden fixed top-0 right-0 h-screen w-[86%] max-w-sm translate-x-full z-[70] flex flex-col mobile-panel" role="dialog" aria-modal="true" aria-label="Site menu">
+      <div class="flex items-center justify-between mb-5">
+        <a href="../index.html" class="flex items-center gap-3" aria-label="ShelemJ, home"><img decoding="async" src="../assets/images/shelemj-logo.png" alt="" width="480" height="438" class="h-11 w-auto" /><span class="font-serif text-xl text-cream">Shelem<span class="text-gold">J</span></span></a>
+        <button id="menuCloseBtn" type="button" class="icon-btn" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6 6 18"/></svg></button>
+      </div>
+      <nav aria-label="Mobile" class="flex-1 overflow-y-auto">
+      <a data-navlink="index.html" href="../index.html" class="m-link">Home<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></a>
+      <a data-navlink="about.html" href="../about.html" class="m-link">About<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></a>
+      <a data-navlink="products.html" href="../products.html" class="m-link">Products<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></a>
+      <a data-navlink="gallery.html" href="../gallery.html" class="m-link">Gallery<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></a>
+      <a data-navlink="supply-chain.html" href="../supply-chain.html" class="m-link">Supply Chain<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></a>
+      <a data-navlink="partnership.html" href="../partnership.html" class="m-link">Partnership<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg></a>
+        <p class="m-sub-title">Resources</p>
+        <div class="m-sub">
+        <a data-navlink="faq.html" href="../faq.html">FAQ</a>
+        <a data-navlink="certifications.html" href="../certifications.html">Certifications</a>
+        <a data-navlink="testimonials.html" href="../testimonials.html">Testimonials</a>
+        <a data-navlink="blog.html" href="../blog.html">Insights</a>
+        </div>
+      </nav>
+      <div class="mt-5 pt-5 border-t border-gold/20">
+        <a data-navlink="contact.html" href="../contact.html" class="nav-cta inline-flex w-full justify-center">Request a Sample <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg></a>
+        <div class="mt-4 grid gap-1 text-xs text-cream/65">
+          <a href="tel:+2348033187724">+234 803 318 7724</a>
+          <a href="mailto:info@shelemjresourcesltd.com" class="nowrap">info@shelemjresourcesltd.com</a>
+        </div>
+      </div>
+    </div>
 
     <main id="main">
       <!-- ============ BREADCRUMB + CATEGORY HERO ============ -->
@@ -941,8 +812,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 1;"
             >
-              <img
-                src="../assets/images/spices-01.JPG"
+              <img decoding="async" width="1040" height="780"
+                src="../assets/images/spices-01.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 1"
                 loading="lazy"
               />
@@ -956,8 +827,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 2;"
             >
-              <img
-                src="../assets/images/spices-02.JPG"
+              <img decoding="async" width="1040" height="780"
+                src="../assets/images/spices-02.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 2"
                 loading="lazy"
               />
@@ -971,8 +842,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 3;"
             >
-              <img
-                src="../assets/images/spices-03.JPG"
+              <img decoding="async" width="1040" height="780"
+                src="../assets/images/spices-03.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 3"
                 loading="lazy"
               />
@@ -986,8 +857,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 4;"
             >
-              <img
-                src="../assets/images/spices-04.JPG"
+              <img decoding="async" width="1040" height="780"
+                src="../assets/images/spices-04.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 4"
                 loading="lazy"
               />
@@ -1001,8 +872,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 5;"
             >
-              <img
-                src="../assets/images/spices-05.JPG"
+              <img decoding="async" width="1040" height="780"
+                src="../assets/images/spices-05.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 5"
                 loading="lazy"
               />
@@ -1016,8 +887,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 6;"
             >
-              <img
-                src="../assets/images/spices-06.JPG"
+              <img decoding="async" width="1125" height="2000"
+                src="../assets/images/spices-06.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 6"
                 loading="lazy"
               />
@@ -1031,8 +902,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 7;"
             >
-              <img
-                src="../assets/images/spices-07.JPG"
+              <img decoding="async" width="960" height="1280"
+                src="../assets/images/spices-07.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 7"
                 loading="lazy"
               />
@@ -1046,8 +917,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 8;"
             >
-              <img
-                src="../assets/images/spices-08.JPG"
+              <img decoding="async" width="868" height="1156"
+                src="../assets/images/spices-08.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 8"
                 loading="lazy"
               />
@@ -1061,8 +932,8 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Spices &amp; Seasonings, packed for export – lot 9;"
             >
-              <img
-                src="../assets/images/spices-09.JPG"
+              <img decoding="async" width="720" height="1280"
+                src="../assets/images/spices-09.webp"
                 alt="Spices &amp; Seasonings, packed for export – lot 9"
                 loading="lazy"
               />
@@ -1077,7 +948,7 @@
               data-gallery="spices"
               data-glightbox="title: Spices &amp; Seasonings; description: Behind the scenes: Spices &amp; Seasonings;"
             >
-              <img
+              <img decoding="async" width="480" height="854"
                 src="../assets/images/spices-video-01-poster.jpg"
                 alt="Behind the scenes: Spices &amp; Seasonings"
                 loading="lazy"
@@ -1243,7 +1114,7 @@
               <input
                 type="hidden"
                 name="access_key"
-                value="0082d43e-b512-413b-9ef5-9ed1dd271a6e"
+                value="69d524a8-4c64-4d17-94d1-d055ac16299d"
               />
               <input
                 type="hidden"
@@ -1283,7 +1154,7 @@
           <div class="footer-brand">
             <!-- 🖼️ PLACEHOLDER: same logo replacement note as the nav -->
             <a href="../index.html" class="footer-logo group inline-flex items-center gap-3 mb-4">
-              <img
+              <img decoding="async" width="480" height="438"
                 src="../assets/images/shelemj-logo.png"
                 alt="ShelemJ"
                 class="h-10 w-auto transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3"
@@ -1369,21 +1240,21 @@
             </ul>
           </div>
 
-          <div>
+          <div class="footer-contact">
             <p class="text-xs tracking-[0.25em] uppercase text-gold mb-4">
               Contact
             </p>
-            <ul class="space-y-2.5 text-sm text-cream/70">
-              <li>16 Kogberegbe Street, Ejigbo, Lagos</li>
-              <li>+234 803 318 7724</li>
-              <li>+234 812 763 2037</li>
-              <li>shelemjresourcesltd@gmail.com</li>
+            <ul class="footer-contact-list text-sm text-cream/70">
+              <li class="fc-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-4.5-4.5-7-8.25-7-12a7 7 0 1 1 14 0c0 3.75-2.5 7.5-7 12ZM12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/></svg><a href="https://www.google.com/maps/search/?api=1&amp;query=16+Kogberegbe+Street%2C+Ejigbo%2C+Lagos" target="_blank" rel="noopener">16 Kogberegbe Street, Ejigbo, Lagos</a></li>
+              <li class="fc-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372a1.125 1.125 0 0 0-.852-1.091l-4.423-1.106a1.125 1.125 0 0 0-1.173.417l-.97 1.293a1.125 1.125 0 0 1-1.21.38 12.035 12.035 0 0 1-7.143-7.143 1.125 1.125 0 0 1 .38-1.21l1.293-.97a1.125 1.125 0 0 0 .417-1.173L6.963 3.102A1.125 1.125 0 0 0 5.872 2.25H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg><a href="tel:+2348033187724">+234 803 318 7724</a></li>
+              <li class="fc-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372a1.125 1.125 0 0 0-.852-1.091l-4.423-1.106a1.125 1.125 0 0 0-1.173.417l-.97 1.293a1.125 1.125 0 0 1-1.21.38 12.035 12.035 0 0 1-7.143-7.143 1.125 1.125 0 0 1 .38-1.21l1.293-.97a1.125 1.125 0 0 0 .417-1.173L6.963 3.102A1.125 1.125 0 0 0 5.872 2.25H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg><a href="tel:+2348127632037">+234 812 763 2037</a></li>
+              <li class="fc-item"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true" ><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg><a href="mailto:info@shelemjresourcesltd.com" class="nowrap">info@shelemjresourcesltd.com</a></li>
             </ul>
           </div>
         </div>
 
         <div
-          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/40"
+          class="mt-14 pt-6 border-t border-gold/10 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-cream/65"
         >
           <p>
             &copy; <span id="year"></span> ShelemJ Resources Ltd. RC 7081228.
@@ -1391,7 +1262,7 @@
           </p>
           <p>Est. 2013, as Jueco Foods</p>
         </div>
-        <div class="mt-3 text-center text-[11px] text-mutedgold/40">
+        <div class="mt-3 text-center text-[11px] text-mutedgold">
           <p>
             Website by
             <a
@@ -1651,10 +1522,14 @@
           { title: "Certifications & Compliance", url: "certifications.html", desc: "Company registration and export compliance" },
           { title: "Testimonials", url: "testimonials.html", desc: "What retailers and partners say" },
           { title: "Insights & Guides", url: "blog.html", desc: "Guides on sourcing, shipping terms, getting started" },
+          { title: "FOB vs CIF: Choosing the Right Shipping Term", url: "blog/fob-vs-cif-shipping-terms.html", desc: "A plain-language breakdown of FOB and CIF shipping terms to help you choose the right one " },
+          { title: "From Sample to Standing Order: A First-Time Buyer's Roadmap", url: "blog/sample-to-standing-order.html", desc: "A realistic timeline from your first sample request to a recurring monthly shipment when w" },
+          { title: "How to Choose an African Food Export Partner", url: "blog/what-to-look-for-in-an-export-partner.html", desc: "Consistency, traceability, and communication matter more than price alone when choosing an" },
         ];
 
-        const inSubfolder = window.location.pathname.includes("/products/");
-        const prefix = inSubfolder ? "../" : "";
+        const inProducts = window.location.pathname.includes("/products/");
+        const inBlog = window.location.pathname.includes("/blog/");
+        const prefix = inProducts || inBlog ? "../" : "";
 
         const btn = document.getElementById("searchBtn");
         const btnMobile = document.getElementById("searchBtnMobile");
@@ -1668,7 +1543,7 @@
 
         function resolveUrl(url) {
           if (url.startsWith("products/")) {
-            return inSubfolder ? url.replace("products/", "") : url;
+            return inProducts ? url.replace("products/", "") : prefix + url;
           }
           return prefix + url;
         }

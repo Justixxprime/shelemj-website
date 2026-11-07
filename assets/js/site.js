@@ -368,3 +368,40 @@
     initDatePickers();
   }
 })();
+
+/* ---------- Header scroll state + reading progress (Nov 2026) ---------- */
+(function () {
+  var header = document.getElementById("siteNav");
+  if (header) {
+    var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 24); };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+  }
+  var bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  bar.setAttribute("aria-hidden", "true");
+  bar.innerHTML = "<span></span>";
+  document.body.appendChild(bar);
+  var fill = bar.firstChild, ticking = false;
+  function update() {
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    fill.style.transform = "scaleX(" + (max > 0 ? Math.min(1, window.scrollY / max) : 0) + ")";
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { ticking = true; requestAnimationFrame(update); }
+  }, { passive: true });
+  update();
+})();
+
+/* hide the floating sample bar when the footer comes into view */
+(function () {
+  var sb = document.getElementById("sampleBar");
+  if (!sb) return;
+  function check() {
+    var nearEnd = window.scrollY + window.innerHeight > document.documentElement.scrollHeight - 460;
+    sb.classList.toggle("near-footer", nearEnd);
+  }
+  window.addEventListener("scroll", check, { passive: true });
+  check();
+})();

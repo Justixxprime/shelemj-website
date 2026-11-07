@@ -50,7 +50,7 @@ developer as a user/manager, not the other way round.
    mx2.zoho.com 20, mx3.zoho.com 50), SPF TXT `v=spf1 include:zoho.com ~all`,
    DKIM TXT (value from Zoho), DMARC TXT at `_dmarc`. In Namecheap set Mail
    Settings to Custom MX. Do NOT delete the GitHub A records / www CNAME.
-2. **After Zoho works**: replace shelemjresourcesltd@gmail.com in the site
+2. **After Zoho works**: replace info@shelemjresourcesltd.com in the site
    (about 43 places incl. schema) with the new address, and create a NEW
    Web3Forms access key for the new inbox (the current key delivers to Gmail).
 3. **Google Search Console** — add a Domain property for shelemjresourcesltd.com,
@@ -69,3 +69,28 @@ developer as a user/manager, not the other way round.
 ## 🔁 Monthly routine
 Search Console errors and top queries; reply to Google reviews; one Google Business
 post; publish one blog article; fix anything flagged.
+
+## 2026-11-07 — Design refinement + performance build
+- NEW HEADER (all 20 pages): transparent over the hero, solid with hairline on scroll, slim contact strip
+  (phone + info@ email) on desktop, underline nav, "Request a Sample" button, scroll progress line.
+  Mobile menu rebuilt and moved OUT of the header (the overlay now covers the whole page; menu is hidden
+  from keyboard users while closed). Resources dropdown markup/JS kept exactly.
+- HERO: video panel now extends under the header and fades into the text side; scroll cue hidden on
+  phones (it used to sit on the address); "Established 2013 - NEPC and CAC registered" line added (facts
+  already on the site).
+- FOOTER: contact column rebuilt - email can no longer break onto two lines; address/phones/email are
+  tappable links with icons; mobile layout fixed.
+- SAMPLE BAR: now a floating bottom bar (was a full-width gold strip under the header); hides near the footer.
+- EMAIL/FORMS: Gmail replaced by info@shelemjresourcesltd.com in 44 places (incl. schema). New Web3Forms
+  key in all 21 forms (enquiry + newsletter). Enquiry form: button disables while sending, errors are
+  announced (role=alert) and readable.
+- PERFORMANCE: hero video re-encoded 4.7 MB -> 2.3 MB (same footage, no audio track existed); hero video
+  only autoplays on healthy connections (not data-saver/2G/3G), preload=metadata; 64 page photos also
+  served as WebP (8.3 MB -> 5.3 MB; originals kept for lightbox links); width/height added to 178 images
+  (no layout shift); film grain now a 9 KB tile instead of an SVG filter; Ken Burns runs once.
+- FIXES: site search from /blog/ pages built broken links (now fixed) and now includes the 3 articles;
+  Tailwind config now scans assets/js; one over-long blog title shortened; invalid iframe attribute fixed;
+  footer + credit-line text raised to readable contrast; duplicate skip link not added (one already existed).
+- NOT DONE / NEEDS OWNER: real photography (landscape hero video, sharp daylight product/packaging shots);
+  product facts (origins, pack sizes, MOQ) - only what is already on the site is used; real Web3Forms
+  delivery test; Search Console / Business Profile checks; WebP for gallery lightbox originals.
