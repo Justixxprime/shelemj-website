@@ -784,6 +784,25 @@
 
                 <p id="formStatus" class="text-sm mt-2" aria-live="polite"></p>
               </form>
+              <div id="formSuccess" class="hidden success-panel" role="status" aria-live="polite">
+                <div class="success-burst" aria-hidden="true"></div>
+                <div class="success-check" aria-hidden="true">
+                  <svg viewBox="0 0 80 80" fill="none"><circle class="sc-ring" cx="40" cy="40" r="34"/><path class="sc-tick" d="M25 41.5l10.5 10.5L56 30"/></svg>
+                </div>
+                <p class="success-eyebrow">Request received</p>
+                <h3 id="successTitle" class="success-title" tabindex="-1">Thank you<span id="successName"></span>.</h3>
+                <p class="success-lead">Your enquiry is now with the ShelemJ team. We usually reply within 24 hours, to <strong id="successEmail" class="nowrap"></strong>.</p>
+                <dl id="successSummary" class="success-summary"></dl>
+                <ol class="success-steps">
+                  <li><span>1</span><div><b>Received</b><em>Your details are with our team.</em></div></li>
+                  <li><span>2</span><div><b>Reviewed</b><em>We look at your products, volume and destination.</em></div></li>
+                  <li><span>3</span><div><b>You hear from us</b><em>We reply by email, usually within 24 hours.</em></div></li>
+                </ol>
+                <div class="success-actions">
+                  <a href="products.html" class="nav-cta inline-flex">Explore products <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0-6-6m6 6-6 6"/></svg></a>
+                  <button type="button" id="sendAnother" class="success-link">Send another enquiry</button>
+                </div>
+              </div>
             </div>
 
             <!-- ============ CONTACT INFO + MAP ============ -->
@@ -1264,17 +1283,84 @@
         if (box) box.checked = true;
       }
 
-      // AJAX submit to Web3Forms, avoids a full page reload, shows an inline confirmation instead
+      // AJAX submit to Web3Forms: no page reload, animated confirmation instead
       const form = document.getElementById("contactForm");
       const statusEl = document.getElementById("formStatus");
+      const successPanel = document.getElementById("formSuccess");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function burst() {
+        if (reduceMotion) return;
+        const host = successPanel.querySelector(".success-burst");
+        host.innerHTML = "";
+        for (let i = 0; i < 18; i++) {
+          const dot = document.createElement("i");
+          const angle = (Math.PI * 2 * i) / 18 + Math.random() * 0.3;
+          const dist = 70 + Math.random() * 70;
+          dot.style.setProperty("--dx", Math.cos(angle) * dist + "px");
+          dot.style.setProperty("--dy", Math.sin(angle) * dist + "px");
+          dot.style.animationDelay = Math.random() * 120 + "ms";
+          host.appendChild(dot);
+        }
+        setTimeout(() => (host.innerHTML = ""), 1400);
+      }
+
+      function showSuccess(s) {
+        document.getElementById("successName").textContent = s.first ? ", " + s.first : "";
+        document.getElementById("successEmail").textContent = s.email;
+        const dl = document.getElementById("successSummary");
+        dl.innerHTML = "";
+        [["Company", s.company], ["Contact", s.contact], ["Country", s.country], ["Products", s.products], ["Order volume", s.volume], ["Shipping term", s.incoterm], ["Needed by", s.needed]]
+          .filter((r) => r[1])
+          .forEach((r) => {
+            const wrap = document.createElement("div");
+            const dt = document.createElement("dt");
+            const dd = document.createElement("dd");
+            dt.textContent = r[0];
+            dd.textContent = r[1];
+            wrap.append(dt, dd);
+            dl.appendChild(wrap);
+          });
+        form.classList.add("hidden");
+        statusEl.textContent = "";
+        statusEl.className = "text-sm mt-2";
+        successPanel.classList.remove("hidden");
+        successPanel.classList.remove("is-in");
+        void successPanel.offsetWidth;
+        successPanel.classList.add("is-in");
+        successPanel.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+        document.getElementById("successTitle").focus({ preventScroll: true });
+        burst();
+      }
+
+      document.getElementById("sendAnother").addEventListener("click", () => {
+        successPanel.classList.add("hidden");
+        form.classList.remove("hidden");
+        document.getElementById("company").focus();
+      });
+
       form.addEventListener("submit", function (e) {
         e.preventDefault();
         const data = new FormData(form);
         const submitBtn = form.querySelector('button[type="submit"]');
-        if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute("aria-busy", "true"); }
+        const label = submitBtn ? submitBtn.innerHTML : "";
+        if (submitBtn) { submitBtn.disabled = true; submitBtn.setAttribute("aria-busy", "true"); submitBtn.innerHTML = '<span class="btn-spinner" aria-hidden="true"></span>Sending your request'; }
         statusEl.removeAttribute("role");
-        statusEl.textContent = "Sending...";
-        statusEl.className = "text-sm mt-2 text-mutedgold";
+        statusEl.className = "text-sm mt-2";
+        statusEl.textContent = "";
+        const text = (id) => (document.getElementById(id) ? document.getElementById(id).value.trim() : "");
+        const sel = (id) => { const el = document.getElementById(id); return el && el.value ? el.options[el.selectedIndex].text.trim() : ""; };
+        const summary = {
+          first: text("contactPerson").split(/\s+/)[0],
+          contact: text("contactPerson"),
+          company: text("company"),
+          email: text("email"),
+          country: text("country"),
+          volume: sel("volume"),
+          incoterm: sel("incoterm"),
+          needed: text("targetDate"),
+          products: [...form.querySelectorAll('input[type="checkbox"][name^="category_"]:checked')].map((c) => c.value).join(", "),
+        };
         fetch("https://api.web3forms.com/submit", {
           method: "POST",
           headers: { Accept: "application/json" },
@@ -1283,22 +1369,25 @@
           .then((res) => res.json())
           .then((json) => {
             if (json.success) {
-              statusEl.textContent =
-                "Thank you, we've received your request and will be in touch soon.";
-              statusEl.className = "text-sm mt-2 text-gold";
               form.reset();
+              showSuccess(summary);
             } else {
               throw new Error(json.message || "Submission failed");
             }
           })
           .catch(() => {
-            statusEl.textContent =
-              "Something went wrong. Please try again, or email us directly at info@shelemjresourcesltd.com.";
-            statusEl.className = "text-sm mt-2 text-[#ffb4a8]";
+            statusEl.className = "form-alert";
             statusEl.setAttribute("role", "alert");
+            statusEl.innerHTML = "";
+            const strong = document.createElement("strong");
+            strong.textContent = "Your message didn\u2019t go through.";
+            const p = document.createElement("span");
+            p.innerHTML = " Please try again, or email <a href=\"mailto:info@shelemjresourcesltd.com\" class=\"nowrap\">info@shelemjresourcesltd.com</a> or <a href=\"https://wa.me/2348033187724\" target=\"_blank\" rel=\"noopener\">message us on WhatsApp</a>.";
+            statusEl.append(strong, p);
+            statusEl.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
           })
           .finally(() => {
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute("aria-busy"); }
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.removeAttribute("aria-busy"); submitBtn.innerHTML = label; }
           });
       });
     </script>
